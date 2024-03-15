@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5voeln4m8bkj"]
+
+[ext_resource type="PackedScene" uid="uid://twqk6y5xdmkf" path="res://Characters/Contestant/Initial Model Contestant/Initial Model Contestant.glb" id="1_em2dm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gkbas"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.223529)
+emission_enabled = true
+emission = Color(0.976471, 0.976471, 0.976471, 1)
+
+[node name="Initial Model Contestant" instance=ExtResource("1_em2dm")]
+
+[node name="Skeleton3D" parent="Armature_002" index="1"]
+bones/0/position = Vector3(-0.35728, -0.354144, 0.26246)
+bones/1/rotation = Quaternion(0.179379, 0.0867515, -0.0710031, 0.977372)
+bones/3/rotation = Quaternion(0.195383, -0.0686942, -0.1099, 0.972126)
+bones/4/rotation = Quaternion(0.593511, -0.000464479, 0.110301, 0.797232)
+bones/5/rotation = Quaternion(-0.0386779, 0.374144, 0.0990207, 0.921257)
+bones/10/rotation = Quaternion(-0.0846476, 0.0291965, 0.0378, 0.995266)
+bones/13/position = Vector3(0.0416654, 0.624322, 0.175853)
+bones/15/rotation = Quaternion(-0.000504166, -0.172854, 0.0281043, 0.984546)
+bones/16/rotation = Quaternion(0.644033, 0.00043757, -0.11728, 0.755954)
+bones/17/rotation = Quaternion(0.0335535, -0.13742, -0.317553, 0.93763)
+bones/21/position = Vector3(0.224428, -1.9698, 1.79053)
+bones/22/position = Vector3(0.0283288, -3.85626, -0.0667337)
+bones/25/position = Vector3(1.50797, 0.682051, 1.83081)
+bones/25/rotation = Quaternion(-0.393994, 0.379572, 0.557921, -0.624034)
+bones/25/scale = Vector3(1.0943, 1.11697, 1.00035)
+bones/26/position = Vector3(0.998945, 1.12557, -1.26351)
+bones/27/position = Vector3(-0.938988, -1.9698, 1.79053)
+bones/28/position = Vector3(-1.36956, -3.85626, -0.0667337)
+bones/31/position = Vector3(-1.64134, 0.687927, 1.84049)
+bones/31/rotation = Quaternion(0.523239, 0.521597, 0.440855, 0.509709)
+bones/31/scale = Vector3(1.0943, 1.11697, 1.00035)
+bones/32/position = Vector3(-3.0481, 3.11204, -1.38199)
+bones/33/position = Vector3(-0.35728, -0.354144, 0.26246)
+bones/34/rotation = Quaternion(-0.458441, 0.146548, -0.115683, 0.868892)
+bones/35/rotation = Quaternion(-0.0808105, -0.00221318, 0.21848, 0.972487)
+bones/36/position = Vector3(-0.35728, -0.354144, 0.26246)
+bones/37/rotation = Quaternion(-0.376273, -0.161942, 0.127894, 0.903237)
+bones/38/rotation = Quaternion(-0.0439281, 0.00225747, -0.118764, 0.991948)
+
+[node name="Body_005" parent="Armature_002/Skeleton3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Body_006" parent="Armature_002/Skeleton3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Glasses_003" parent="Armature_002/Skeleton3D" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+surface_material_override/1 = SubResource("StandardMaterial3D_gkbas")
+
+[node name="HairRetopo_011" parent="Armature_002/Skeleton3D" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Mouth_006" parent="Armature_002/Skeleton3D" index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.031663)
+
+[node name="Jacket_003" parent="Armature_002/Skeleton3D" index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

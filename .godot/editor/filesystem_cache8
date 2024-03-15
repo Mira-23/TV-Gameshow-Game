@@ -1,0 +1,15 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1710539478
+icon.svg::CompressedTexture2D::179818749430815539::1710535844::1710535855::1::::<><>::
+initial_model_contestant.tscn::PackedScene::4536295705917948809::1710539478::0::1::::<><>::uid://twqk6y5xdmkf::::res://Characters/Contestant/Initial Model Contestant/Initial Model Contestant.glb
+::res://Characters/::1710537574
+::res://Characters/Contestant/::1710537597
+::res://Characters/Contestant/Initial Model Contestant/::1710539223
+Initial Model Contestant.glb::PackedScene::1379995336228333777::1710539221::1710539223::1::::<><>::uid://dcfujalf62kxn::::res://Characters/Contestant/Initial Model Contestant/Initial Model Contestant_FaceTex1.png<>uid://ce0cdnkc2t8m6::::res://Characters/Contestant/Initial Model Contestant/Initial Model Contestant_BlackHairTex.png<>uid://dsk6thsbwgyhv::::res://Characters/Contestant/Initial Model Contestant/Initial Model Contestant_finalJacketTex1.png<>uid://vynbind8vqej::::res://Characters/Contestant/Initial Model Contestant/Initial Model Contestant_finalPantsTex.png<>uid://yt6ucus36jhn::::res://Characters/Contestant/Initial Model Contestant/Initial Model Contestant_finalShirtTex1.png
+Initial Model Contestant_FaceTex1.png::CompressedTexture2D::7311192056388665835::1710539222::1710539223::1::::<><>::
+Initial Model Contestant_BlackHairTex.png::CompressedTexture2D::5105333675536406979::1710539222::1710539223::1::::<><>::
+Initial Model Contestant_finalJacketTex1.png::CompressedTexture2D::8445221566509466387::1710539222::1710539223::1::::<><>::
+Initial Model Contestant_finalPantsTex.png::CompressedTexture2D::1524302329646491561::1710539222::1710539223::1::::<><>::
+Initial Model Contestant_finalShirtTex1.png::CompressedTexture2D::1725673504093043991::1710539222::1710539223::1::::<><>::
+::res://Characters/Host/::1710538506
+::res://Characters/Host/Initial Model Host/::1710538479
