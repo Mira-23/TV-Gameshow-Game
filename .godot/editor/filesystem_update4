@@ -1,2 +1,4 @@
-res://initial_model_contestant.tscn
+res://host_initial_model.tscn
 res://Characters/Contestant/Initial Model Contestant/initial_model_contestant.tscn
+res://Scenes/CurrentMainScene.tscn
+res://Characters/Host/Initial Model Host/host_initial_model.tscn

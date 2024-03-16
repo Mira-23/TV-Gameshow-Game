@@ -40,21 +40,8 @@ bones/36/position = Vector3(-0.35728, -0.354144, 0.26246)
 bones/37/rotation = Quaternion(-0.376273, -0.161942, 0.127894, 0.903237)
 bones/38/rotation = Quaternion(-0.0439281, 0.00225747, -0.118764, 0.991948)
 
-[node name="Body_005" parent="Armature_002/Skeleton3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Body_006" parent="Armature_002/Skeleton3D" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-
 [node name="Glasses_003" parent="Armature_002/Skeleton3D" index="4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 surface_material_override/1 = SubResource("StandardMaterial3D_gkbas")
-
-[node name="HairRetopo_011" parent="Armature_002/Skeleton3D" index="5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Mouth_006" parent="Armature_002/Skeleton3D" index="6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.031663)
-
-[node name="Jacket_003" parent="Armature_002/Skeleton3D" index="8"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
