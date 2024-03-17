@@ -1,20 +1,28 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1710546548
-host_initial_model.tscn::PackedScene::5417804851811518774::1710546528::0::1::::<><>::uid://2mjxmb1isiaf::::res://Characters/Host/Initial Model Host/Host Initial Model.glb
+::res://::1710634083
 icon.svg::CompressedTexture2D::179818749430815539::1710535844::1710535855::1::::<><>::
 README.md::TextFile::-1::1710533782::0::1::::<><>::
+::res://addons/::1710619491
+::res://addons/anthonyec.camera_preview/::1710619492
+GuiResizerTopLeft.svg::CompressedTexture2D::3725702983604658859::1710619491::1710619492::1::::<><>::
+GuiResizerTopRight.svg::CompressedTexture2D::1815302168263048502::1710619491::1710619492::1::::<><>::
+Pin.svg::CompressedTexture2D::8206140417864082802::1710619491::1710619492::1::::<><>::
+plugin.cfg::TextFile::-1::1710619491::0::1::::<><>::
+plugin.gd::GDScript::-1::1710619491::0::1::::<>EditorPlugin<>::
+preview.gd::GDScript::-1::1710619491::0::1::::CameraPreview<>Control<>::
+preview.tscn::PackedScene::48940320948976937::1710619491::0::1::::<><>::res://addons/anthonyec.camera_preview/preview.gd<>uid://do6d60od41vmg::::res://addons/anthonyec.camera_preview/Pin.svg<>uid://btc01wc11tiid::::res://addons/anthonyec.camera_preview/GuiResizerTopLeft.svg<>uid://04l05jxuyt7k::::res://addons/anthonyec.camera_preview/GuiResizerTopRight.svg
 ::res://Characters/::1710537574
 ::res://Characters/Contestant/::1710537597
-::res://Characters/Contestant/Initial Model Contestant/::1710546531
+::res://Characters/Contestant/Initial Model Contestant/::1710618500
 Initial Model Contestant.glb::PackedScene::1379995336228333777::1710539221::1710539223::1::::<><>::uid://dcfujalf62kxn::::res://Characters/Contestant/Initial Model Contestant/Initial Model Contestant_FaceTex1.png<>uid://ce0cdnkc2t8m6::::res://Characters/Contestant/Initial Model Contestant/Initial Model Contestant_BlackHairTex.png<>uid://dsk6thsbwgyhv::::res://Characters/Contestant/Initial Model Contestant/Initial Model Contestant_finalJacketTex1.png<>uid://vynbind8vqej::::res://Characters/Contestant/Initial Model Contestant/Initial Model Contestant_finalPantsTex.png<>uid://yt6ucus36jhn::::res://Characters/Contestant/Initial Model Contestant/Initial Model Contestant_finalShirtTex1.png
 Initial Model Contestant_BlackHairTex.png::CompressedTexture2D::5105333675536406979::1710539222::1710539223::1::::<><>::
 Initial Model Contestant_FaceTex1.png::CompressedTexture2D::7311192056388665835::1710539222::1710539223::1::::<><>::
 Initial Model Contestant_finalJacketTex1.png::CompressedTexture2D::8445221566509466387::1710539222::1710539223::1::::<><>::
 Initial Model Contestant_finalPantsTex.png::CompressedTexture2D::1524302329646491561::1710539222::1710539223::1::::<><>::
 Initial Model Contestant_finalShirtTex1.png::CompressedTexture2D::1725673504093043991::1710539222::1710539223::1::::<><>::
-initial_model_contestant.tscn::PackedScene::4536295705917948809::1710546531::0::1::::<><>::uid://twqk6y5xdmkf::::res://Characters/Contestant/Initial Model Contestant/Initial Model Contestant.glb
+initial_model_contestant.tscn::PackedScene::4536295705917948809::1710618500::0::1::::<><>::uid://twqk6y5xdmkf::::res://Characters/Contestant/Initial Model Contestant/Initial Model Contestant.glb
 ::res://Characters/Host/::1710538506
-::res://Characters/Host/Initial Model Host/::1710546468
+::res://Characters/Host/Initial Model Host/::1710618500
 Host Initial Model.glb::PackedScene::1920459470488037045::1710546448::1710546467::1::::<><>::uid://dupoww6ukuyfw::::res://Characters/Host/Initial Model Host/Host Initial Model_HairTex2.png<>uid://qvcbfscqpy4j::::res://Characters/Host/Initial Model Host/Host Initial Model_7721993.jpg<>uid://d3o07ydyxe2qg::::res://Characters/Host/Initial Model Host/Host Initial Model_finalShirtTex1.png<>uid://w6eo36xj2teh::::res://Characters/Host/Initial Model Host/Host Initial Model_finalFaceTex1.png<>uid://ddkg3lq1pxqml::::res://Characters/Host/Initial Model Host/Host Initial Model_finalSuitTex1.png<>uid://bbrag62ja7tai::::res://Characters/Host/Initial Model Host/Host Initial Model_finalPantsTex.png<>uid://tbsagunqhe6q::::res://Characters/Host/Initial Model Host/Host Initial Model_finalVestTex1.png
 Host Initial Model_7721993.jpg::CompressedTexture2D::1166496941359311995::1710546449::1710546468::1::::<><>::
 Host Initial Model_finalFaceTex1.png::CompressedTexture2D::1608419659099165923::1710546450::1710546468::1::::<><>::
@@ -23,7 +31,32 @@ Host Initial Model_finalShirtTex1.png::CompressedTexture2D::9155027298041356642:
 Host Initial Model_finalSuitTex1.png::CompressedTexture2D::7390887267395945163::1710546450::1710546468::1::::<><>::
 Host Initial Model_finalVestTex1.png::CompressedTexture2D::1336745659394983318::1710546450::1710546468::1::::<><>::
 Host Initial Model_HairTex2.png::CompressedTexture2D::8594895119841011616::1710546449::1710546468::1::::<><>::
-::res://Scenes/::1710546548
-CurrentMainScene.tscn::PackedScene::7074857800379777369::1710546560::0::1::::<><>::
+host_initial_model.tscn::PackedScene::5417804851811518774::1710618500::0::1::::<><>::uid://2mjxmb1isiaf::::res://Characters/Host/Initial Model Host/Host Initial Model.glb
+::res://Materials/::1710633837
+DarkBlueMaterial.tres::StandardMaterial3D::567024038864483701::1710632868::0::1::::<><>::
+ScreenMaterial.tres::ShaderMaterial::5172016320005987756::1710633837::0::1::::<><>::res://Shaders/VHS.gdshader
+::res://Scenes/::1710634077
+CurrentMainScene.tscn::PackedScene::7074857800379777369::1710634077::0::1::::<><>::uid://b5voeln4m8bkj::::res://Characters/Contestant/Initial Model Contestant/initial_model_contestant.tscn<>uid://cjgoppide1bni::::res://Characters/Host/Initial Model Host/host_initial_model.tscn<>uid://icw2kmerfajl::::res://Materials/DarkBlueMaterial.tres<>uid://cfxmmaigllk65::::res://Materials/ScreenMaterial.tres
+::res://Shaders/::1710634078
+AccurateCRT.gdshader::Shader::-1::1710631688::0::1::::<><>::
+Glitch.gdshader::Shader::-1::1710631688::0::1::::<><>::
+Grain.gdshader::Shader::-1::1710631688::0::1::::<><>::
+JpegCompression.gdshader::Shader::-1::1710631688::0::1::::<><>::
+LensDistortion.gdshader::Shader::-1::1710631688::0::1::::<><>::
+NewVHS.gdshader::Shader::-1::1710634078::0::1::::<><>::
+NTSC.gdshader::Shader::-1::1710631688::0::1::::<><>::
+NTSCBasic.gdshader::Shader::-1::1710631688::0::1::::<><>::
+SimpleGlitch.gdshader::Shader::-1::1710631688::0::1::::<><>::
+SimpleGrain.gdshader::Shader::-1::1710631688::0::1::::<><>::
+TV.gdshader::Shader::-1::1710634078::0::1::::<><>::
+VHS.gdshader::Shader::-1::1710634078::0::1::::<><>::
+VHSPause.gdshader::Shader::-1::1710631688::0::1::::<><>::
+::res://Shaders/Aditional Shaders/::1710632136
+B&W.gdshader::Shader::-1::1710631688::0::1::::<><>::
+BetterCC.gdshader::Shader::-1::1710631688::0::1::::<><>::
+Blur.gdshader::Shader::-1::1710631688::0::1::::<><>::
+ColorPrecission.gdshader::Shader::-1::1710631688::0::1::::<><>::
+Dithering.gdshader::Shader::-1::1710631688::0::1::::<><>::
+Sharpness.gdshader::Shader::-1::1710631688::0::1::::<><>::
 ::res://TV-Gameshow-Game/::1710544514
 README.md::TextFile::-1::1710544514::0::1::::<><>::

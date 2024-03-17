@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c72d4yym01qjh"]
+[gd_scene load_steps=11 format=3 uid="uid://c72d4yym01qjh"]
 
 [ext_resource type="PackedScene" uid="uid://b5voeln4m8bkj" path="res://Characters/Contestant/Initial Model Contestant/initial_model_contestant.tscn" id="1_cost8"]
 [ext_resource type="PackedScene" uid="uid://cjgoppide1bni" path="res://Characters/Host/Initial Model Host/host_initial_model.tscn" id="2_6qc5f"]
+[ext_resource type="Material" uid="uid://icw2kmerfajl" path="res://Materials/DarkBlueMaterial.tres" id="3_ljqxm"]
+[ext_resource type="Material" uid="uid://cfxmmaigllk65" path="res://Materials/ScreenMaterial.tres" id="4_j1uc1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ewc05"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -16,20 +18,85 @@ sky = SubResource("Sky_06elw")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_1phf0"]
+material = ExtResource("3_ljqxm")
+radial_segments = 16
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fg5vd"]
+albedo_color = Color(1, 1, 0.686275, 1)
+emission_enabled = true
+emission = Color(1, 0.690196, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pfku3"]
+albedo_color = Color(0.278431, 0.278431, 0.278431, 1)
+
 [node name="CurrentMainScene" type="Node3D"]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+[node name="Environment" type="Node" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+visible = false
 shadow_enabled = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
 environment = SubResource("Environment_qgfgx")
 
-[node name="Initial Model Contestant" parent="." instance=ExtResource("1_cost8")]
+[node name="SpotLight3D" type="SpotLight3D" parent="Environment"]
+transform = Transform3D(0.971563, -0.0590169, 0.22931, -0.214189, 0.193801, 0.957374, -0.100942, -0.979264, 0.175649, -2.8568, 6.05415, 1.71948)
+light_energy = 4.879
+spot_range = 9.75251
+spot_angle = 29.4736
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Environment"]
+transform = Transform3D(-0.155395, 0.96087, -0.229304, -0.214455, 0.193775, 0.957319, 0.964293, 0.197938, 0.175951, 3.00275, 6.05415, 1.71948)
+light_energy = 4.879
+spot_range = 9.75251
+spot_angle = 29.4736
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Environment"]
+transform = Transform3D(-0.218143, 0.975917, 3.38809e-09, -0.857839, -0.19175, 0.476806, 0.465323, 0.104012, 0.879009, 0, 8.37805, 0)
+visible = false
+light_energy = 4.879
+spot_range = 9.75251
+spot_angle = 50.1981
+
+[node name="Characters" type="Node" parent="."]
+
+[node name="Initial Model Contestant" parent="Characters" instance=ExtResource("1_cost8")]
 transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -5, 0, 0)
 
-[node name="Host Initial Model" parent="." instance=ExtResource("2_6qc5f")]
+[node name="Host Initial Model" parent="Characters" instance=ExtResource("2_6qc5f")]
 transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 5, 0, 0)
 
+[node name="Structures" type="Node" parent="."]
+
+[node name="Stage-Ground" type="CSGMesh3D" parent="Structures"]
+transform = Transform3D(20, 0, 0, 0, 0.115, 0, 0, 0, 20, 0, 0, 0)
+mesh = SubResource("CylinderMesh_1phf0")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Structures"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0102539, 4.3972, -5.48)
+size = Vector3(12.4795, 8.56641, 0.5)
+material = ExtResource("3_ljqxm")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Structures"]
+transform = Transform3D(13, 0, 0, 0, 6.645, 0, 0, 0, 0.5, -0.0236053, 4.66856, -5.46267)
+size = Vector3(0.892059, 1.06396, 1)
+material = SubResource("StandardMaterial3D_fg5vd")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Structures"]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
+flip_faces = true
+material = SubResource("StandardMaterial3D_pfku3")
+metadata/_edit_lock_ = true
+
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.993572, 0.113203, 0, -0.113203, 0.993572, 0, 3.28141, 7.284)
+transform = Transform3D(1, 0, 0, 0, 0.993572, 0.113203, 0, -0.113203, 0.993572, 0.0225563, 3.28141, 7.26297)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = ExtResource("4_j1uc1")
+offset_right = 1149.0
+offset_bottom = 647.0
