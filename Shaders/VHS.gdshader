@@ -72,9 +72,9 @@ void fragment(){
 	// bloom
  for( float x = 0.0; x < 3.0; x += 1.0 ){
 		col.xyz += vec3(
-		tex2D( SCREEN_TEXTURE, uvn + vec2( x - 2.0, 0.0 ) * 0.007 ).x,
-		tex2D( SCREEN_TEXTURE, uvn + vec2( x - 2.0, 0.0 ) * 0.007 ).y,
-		tex2D( SCREEN_TEXTURE, uvn + vec2( x - 2.0, 0.0 ) * 0.007 ).z
+		tex2D( SCREEN_TEXTURE, uvn + vec2( x - 1.0, 0.0 ) * 0.007 ).x,
+		tex2D( SCREEN_TEXTURE, uvn + vec2( x - 1.0, 0.0 ) * 0.007 ).y,
+		tex2D( SCREEN_TEXTURE, uvn + vec2( x - 1.0, 0.0 ) * 0.007 ).z
 		) * 0.1;
 	}
 	col *= 0.8;

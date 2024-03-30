@@ -1,8 +1,10 @@
+Node
+Control
 ColorRect
+BackBufferCopy
 CanvasLayer
 SpotLight3D
 CSGSphere3D
 CSGBox3D
 CSGMesh3D
-Node
 Camera3D

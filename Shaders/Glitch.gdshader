@@ -10,6 +10,7 @@ uniform float _ScanLineJitter : hint_range(.2, 1) = .25; // (displacement, thres
 uniform float _VerticalJump : hint_range(0, 1) = .01;   // (amount, time)
 uniform float _HorizontalShake : hint_range(0, 1) = 0;
 uniform float _ColorDrift : hint_range(0, 1) = .02;     // (amount, time)
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, repeat_disable, filter_nearest;
 
 
 float nrand(float x, float y){

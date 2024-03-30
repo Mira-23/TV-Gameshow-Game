@@ -10,6 +10,7 @@ uniform float shake_amount_x  : hint_range(1, 500) = 250.0;
 uniform float shake_amount_y  : hint_range(1, 500) = 40.0;
 uniform float white_hlines : hint_range(0, 50) = 50;
 uniform float white_vlines : hint_range(0,80) = 80;
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, repeat_disable, filter_nearest;
 
 float rand(vec2 co){
 	return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);

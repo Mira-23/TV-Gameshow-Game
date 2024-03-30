@@ -7,6 +7,7 @@
 shader_type canvas_item;
 
 uniform float strength :hint_range(-0.035, 0.035) = 0.0;
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, repeat_disable, filter_nearest;
 
 void fragment(){
 	vec2 Resolution = 1.0 / SCREEN_PIXEL_SIZE; 

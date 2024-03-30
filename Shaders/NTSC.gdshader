@@ -10,6 +10,7 @@ uniform float blur_amount :hint_range(0.0, 8.0) = 3.0;
 uniform float signal_quality :hint_range(0.0, 0.5) = 0; 
 uniform float bottom_strenth :hint_range(0.0, 6.0) = 3.0;
 uniform sampler2D grain_tex; 
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, repeat_disable, filter_nearest;
 
 float grain (vec2 st, float iTime) {
     return fract(sin(dot(st.xy, vec2(17.0,180.)))* 2500. + iTime);

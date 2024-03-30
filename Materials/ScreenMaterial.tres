@@ -1,10 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cfxmmaigllk65"]
 
-[ext_resource type="Shader" path="res://Shaders/VHS.gdshader" id="1_kpx3b"]
+[ext_resource type="Shader" path="res://Shaders/SimpleGrain.gdshader" id="1_s06ji"]
 
 [resource]
-shader = ExtResource("1_kpx3b")
-shader_parameter/tape_wave_amount = 0.003
-shader_parameter/tape_crease_amount = 2.5
-shader_parameter/color_displacement = 1.0
-shader_parameter/lines_velocity = 0.1
+shader = ExtResource("1_s06ji")
+shader_parameter/amount = 0.1

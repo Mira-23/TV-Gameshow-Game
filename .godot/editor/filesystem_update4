@@ -1,6 +1,11 @@
 res://Scenes/CurrentMainScene.tscn
 res://Materials/DarkBlueMaterial.tres
-res://Shaders/VHS.gdshader
 res://Materials/ScreenMaterial.tres
-res://Shaders/TV.gdshader
 res://Shaders/NewVHS.gdshader
+res://Shaders/Vignette.gdshader
+res://Scenes/balloon.tscn
+res://Scripts/question1attempt.gd
+res://Scripts/Dialogue Manager.gd
+res://addons/dialogue_manager/dialogue_manager.gd
+res://Scripts/question_answers.gd
+res://Scripts/barmovement.gd

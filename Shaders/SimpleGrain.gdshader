@@ -7,6 +7,7 @@
 shader_type canvas_item;
 
 uniform float amount :hint_range(0.0, 0.4) = 0.1;
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, repeat_disable, filter_nearest;
 
 float grain (vec2 st, float time){
 	return fract(sin(dot(st.xy, vec2(17.0,180.)))* 2500. + time);

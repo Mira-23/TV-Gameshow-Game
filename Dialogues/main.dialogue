@@ -1,0 +1,17 @@
+~ question_1
+
+#max 144 characters per line
+Host: Question 1:
+Host: Which one of these is the second letter of the alphabet?
+
+=> END
+
+~ question_attempt
+if QuestionAnswers.current_answer == null
+	=> question_attempt
+else if QuestionAnswers.current_answer == "B":
+	Host: Correct!
+else
+	Host: False!  
+
+=> question_1

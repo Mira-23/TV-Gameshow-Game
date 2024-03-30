@@ -12,6 +12,7 @@ uniform float color_amount :hint_range(0, 1.3) = 0.6;
 uniform float grain_amount :hint_range(0, 0.07) = 0.025; //grain amount
 uniform float grain_size :hint_range(1, 3) = 1.6; //grain particle size (1.5 - 2.5)
 uniform float lum_amount :hint_range(0, 2) = 1.3;
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, repeat_disable, filter_nearest;
 
 varying float time;
 

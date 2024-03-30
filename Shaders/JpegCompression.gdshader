@@ -8,6 +8,7 @@ shader_type canvas_item;
 
 uniform float color_depth :hint_range(0.0, 255.0) = 100.0;
 uniform float color_number :hint_range(0.0, 50.0) = 20.0;
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, repeat_disable, filter_nearest;
 
 const mat3 rgb2ycbcr = mat3(
     vec3(0.299, -0.168736, 0.5), 

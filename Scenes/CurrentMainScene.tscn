@@ -1,11 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://c72d4yym01qjh"]
+[gd_scene load_steps=16 format=3 uid="uid://c72d4yym01qjh"]
 
 [ext_resource type="PackedScene" uid="uid://b5voeln4m8bkj" path="res://Characters/Contestant/Initial Model Contestant/initial_model_contestant.tscn" id="1_cost8"]
 [ext_resource type="PackedScene" uid="uid://cjgoppide1bni" path="res://Characters/Host/Initial Model Host/host_initial_model.tscn" id="2_6qc5f"]
 [ext_resource type="Material" uid="uid://icw2kmerfajl" path="res://Materials/DarkBlueMaterial.tres" id="3_ljqxm"]
 [ext_resource type="Material" uid="uid://cfxmmaigllk65" path="res://Materials/ScreenMaterial.tres" id="4_j1uc1"]
+[ext_resource type="Shader" path="res://Shaders/NewVHS.gdshader" id="4_spq4f"]
+[ext_resource type="Shader" path="res://Shaders/Aditional Shaders/Blur.gdshader" id="5_0ubel"]
+[ext_resource type="Script" path="res://Scripts/Dialogue Manager.gd" id="7_s4xj7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ewc05"]
+sky_top_color = Color(0.14902, 0.188235, 0.239216, 1)
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
@@ -30,7 +34,21 @@ emission = Color(1, 0.690196, 0, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pfku3"]
 albedo_color = Color(0.278431, 0.278431, 0.278431, 1)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0ht4e"]
+shader = ExtResource("4_spq4f")
+shader_parameter/tape_wave_amount = 0.003
+shader_parameter/tape_crease_amount = 2.5
+shader_parameter/color_displacement = 1.0
+shader_parameter/lines_velocity = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8pord"]
+shader = ExtResource("5_0ubel")
+shader_parameter/amount = 1.0
+
 [node name="CurrentMainScene" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.993572, 0.113203, 0, -0.113203, 0.993572, 0.0225563, 3.28141, 7.26297)
 
 [node name="Environment" type="Node" parent="."]
 
@@ -43,13 +61,13 @@ shadow_enabled = true
 environment = SubResource("Environment_qgfgx")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Environment"]
-transform = Transform3D(0.971563, -0.0590169, 0.22931, -0.214189, 0.193801, 0.957374, -0.100942, -0.979264, 0.175649, -2.8568, 6.05415, 1.71948)
+transform = Transform3D(0.971563, -0.0590169, 0.22931, -0.214189, 0.193801, 0.957374, -0.100942, -0.979264, 0.175649, 6, 6, 1.7)
 light_energy = 4.879
 spot_range = 9.75251
 spot_angle = 29.4736
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Environment"]
-transform = Transform3D(-0.155395, 0.96087, -0.229304, -0.214455, 0.193775, 0.957319, 0.964293, 0.197938, 0.175951, 3.00275, 6.05415, 1.71948)
+transform = Transform3D(-0.155395, 0.96087, -0.229304, -0.214455, 0.193775, 0.957319, 0.964293, 0.197938, 0.175951, -6, 6, 1.7)
 light_energy = 4.879
 spot_range = 9.75251
 spot_angle = 29.4736
@@ -91,12 +109,49 @@ flip_faces = true
 material = SubResource("StandardMaterial3D_pfku3")
 metadata/_edit_lock_ = true
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.993572, 0.113203, 0, -0.113203, 0.993572, 0.0225563, 3.28141, 7.26297)
+[node name="Dialogue Manager" type="Node" parent="."]
+script = ExtResource("7_s4xj7")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="Filter" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SimpleGrain" type="ColorRect" parent="CanvasLayer/Filter"]
 material = ExtResource("4_j1uc1")
-offset_right = 1149.0
-offset_bottom = 647.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.997396
+anchor_bottom = 0.998457
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="CanvasLayer/Filter"]
+copy_mode = 2
+
+[node name="NewVHS" type="ColorRect" parent="CanvasLayer/Filter"]
+material = SubResource("ShaderMaterial_0ht4e")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackBufferCopy2" type="BackBufferCopy" parent="CanvasLayer/Filter"]
+copy_mode = 2
+
+[node name="Blur" type="ColorRect" parent="CanvasLayer/Filter"]
+material = SubResource("ShaderMaterial_8pord")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true

@@ -7,6 +7,7 @@
 shader_type canvas_item;
 
 uniform float amount :hint_range(0.0, 1.5) = 1.0;
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 
 vec2 Circle(float Start, float Points, float Point) {
 	float Rad = (3.141592 * 3.0 * (1.0 / Points)) * (Point + Start);
@@ -18,7 +19,7 @@ void fragment(){
 	vec2 PixelOffset = amount / (1.0 / SCREEN_PIXEL_SIZE).xy;
 	
 	float Start = 2.0 / 14.0;
-	vec2 Scale = 0.66 * 4.0 * 2.0 * PixelOffset.xy;
+	vec2 Scale = 0.2 * 4.0 * 2.0 * PixelOffset.xy;
 	
 	vec3 N0 = texture(SCREEN_TEXTURE, uv + Circle(Start, 14.0, 0.0) * Scale).rgb;
 	vec3 N1 = texture(SCREEN_TEXTURE, uv + Circle(Start, 14.0, 1.0) * Scale).rgb;

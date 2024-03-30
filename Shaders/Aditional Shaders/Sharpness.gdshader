@@ -7,6 +7,7 @@
 shader_type canvas_item;
 
 uniform float sharpen_amount :hint_range(0,4) = 1.0;
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, repeat_disable, filter_nearest;
 
 vec4 sharpenMask (sampler2D st, vec2 fc, vec2 sps){
 	// Sharpen detection matrix [0,1,0],[1,-4,1],[0,1,0]
