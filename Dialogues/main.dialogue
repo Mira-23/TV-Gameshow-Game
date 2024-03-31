@@ -1,17 +1,43 @@
 ~ question_1
-
+set QuestionAnswers.question_number += 1
+set QuestionAnswers.correct_answer = "B"
 #max 144 characters per line
 Host: Question 1:
-Host: Which one of these is the second letter of the alphabet?
+set QuestionAnswers.current_timer.start(10)	
+Host: Which one of these is the second letter of the alphabet?[next=10]
 
 => END
 
+~ question_2
+
+set QuestionAnswers.question_number += 1
+set QuestionAnswers.correct_answer = "C"
+#max 144 characters per line
+Host: Question 2:
+set QuestionAnswers.current_timer.start(10)	
+Host: Which one of these is the third letter of the alphabet?[next=10]
+
+=> END
+
+~ rerouting
+if QuestionAnswers.question_number == 1
+	=> question_1
+else if QuestionAnswers.question_number == 2
+	=> question_2
+else
+	=> END
+
+
+
 ~ question_attempt
+do debug(QuestionAnswers.current_answer)
 if QuestionAnswers.current_answer == null
-	=> question_attempt
-else if QuestionAnswers.current_answer == "B":
-	Host: Correct!
+	Host: Uh oh!
+else if QuestionAnswers.current_answer == QuestionAnswers.correct_answer:
+	Host: Correct![next=1]
+	=> rerouting
 else
 	Host: False!  
+	=> question_1
 
-=> question_1
+=> END

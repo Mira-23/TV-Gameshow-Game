@@ -1,24 +1,283 @@
 [gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_805hu"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_s26u7"]
 
 [resource]
-script = ExtResource("1_805hu")
+script = ExtResource("1_s26u7")
 using_states = PackedStringArray()
 titles = {
-"question_1": "4",
-"question_attempt": "10"
+"question_1": "2",
+"question_2": "13",
+"question_attempt": "33",
+"rerouting": "23"
 }
 character_names = PackedStringArray("Host")
-first_title = "4"
+first_title = "2"
 lines = {
 "1": {
 "id": "1",
-"next_id": "4",
+"next_id": "2",
 "text": "question_1",
 "type": "title"
 },
-"10": {
+"11": {
+"id": "11",
+"next_id": "13",
+"text": "question_2",
+"type": "title"
+},
+"13": {
+"id": "13",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "QuestionAnswers"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "question_number"
+}, {
+"type": "assignment",
+"value": "+="
+}, {
+"type": "number",
+"value": 1
+}])
+},
+"next_id": "14",
+"type": "mutation"
+},
+"14": {
+"id": "14",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "QuestionAnswers"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "correct_answer"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "string",
+"value": "C"
+}])
+},
+"next_id": "16",
+"type": "mutation"
+},
+"16": {
+"character": "Host",
+"character_replacements": Array[Dictionary]([]),
+"id": "16",
+"next_id": "17",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Question 2:",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Question 2:",
+"type": "dialogue"
+},
+"17": {
+"id": "17",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "QuestionAnswers"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "current_timer"
+}, {
+"type": "dot"
+}, {
+"function": "start",
+"type": "function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "number",
+"value": 10
+}])])
+}])
+},
+"next_id": "18",
+"type": "mutation"
+},
+"18": {
+"character": "Host",
+"character_replacements": Array[Dictionary]([]),
+"id": "18",
+"next_id": "20",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Which one of these is the third letter of the alphabet?[next=10]",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Which one of these is the third letter of the alphabet?[next=10]",
+"type": "dialogue"
+},
+"2": {
+"id": "2",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "QuestionAnswers"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "question_number"
+}, {
+"type": "assignment",
+"value": "+="
+}, {
+"type": "number",
+"value": 1
+}])
+},
+"next_id": "3",
+"type": "mutation"
+},
+"20": {
+"id": "20",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"22": {
+"id": "22",
+"next_id": "23",
+"text": "rerouting",
+"type": "title"
+},
+"23": {
+"condition": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "QuestionAnswers"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "question_number"
+}, {
+"type": "comparison",
+"value": "=="
+}, {
+"type": "number",
+"value": 1
+}])
+},
+"id": "23",
+"next_conditional_id": "25",
+"next_id": "24",
+"next_id_after": "33",
+"type": "condition"
+},
+"24": {
+"id": "24",
+"is_snippet": false,
+"next_id": "2",
+"parent_id": "23",
+"type": "goto"
+},
+"25": {
+"condition": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "QuestionAnswers"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "question_number"
+}, {
+"type": "comparison",
+"value": "=="
+}, {
+"type": "number",
+"value": 2
+}])
+},
+"id": "25",
+"next_conditional_id": "27",
+"next_id": "26",
+"next_id_after": "33",
+"type": "condition"
+},
+"26": {
+"id": "26",
+"is_snippet": false,
+"next_id": "13",
+"parent_id": "25",
+"type": "goto"
+},
+"27": {
+"id": "27",
+"next_conditional_id": "33",
+"next_id": "28",
+"next_id_after": "33",
+"type": "condition"
+},
+"28": {
+"id": "28",
+"is_snippet": false,
+"next_id": "end",
+"parent_id": "27",
+"type": "goto"
+},
+"3": {
+"id": "3",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "QuestionAnswers"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "correct_answer"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "string",
+"value": "B"
+}])
+},
+"next_id": "5",
+"type": "mutation"
+},
+"32": {
+"id": "32",
+"next_id": "33",
+"text": "question_attempt",
+"type": "title"
+},
+"33": {
+"id": "33",
+"mutation": {
+"expression": Array[Dictionary]([{
+"function": "debug",
+"type": "function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "variable",
+"value": "QuestionAnswers"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "current_answer"
+}])])
+}])
+},
+"next_id": "34",
+"type": "mutation"
+},
+"34": {
 "condition": {
 "expression": Array[Dictionary]([{
 "type": "variable",
@@ -36,20 +295,26 @@ lines = {
 "value": "null"
 }])
 },
-"id": "10",
-"next_conditional_id": "12",
-"next_id": "11",
-"next_id_after": "17",
+"id": "34",
+"next_conditional_id": "36",
+"next_id": "35",
+"next_id_after": "43",
 "type": "condition"
 },
-"11": {
-"id": "11",
-"is_snippet": false,
-"next_id": "10",
-"parent_id": "10",
-"type": "goto"
+"35": {
+"character": "Host",
+"character_replacements": Array[Dictionary]([]),
+"id": "35",
+"next_id": "43",
+"notes": "",
+"parent_id": "34",
+"tags": PackedStringArray(),
+"text": "Uh oh!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Uh oh!",
+"type": "dialogue"
 },
-"12": {
+"36": {
 "condition": {
 "expression": Array[Dictionary]([{
 "type": "variable",
@@ -63,62 +328,81 @@ lines = {
 "type": "comparison",
 "value": "=="
 }, {
-"type": "string",
-"value": "B"
+"type": "variable",
+"value": "QuestionAnswers"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "correct_answer"
 }, {
 "type": "colon"
 }])
 },
-"id": "12",
-"next_conditional_id": "14",
-"next_id": "13",
-"next_id_after": "17",
+"id": "36",
+"next_conditional_id": "39",
+"next_id": "37",
+"next_id_after": "43",
 "type": "condition"
 },
-"13": {
+"37": {
 "character": "Host",
 "character_replacements": Array[Dictionary]([]),
-"id": "13",
-"next_id": "17",
+"id": "37",
+"next_id": "38",
 "notes": "",
-"parent_id": "12",
+"parent_id": "36",
 "tags": PackedStringArray(),
-"text": "Correct!",
+"text": "Correct![next=1]",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "Correct!",
+"translation_key": "Correct![next=1]",
 "type": "dialogue"
 },
-"14": {
-"id": "14",
-"next_conditional_id": "17",
-"next_id": "15",
-"next_id_after": "17",
+"38": {
+"id": "38",
+"is_snippet": false,
+"next_id": "23",
+"parent_id": "36",
+"type": "goto"
+},
+"39": {
+"id": "39",
+"next_conditional_id": "43",
+"next_id": "40",
+"next_id_after": "43",
 "type": "condition"
 },
-"15": {
+"40": {
 "character": "Host",
 "character_replacements": Array[Dictionary]([]),
-"id": "15",
-"next_id": "17",
+"id": "40",
+"next_id": "41",
 "notes": "",
-"parent_id": "14",
+"parent_id": "39",
 "tags": PackedStringArray(),
 "text": "False!",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "False!",
 "type": "dialogue"
 },
-"17": {
-"id": "17",
+"41": {
+"id": "41",
 "is_snippet": false,
-"next_id": "4",
+"next_id": "2",
+"parent_id": "39",
 "type": "goto"
 },
-"4": {
+"43": {
+"id": "43",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"5": {
 "character": "Host",
 "character_replacements": Array[Dictionary]([]),
-"id": "4",
-"next_id": "5",
+"id": "5",
+"next_id": "6",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Question 1:",
@@ -126,46 +410,91 @@ lines = {
 "translation_key": "Question 1:",
 "type": "dialogue"
 },
-"5": {
-"character": "Host",
-"character_replacements": Array[Dictionary]([]),
-"id": "5",
+"6": {
+"id": "6",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "QuestionAnswers"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "current_timer"
+}, {
+"type": "dot"
+}, {
+"function": "start",
+"type": "function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "number",
+"value": 10
+}])])
+}])
+},
 "next_id": "7",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Which one of these is the second letter of the alphabet?",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Which one of these is the second letter of the alphabet?",
-"type": "dialogue"
+"type": "mutation"
 },
 "7": {
+"character": "Host",
+"character_replacements": Array[Dictionary]([]),
 "id": "7",
-"is_snippet": false,
-"next_id": "end",
-"type": "goto"
+"next_id": "9",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Which one of these is the second letter of the alphabet?[next=10]",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Which one of these is the second letter of the alphabet?[next=10]",
+"type": "dialogue"
 },
 "9": {
 "id": "9",
-"next_id": "10",
-"text": "question_attempt",
-"type": "title"
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
 }
 }
 raw_text = "~ question_1
-
+set QuestionAnswers.question_number += 1
+set QuestionAnswers.correct_answer = \"B\"
 #max 144 characters per line
 Host: Question 1:
-Host: Which one of these is the second letter of the alphabet?
+set QuestionAnswers.current_timer.start(10)	
+Host: Which one of these is the second letter of the alphabet?[next=10]
 
 => END
 
+~ question_2
+
+set QuestionAnswers.question_number += 1
+set QuestionAnswers.correct_answer = \"C\"
+#max 144 characters per line
+Host: Question 2:
+set QuestionAnswers.current_timer.start(10)	
+Host: Which one of these is the third letter of the alphabet?[next=10]
+
+=> END
+
+~ rerouting
+if QuestionAnswers.question_number == 1
+	=> question_1
+else if QuestionAnswers.question_number == 2
+	=> question_2
+else
+	=> END
+
+
+
 ~ question_attempt
+do debug(QuestionAnswers.current_answer)
 if QuestionAnswers.current_answer == null
-	=> question_attempt
-else if QuestionAnswers.current_answer == \"B\":
-	Host: Correct!
+	Host: Uh oh!
+else if QuestionAnswers.current_answer == QuestionAnswers.correct_answer:
+	Host: Correct![next=1]
+	=> rerouting
 else
 	Host: False!  
+	=> question_1
 
-=> question_1"
+=> END"
 metadata/dialogue_manager_version = "2.36.0"
