@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5voeln4m8bkj"]
+[gd_scene load_steps=5 format=3 uid="uid://b5voeln4m8bkj"]
 
 [ext_resource type="PackedScene" uid="uid://twqk6y5xdmkf" path="res://Characters/Contestant/Initial Model Contestant/Initial Model Contestant.glb" id="1_em2dm"]
+[ext_resource type="Material" uid="uid://1eplyv6tvl5v" path="res://Materials/table_beige_body.tres" id="2_5ea6l"]
+[ext_resource type="Material" uid="uid://cdkklkkxregbc" path="res://Materials/table_green_top.tres" id="3_g4ggu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gkbas"]
 transparency = 1
@@ -45,3 +47,7 @@ surface_material_override/1 = SubResource("StandardMaterial3D_gkbas")
 
 [node name="Mouth_006" parent="Armature_002/Skeleton3D" index="6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.031663)
+
+[node name="Cube_003" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_5ea6l")
+surface_material_override/1 = ExtResource("3_g4ggu")

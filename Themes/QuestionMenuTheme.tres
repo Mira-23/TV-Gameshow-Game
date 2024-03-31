@@ -1,0 +1,16 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dns7qlt80b07c"]
+
+[ext_resource type="FontFile" uid="uid://dqeoiby0e7d4p" path="res://Fonts/Montserrat-Bold.ttf" id="1_tom6m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4ypp"]
+bg_color = Color(0.133333, 0.0705882, 0.643137, 1)
+skew = Vector2(-0.115, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.152941, 0.466667, 0.905882, 1)
+
+[resource]
+default_font = ExtResource("1_tom6m")
+Panel/styles/panel = SubResource("StyleBoxFlat_s4ypp")

@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cjgoppide1bni"]
+[gd_scene load_steps=8 format=3 uid="uid://cjgoppide1bni"]
 
 [ext_resource type="PackedScene" uid="uid://2mjxmb1isiaf" path="res://Characters/Host/Initial Model Host/Host Initial Model.glb" id="1_5vtx3"]
+[ext_resource type="Material" uid="uid://1eplyv6tvl5v" path="res://Materials/table_beige_body.tres" id="2_imhdf"]
+[ext_resource type="Material" uid="uid://cdkklkkxregbc" path="res://Materials/table_green_top.tres" id="3_lo66l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vel1q"]
 resource_name = "Light Blue"
@@ -8,7 +10,7 @@ cull_mode = 2
 albedo_color = Color(0, 0, 0, 1)
 metallic = 1.0
 emission_enabled = true
-emission = Color(0.38115, 0.50217, 0.749987, 1)
+emission = Color(0.627451, 0.513726, 0.458824, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l4t7o"]
 resource_name = "Dark Blue"
@@ -16,7 +18,7 @@ cull_mode = 2
 albedo_color = Color(0, 0, 0, 1)
 metallic = 1.0
 emission_enabled = true
-emission = Color(0.147287, 0.283715, 0.692985, 1)
+emission = Color(0.14902, 0.282353, 0.243137, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_kfonl"]
 _surfaces = [{
@@ -107,3 +109,5 @@ bones/62/rotation = Quaternion(-0.497123, 0.447132, 0.0565585, 0.741447)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.6, 0, 1, 1.10964)
 mesh = SubResource("ArrayMesh_qytgk")
 skeleton = NodePath("")
+surface_material_override/0 = ExtResource("2_imhdf")
+surface_material_override/1 = ExtResource("3_lo66l")

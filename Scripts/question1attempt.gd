@@ -3,7 +3,7 @@ extends Panel
 @onready var timer: Timer = $Timer
 @onready var label: Label = $CountDown
 @onready var dialogue_manager: Node = $"/root/CurrentMainScene/Dialogue Manager"
-
+#mira is gay
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	QuestionAnswers.current_timer = timer

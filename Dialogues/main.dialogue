@@ -1,21 +1,32 @@
 ~ question_1
-set QuestionAnswers.question_number += 1
+set QuestionAnswers.question_number = 2
 set QuestionAnswers.correct_answer = "B"
 #max 144 characters per line
-Host: Question 1:
 set QuestionAnswers.current_timer.start(10)	
-Host: Which one of these is the second letter of the alphabet?[next=10]
+Host: Question 1: 
+	Which one of these is the second letter of the alphabet?[next=10]
 
 => END
 
 ~ question_2
 
-set QuestionAnswers.question_number += 1
+set QuestionAnswers.question_number = 3
 set QuestionAnswers.correct_answer = "C"
 #max 144 characters per line
-Host: Question 2:
 set QuestionAnswers.current_timer.start(10)	
-Host: Which one of these is the third letter of the alphabet?[next=10]
+Host: Question 2:
+	Which one of these is the third letter of the alphabet?[next=10]
+
+=> END
+
+~ question_3
+
+set QuestionAnswers.question_number = 4
+set QuestionAnswers.correct_answer = "A"
+#max 144 characters per line
+set QuestionAnswers.current_timer.start(10)	
+Host: Question 3:
+	Which one of these is the first letter of the alphabet?[next=10]
 
 => END
 
@@ -24,7 +35,10 @@ if QuestionAnswers.question_number == 1
 	=> question_1
 else if QuestionAnswers.question_number == 2
 	=> question_2
+else if QuestionAnswers.question_number == 3
+	=> question_3
 else
+	Host: To be continued...[next=100000]
 	=> END
 
 
@@ -37,7 +51,7 @@ else if QuestionAnswers.current_answer == QuestionAnswers.correct_answer:
 	Host: Correct![next=1]
 	=> rerouting
 else
-	Host: False!  
+	Host: False![next=1]
 	=> question_1
-
+	do debug("b")
 => END

@@ -8,3 +8,6 @@ res://Scenes/CurrentMainScene.tscn
 res://Scripts/question_answers.gd
 res://Scripts/QuestionMenu.gd
 res://Scripts/question1attempt.gd
+res://Themes/QuestionMenuTheme.tres
+res://Characters/Host/Initial Model Host/host_initial_model.tscn
+res://Characters/Contestant/Initial Model Contestant/initial_model_contestant.tscn
