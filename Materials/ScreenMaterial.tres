@@ -1,7 +1,13 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cfxmmaigllk65"]
 
-[ext_resource type="Shader" path="res://Shaders/SimpleGrain.gdshader" id="1_s06ji"]
+[ext_resource type="Shader" path="res://Shaders/TV.gdshader" id="1_jwsc8"]
 
 [resource]
-shader = ExtResource("1_s06ji")
-shader_parameter/amount = 0.1
+shader = ExtResource("1_jwsc8")
+shader_parameter/vertJerkOpt = 0.2
+shader_parameter/vertMovementOpt = 0.0
+shader_parameter/bottomStaticOpt = 0.0
+shader_parameter/bottomStaticStrenth = 0.7
+shader_parameter/scalinesOpt = 0.8
+shader_parameter/rgbOffsetOpt = 0.2
+shader_parameter/horzFuzzOpt = 0.15

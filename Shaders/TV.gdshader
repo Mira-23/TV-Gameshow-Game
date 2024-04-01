@@ -113,9 +113,9 @@ void fragment(){
 	
 	staticVal *= bottomStaticOpt;
 	
-	float red = texture(SCREEN_TEXTURE, vec2(uv.x + xOffset -0.01*rgbOffsetOpt,_y)).r+staticVal;
-	float green = texture(SCREEN_TEXTURE, vec2(uv.x + xOffset,_y)).g+staticVal;
-	float blue = texture(SCREEN_TEXTURE, vec2(uv.x + xOffset +0.01*rgbOffsetOpt,_y)).b+staticVal;
+	float red = texture(SCREEN_TEXTURE, vec2(uv.x + xOffset -0.01*rgbOffsetOpt,uv.y)).r+staticVal;
+	float green = texture(SCREEN_TEXTURE, vec2(uv.x + xOffset,uv.y)).g+staticVal;
+	float blue = texture(SCREEN_TEXTURE, vec2(uv.x + xOffset +0.01*rgbOffsetOpt,uv.y)).b+staticVal;
 	
 	vec3 color = vec3(red,green,blue);
 	float scanline = sin(uv.y*800.0)*0.04*scalinesOpt;
