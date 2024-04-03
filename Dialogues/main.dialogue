@@ -1,57 +1,57 @@
-~ question_1
-set QuestionAnswers.question_number = 2
-set QuestionAnswers.correct_answer = "B"
-#max 144 characters per line
-set QuestionAnswers.current_timer.start(10)	
-Host: Question 1: 
-	Which one of these is the second letter of the alphabet?[next=10]
+~ tbc
+To Be Continued...
+=> END
 
+~ question_1
+set QuestionAnswers.SetQuestion(2,"B",5)
+#max 144 characters per line
+Host: Question 1: 
+	Which one of these is the second letter of the alphabet?[next=6]
 => END
 
 ~ question_2
-
-set QuestionAnswers.question_number = 3
-set QuestionAnswers.correct_answer = "C"
+set QuestionAnswers.SetQuestion(3,"C",10)
 #max 144 characters per line
-set QuestionAnswers.current_timer.start(10)	
 Host: Question 2:
-	Which one of these is the third letter of the alphabet?[next=10]
+	Which one of these is the third letter of the alphabet?[next=11]
 
 => END
 
 ~ question_3
-
-set QuestionAnswers.question_number = 4
-set QuestionAnswers.correct_answer = "A"
+set QuestionAnswers.SetQuestion(4,"A",10)
 #max 144 characters per line
-set QuestionAnswers.current_timer.start(10)	
 Host: Question 3:
-	Which one of these is the first letter of the alphabet?[next=10]
+	Which one of these is the first letter of the alphabet?[next=11]
 
 => END
 
-~ rerouting
-if QuestionAnswers.question_number == 1
-	=> question_1
-else if QuestionAnswers.question_number == 2
-	=> question_2
-else if QuestionAnswers.question_number == 3
-	=> question_3
-else
-	Host: To be continued...[next=100000]
-	=> END
+~ question_4
+#max 144 characters per line
+set QuestionAnswers.SetQuestion(5,"D",10)
+Host: Question 4:
+	Which one of these is the fourth letter of the alphabet?[next=11]
 
+=> END
 
+~ question_5
+#max 144 characters per line
+Host: Question 5:
+	Which one of these is the fourth letter of the alphabet?[next=11]
+
+=> END
 
 ~ question_attempt
 do debug(QuestionAnswers.current_answer)
 if QuestionAnswers.current_answer == null
-	Host: Uh oh!
+	=> question_radio
 else if QuestionAnswers.current_answer == QuestionAnswers.correct_answer:
 	Host: Correct![next=1]
-	=> rerouting
 else
 	Host: False![next=1]
-	=> question_1
-	do debug("b")
+	set QuestionAnswers.current_answer = 1 
+do QuestionAnswers.question_attempt_start.emit()
+=> END
+
+~ question_radio
+
 => END

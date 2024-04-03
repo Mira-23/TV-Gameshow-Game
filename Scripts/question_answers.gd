@@ -1,16 +1,16 @@
 extends Node
 
+@onready var dialogue_manager: Node = $"/root/CurrentMainScene/Dialogue Manager"
 @onready var current_timer
 var current_answer = null
 var correct_answer : String
 var question_number = 1
+signal question_attempt_start
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	self.connect("question_attempt_start",dialogue_manager._on_question_change)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func SetQuestion(q_number:int, c_answer:String, c_time: float):
+	question_number = q_number
+	correct_answer = c_answer
+	current_timer.start(c_time)
