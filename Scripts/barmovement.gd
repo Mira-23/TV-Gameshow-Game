@@ -4,6 +4,7 @@ extends Panel
 @onready var progress_bar_b: ProgressBar = $ProgressBar2
 @onready var progress_bar_c: ProgressBar = $ProgressBar3
 @onready var progress_bar_d: ProgressBar = $ProgressBar4
+
 #var a = progress_bar_a
 var bar_array
 var rng = RandomNumberGenerator.new()
@@ -14,6 +15,7 @@ var bar_speed: float = 30
 var answer_speed: float = 40
 
 func _ready() -> void:
+	QuestionAnswers.current_bars = self
 	bar_array = [progress_bar_a, progress_bar_b, progress_bar_c, progress_bar_d]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,6 +27,10 @@ func _process(delta: float) -> void:
 	
 	for i in 4:
 		bar_moving(delta, bar_array[i], rand_values_array[i])
+
+func stop_bars() -> void:
+	self.set_process(false)
+	self.hide()
 
 #replace with tween
 func bar_moving(delta, progress_bar: ProgressBar, rand_value: int) -> void:

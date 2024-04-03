@@ -11,8 +11,8 @@ var main_dialogue = load(dialogue_path)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
 	DialogueManager.show_dialogue_balloon_scene.call_deferred(balloon_scene, main_dialogue, "question_1")
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,18 +29,21 @@ func _process(_delta: float) -> void:
 
 
 func _on_Timer_timeout():
-	DialogueManager.show_dialogue_balloon_scene.call_deferred(balloon_scene, main_dialogue, "question_attempt")
+	DialogueManager.show_dialogue_balloon(main_dialogue, "question_attempt")
+	
 
 
 func _on_question_change():
 	match QuestionAnswers.question_number:
 		1: 
-			DialogueManager.show_dialogue_balloon_scene.call_deferred(balloon_scene, main_dialogue, "question_1")
+			DialogueManager.show_dialogue_balloon(main_dialogue, "question_1")
 		2: 
-			DialogueManager.show_dialogue_balloon_scene.call_deferred(balloon_scene, main_dialogue, "question_2")
+			DialogueManager.show_dialogue_balloon(main_dialogue, "question_2")
 		3:
-			DialogueManager.show_dialogue_balloon_scene.call_deferred(balloon_scene, main_dialogue, "question_3")
+			DialogueManager.show_dialogue_balloon(main_dialogue, "question_3")
 		4:
-			DialogueManager.show_dialogue_balloon_scene.call_deferred(balloon_scene, main_dialogue, "question_4")
+			DialogueManager.show_dialogue_balloon(main_dialogue, "question_4")
+		5:
+			DialogueManager.show_dialogue_balloon(main_dialogue, "question_5")
 		_: 
 			DialogueManager.show_dialogue_balloon_scene.call_deferred(balloon_scene, main_dialogue, "tbc")
