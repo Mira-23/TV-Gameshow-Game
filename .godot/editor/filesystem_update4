@@ -1,4 +1,4 @@
-res://Scenes/CurrentMainScene.tscn
+res://Scenes/balloon.tscn
 res://Materials/table_beige_body.tres
 res://Materials/table_green_top.tres
 res://Materials/DarkBlueMaterial.tres
@@ -8,11 +8,10 @@ res://Shaders/NewVHS.gdshader
 res://Shaders/SimpleGrain.gdshader
 res://Themes/QuestionMenuTheme.tres
 res://Shaders/Vignette.gdshader
-res://Scenes/balloon.tscn
+res://Scenes/CurrentMainScene.tscn
 res://Characters/Host/Initial Model Host/host_initial_model.tscn
 res://Characters/Contestant/Initial Model Contestant/initial_model_contestant.tscn
-res://Scripts/question_answers.gd
-res://Scripts/Dialogue Manager.gd
-res://Scripts/question1attempt.gd
+res://Scripts/ClickableAnswers.gd
+res://Scenes/filter_script.gd
 res://Scripts/QuestionMenu.gd
-res://Scripts/barmovement.gd
+res://Themes/style_box_dark_blue.tres

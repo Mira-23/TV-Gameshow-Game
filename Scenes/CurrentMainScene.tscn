@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c72d4yym01qjh"]
+[gd_scene load_steps=19 format=3 uid="uid://c72d4yym01qjh"]
 
 [ext_resource type="PackedScene" uid="uid://b5voeln4m8bkj" path="res://Characters/Contestant/Initial Model Contestant/initial_model_contestant.tscn" id="1_cost8"]
 [ext_resource type="PackedScene" uid="uid://cjgoppide1bni" path="res://Characters/Host/Initial Model Host/host_initial_model.tscn" id="2_6qc5f"]
@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://cfxmmaigllk65" path="res://Materials/ScreenMaterial.tres" id="4_j1uc1"]
 [ext_resource type="Shader" path="res://Shaders/NewVHS.gdshader" id="4_spq4f"]
 [ext_resource type="Shader" path="res://Shaders/Aditional Shaders/Blur.gdshader" id="5_0ubel"]
+[ext_resource type="Script" path="res://Scenes/filter_script.gd" id="5_d408l"]
 [ext_resource type="Shader" path="res://Shaders/SimpleGrain.gdshader" id="6_yemo8"]
 [ext_resource type="Script" path="res://Scripts/Dialogue Manager.gd" id="7_s4xj7"]
 
@@ -119,6 +120,7 @@ metadata/_edit_lock_ = true
 script = ExtResource("7_s4xj7")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
 
 [node name="Filter" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -127,8 +129,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("5_d408l")
 
-[node name="SimpleGrain2" type="ColorRect" parent="CanvasLayer/Filter"]
+[node name="TVShader" type="ColorRect" parent="CanvasLayer/Filter"]
 material = ExtResource("4_j1uc1")
 layout_mode = 1
 anchors_preset = -1
@@ -136,11 +140,12 @@ anchor_right = 0.997396
 anchor_bottom = 0.998457
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="CanvasLayer/Filter"]
 copy_mode = 2
 
-[node name="SimpleGrain3" type="ColorRect" parent="CanvasLayer/Filter"]
+[node name="SimpleGrain" type="ColorRect" parent="CanvasLayer/Filter"]
 material = SubResource("ShaderMaterial_0o5d4")
 layout_mode = 1
 anchors_preset = -1
@@ -148,6 +153,7 @@ anchor_right = 0.997396
 anchor_bottom = 0.998457
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="BackBufferCopy3" type="BackBufferCopy" parent="CanvasLayer/Filter"]
 copy_mode = 2
@@ -160,6 +166,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="BackBufferCopy2" type="BackBufferCopy" parent="CanvasLayer/Filter"]
 copy_mode = 2
@@ -172,4 +179,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
+mouse_filter = 2

@@ -99,7 +99,6 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [node name="ExampleBalloon" type="CanvasLayer"]
-layer = 0
 script = ExtResource("1_36de5")
 
 [node name="Balloon" type="Control" parent="."]
@@ -128,6 +127,7 @@ offset_bottom = 0.0639648
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("3_7amrp")
+metadata/_edit_lock_ = true
 
 [node name="NameBubble" type="Panel" parent="Balloon/QuestionBox"]
 layout_mode = 1
@@ -169,9 +169,9 @@ anchors_preset = -1
 anchor_top = 1.091
 anchor_right = 0.486
 anchor_bottom = 1.545
-offset_top = 0.991989
-offset_right = 0.0639954
-offset_bottom = 1.03999
+offset_top = 1.17307
+offset_right = 0.0640259
+offset_bottom = 1.1351
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("3_7amrp")
@@ -253,6 +253,72 @@ theme = ExtResource("3_7amrp")
 text = "• D: D
 "
 
+[node name="ClickableAnswers" type="Control" parent="Balloon/QuestionBox"]
+layout_mode = 1
+anchor_left = -0.00347222
+anchor_top = 1.10306
+anchor_right = 1.005
+anchor_bottom = 2.124
+offset_top = 0.0030365
+offset_right = 0.120056
+offset_bottom = -0.0278778
+script = ExtResource("4_h5meq")
+metadata/_edit_use_anchors_ = true
+
+[node name="CheckButton" type="CheckButton" parent="Balloon/QuestionBox/ClickableAnswers"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.003
+anchor_right = 0.485
+anchor_bottom = 0.444
+offset_left = 0.257
+offset_right = 0.214996
+offset_bottom = 0.0439949
+theme = ExtResource("3_7amrp")
+button_group = ExtResource("6_nhnn3")
+metadata/_edit_use_anchors_ = true
+
+[node name="CheckButton2" type="CheckButton" parent="Balloon/QuestionBox/ClickableAnswers"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.512466
+anchor_right = 0.994466
+anchor_bottom = 0.444
+offset_left = 0.257
+offset_right = 0.214996
+offset_bottom = 0.0439949
+theme = ExtResource("3_7amrp")
+button_group = ExtResource("5_8aapb")
+metadata/_edit_use_anchors_ = true
+
+[node name="CheckButton3" type="CheckButton" parent="Balloon/QuestionBox/ClickableAnswers"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.003
+anchor_top = 0.555556
+anchor_right = 0.485
+anchor_bottom = 0.999556
+offset_left = 0.257
+offset_right = 0.214996
+offset_bottom = 0.0439911
+theme = ExtResource("3_7amrp")
+button_group = ExtResource("6_nhnn3")
+metadata/_edit_use_anchors_ = true
+
+[node name="CheckButton4" type="CheckButton" parent="Balloon/QuestionBox/ClickableAnswers"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.512466
+anchor_top = 0.555556
+anchor_right = 0.994466
+anchor_bottom = 0.999556
+offset_left = 0.257
+offset_right = 0.214996
+offset_bottom = 0.0439911
+theme = ExtResource("3_7amrp")
+button_group = ExtResource("5_8aapb")
+metadata/_edit_use_anchors_ = true
+
 [node name="DialogueLabel" parent="Balloon/QuestionBox" instance=ExtResource("2_a8ve6")]
 unique_name_in_owner = true
 layout_mode = 1
@@ -261,52 +327,14 @@ anchor_left = 0.028
 anchor_top = 0.182
 anchor_right = 0.972
 anchor_bottom = 0.909
-offset_left = 0.872002
+offset_left = -0.127998
 offset_top = -0.653988
-offset_right = 1.12805
+offset_right = 0.128052
 offset_bottom = -0.172943
 grow_vertical = 2
 size_flags_vertical = 3
 theme = ExtResource("3_7amrp")
 text = "Dialogue..."
-
-[node name="ClickableAnswers" type="Control" parent="Balloon/QuestionBox"]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("4_h5meq")
-metadata/_edit_lock_ = true
-
-[node name="CheckButton" type="CheckButton" parent="Balloon/QuestionBox/ClickableAnswers"]
-layout_mode = 0
-offset_top = 97.0
-offset_right = 280.0
-offset_bottom = 137.0
-button_group = ExtResource("5_8aapb")
-
-[node name="CheckButton2" type="CheckButton" parent="Balloon/QuestionBox/ClickableAnswers"]
-layout_mode = 0
-offset_left = 296.0
-offset_top = 97.0
-offset_right = 576.0
-offset_bottom = 137.0
-button_group = ExtResource("6_nhnn3")
-
-[node name="CheckButton3" type="CheckButton" parent="Balloon/QuestionBox/ClickableAnswers"]
-layout_mode = 0
-offset_top = 147.0
-offset_right = 280.0
-offset_bottom = 187.0
-button_group = ExtResource("6_nhnn3")
-
-[node name="CheckButton4" type="CheckButton" parent="Balloon/QuestionBox/ClickableAnswers"]
-layout_mode = 0
-offset_left = 296.0
-offset_top = 147.0
-offset_right = 576.0
-offset_bottom = 187.0
-button_group = ExtResource("5_8aapb")
 
 [node name="BarAnswerSliders" type="Panel" parent="Balloon"]
 layout_mode = 1
