@@ -1,18 +1,18 @@
 [gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_1j6sr"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_ft6wk"]
 
 [resource]
-script = ExtResource("1_1j6sr")
+script = ExtResource("1_ft6wk")
 using_states = PackedStringArray()
 titles = {
-"question_1": "6",
+"question_1": "7",
 "question_2": "13",
-"question_3": "21",
-"question_4": "30",
-"question_5": "37",
-"question_attempt": "45",
-"question_radio": "62",
+"question_3": "20",
+"question_4": "27",
+"question_5": "34",
+"question_attempt": "40",
+"question_radio": "54",
 "tbc": "2"
 }
 character_names = PackedStringArray("Host")
@@ -24,63 +24,37 @@ lines = {
 "text": "tbc",
 "type": "title"
 },
-"10": {
-"id": "10",
-"is_snippet": false,
-"next_id": "end",
-"type": "goto"
-},
-"12": {
-"id": "12",
+"11": {
+"id": "11",
 "next_id": "13",
 "text": "question_2",
 "type": "title"
 },
 "13": {
-"id": "13",
-"mutation": {
-"expression": Array[Dictionary]([{
-"type": "variable",
-"value": "QuestionAnswers"
-}, {
-"type": "dot"
-}, {
-"function": "SetQuestion",
-"type": "function",
-"value": Array[Array]([Array[Dictionary]([{
-"type": "number",
-"value": 3
-}]), Array[Dictionary]([{
-"type": "string",
-"value": "C"
-}]), Array[Dictionary]([{
-"type": "number",
-"value": 5
-}])])
-}])
-},
-"next_id": "15",
-"type": "mutation"
-},
-"15": {
 "character": "Host",
 "character_replacements": Array[Dictionary]([]),
-"id": "15",
-"next_id": "18",
+"id": "13",
+"next_id": "16",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Question 2:
-Which one of these is the third letter of the alphabet?[next=6]",
+Which one of these is the third letter of the alphabet?[next=10000]",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Question 2:
-Which one of these is the third letter of the alphabet?[next=6]",
+Which one of these is the third letter of the alphabet?[next=10000]",
 "type": "dialogue"
 },
-"18": {
-"id": "18",
+"16": {
+"id": "16",
 "is_snippet": false,
 "next_id": "end",
 "type": "goto"
+},
+"18": {
+"id": "18",
+"next_id": "20",
+"text": "question_3",
+"type": "title"
 },
 "2": {
 "character": "",
@@ -95,62 +69,44 @@ Which one of these is the third letter of the alphabet?[next=6]",
 "type": "dialogue"
 },
 "20": {
-"id": "20",
-"next_id": "21",
-"text": "question_3",
-"type": "title"
-},
-"21": {
-"id": "21",
-"mutation": {
-"expression": Array[Dictionary]([{
-"type": "variable",
-"value": "QuestionAnswers"
-}, {
-"type": "dot"
-}, {
-"function": "SetQuestion",
-"type": "function",
-"value": Array[Array]([Array[Dictionary]([{
-"type": "number",
-"value": 4
-}]), Array[Dictionary]([{
-"type": "string",
-"value": "A"
-}]), Array[Dictionary]([{
-"type": "number",
-"value": 5
-}])])
-}])
-},
-"next_id": "23",
-"type": "mutation"
-},
-"23": {
 "character": "Host",
 "character_replacements": Array[Dictionary]([]),
-"id": "23",
-"next_id": "26",
+"id": "20",
+"next_id": "23",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Question 3:
-Which one of these is the first letter of the alphabet?[next=6]",
+Which one of these is the first letter of the alphabet?[next=10000]",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Question 3:
-Which one of these is the first letter of the alphabet?[next=6]",
+Which one of these is the first letter of the alphabet?[next=10000]",
 "type": "dialogue"
 },
-"26": {
-"id": "26",
+"23": {
+"id": "23",
 "is_snippet": false,
 "next_id": "end",
 "type": "goto"
 },
-"28": {
-"id": "28",
-"next_id": "30",
+"25": {
+"id": "25",
+"next_id": "27",
 "text": "question_4",
 "type": "title"
+},
+"27": {
+"character": "Host",
+"character_replacements": Array[Dictionary]([]),
+"id": "27",
+"next_id": "30",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Question 4:
+Which one of these is the fourth letter of the alphabet?[next=10000]",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Question 4:
+Which one of these is the fourth letter of the alphabet?[next=10000]",
+"type": "dialogue"
 },
 "3": {
 "id": "3",
@@ -160,128 +116,44 @@ Which one of these is the first letter of the alphabet?[next=6]",
 },
 "30": {
 "id": "30",
-"mutation": {
-"expression": Array[Dictionary]([{
-"type": "variable",
-"value": "QuestionAnswers"
-}, {
-"type": "dot"
-}, {
-"function": "SetQuestion",
-"type": "function",
-"value": Array[Array]([Array[Dictionary]([{
-"type": "number",
-"value": 5
-}]), Array[Dictionary]([{
-"type": "string",
-"value": "D"
-}]), Array[Dictionary]([{
-"type": "number",
-"value": 5
-}])])
-}])
-},
-"next_id": "31",
-"type": "mutation"
-},
-"31": {
-"character": "Host",
-"character_replacements": Array[Dictionary]([]),
-"id": "31",
-"next_id": "34",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Question 4:
-Which one of these is the fourth letter of the alphabet?[next=6]",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Question 4:
-Which one of these is the fourth letter of the alphabet?[next=6]",
-"type": "dialogue"
-},
-"34": {
-"id": "34",
 "is_snippet": false,
 "next_id": "end",
 "type": "goto"
 },
-"36": {
-"id": "36",
-"next_id": "37",
+"32": {
+"id": "32",
+"next_id": "34",
 "text": "question_5",
 "type": "title"
 },
-"37": {
-"id": "37",
-"mutation": {
-"expression": Array[Dictionary]([{
-"type": "variable",
-"value": "QuestionAnswers"
-}, {
-"type": "dot"
-}, {
-"type": "variable",
-"value": "current_bars"
-}, {
-"type": "dot"
-}, {
-"function": "stop_bars",
-"type": "function",
-"value": Array[Array]([])
-}])
-},
-"next_id": "39",
-"type": "mutation"
-},
-"39": {
+"34": {
 "character": "Host",
 "character_replacements": Array[Dictionary]([]),
-"id": "39",
-"next_id": "42",
+"id": "34",
+"next_id": "37",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Question 5:
-Which one of these is the fourth letter of the alphabet?[next=6000]",
+Which one of these are the first two letters of the alphabet?[next=10000]",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Question 5:
-Which one of these is the fourth letter of the alphabet?[next=6000]",
+Which one of these are the first two letters of the alphabet?[next=10000]",
 "type": "dialogue"
 },
-"42": {
-"id": "42",
+"37": {
+"id": "37",
 "is_snippet": false,
 "next_id": "end",
 "type": "goto"
 },
-"44": {
-"id": "44",
-"next_id": "45",
+"39": {
+"id": "39",
+"next_id": "40",
 "text": "question_attempt",
 "type": "title"
 },
-"45": {
-"id": "45",
-"mutation": {
-"expression": Array[Dictionary]([{
-"type": "variable",
-"value": "QuestionAnswers"
-}, {
-"type": "dot"
-}, {
-"type": "variable",
-"value": "current_bars"
-}, {
-"type": "dot"
-}, {
-"function": "stop_bars",
-"type": "function",
-"value": Array[Array]([])
-}])
-},
-"next_id": "46",
-"type": "mutation"
-},
-"46": {
-"id": "46",
+"40": {
+"id": "40",
 "mutation": {
 "expression": Array[Dictionary]([{
 "function": "debug",
@@ -297,41 +169,10 @@ Which one of these is the fourth letter of the alphabet?[next=6000]",
 }])])
 }])
 },
-"next_id": "47",
+"next_id": "41",
 "type": "mutation"
 },
-"47": {
-"condition": {
-"expression": Array[Dictionary]([{
-"type": "variable",
-"value": "QuestionAnswers"
-}, {
-"type": "dot"
-}, {
-"type": "variable",
-"value": "current_answer"
-}, {
-"type": "comparison",
-"value": "=="
-}, {
-"type": "variable",
-"value": "null"
-}])
-},
-"id": "47",
-"next_conditional_id": "49",
-"next_id": "48",
-"next_id_after": "57",
-"type": "condition"
-},
-"48": {
-"id": "48",
-"is_snippet": false,
-"next_id": "62",
-"parent_id": "47",
-"type": "goto"
-},
-"49": {
+"41": {
 "condition": {
 "expression": Array[Dictionary]([{
 "type": "variable",
@@ -356,46 +197,40 @@ Which one of these is the fourth letter of the alphabet?[next=6000]",
 "type": "colon"
 }])
 },
-"id": "49",
-"next_conditional_id": "54",
-"next_id": "50",
-"next_id_after": "57",
+"id": "41",
+"next_conditional_id": "46",
+"next_id": "42",
+"next_id_after": "49",
 "type": "condition"
 },
-"5": {
-"id": "5",
-"next_id": "6",
-"text": "question_1",
-"type": "title"
-},
-"50": {
+"42": {
 "character": "Host",
 "character_replacements": Array[Dictionary]([]),
-"id": "50",
-"next_id": "51",
+"id": "42",
+"next_id": "43",
 "notes": "",
-"parent_id": "49",
+"parent_id": "41",
 "tags": PackedStringArray(),
 "text": "Correct![next=1]",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Correct![next=1]",
 "type": "dialogue"
 },
-"51": {
+"43": {
 "character": "Host",
 "character_replacements": Array[Dictionary]([]),
-"id": "51",
-"next_id": "57",
+"id": "43",
+"next_id": "49",
 "notes": "",
-"parent_id": "49",
+"parent_id": "41",
 "siblings": [{
-"id": "51",
+"id": "43",
 "weight": 1.0
 }, {
-"id": "52",
+"id": "44",
 "weight": 1.0
 }, {
-"id": "53",
+"id": "45",
 "weight": 1.0
 }],
 "tags": PackedStringArray(),
@@ -404,41 +239,41 @@ Which one of these is the fourth letter of the alphabet?[next=6000]",
 "translation_key": "Now onto the next question...[next=1]",
 "type": "dialogue"
 },
-"52": {
+"44": {
 "character": "Host",
 "character_replacements": Array[Dictionary]([]),
-"id": "52",
-"next_id": "57",
+"id": "44",
+"next_id": "49",
 "notes": "",
-"parent_id": "49",
+"parent_id": "41",
 "tags": PackedStringArray(),
 "text": "Next...[next=1]",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Next...[next=1]",
 "type": "dialogue"
 },
-"53": {
+"45": {
 "character": "Host",
 "character_replacements": Array[Dictionary]([]),
-"id": "53",
-"next_id": "57",
+"id": "45",
+"next_id": "49",
 "notes": "",
-"parent_id": "49",
+"parent_id": "41",
 "tags": PackedStringArray(),
 "text": "Let's see what else...[next=1]",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Let's see what else...[next=1]",
 "type": "dialogue"
 },
-"54": {
-"id": "54",
-"next_conditional_id": "57",
-"next_id": "55",
-"next_id_after": "57",
+"46": {
+"id": "46",
+"next_conditional_id": "49",
+"next_id": "47",
+"next_id_after": "49",
 "type": "condition"
 },
-"55": {
-"id": "55",
+"47": {
+"id": "47",
 "mutation": {
 "expression": Array[Dictionary]([{
 "type": "variable",
@@ -452,29 +287,40 @@ Which one of these is the fourth letter of the alphabet?[next=6000]",
 "type": "assignment",
 "value": "="
 }, {
+"type": "variable",
+"value": "QuestionAnswers"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "question_number"
+}, {
+"type": "operator",
+"value": "-"
+}, {
 "type": "number",
 "value": 1
 }])
 },
-"next_id": "56",
-"parent_id": "54",
+"next_id": "48",
+"parent_id": "46",
 "type": "mutation"
 },
-"56": {
+"48": {
 "character": "Host",
 "character_replacements": Array[Dictionary]([]),
-"id": "56",
-"next_id": "57",
+"id": "48",
+"next_id": "49",
 "notes": "",
-"parent_id": "54",
+"parent_id": "46",
 "tags": PackedStringArray(),
 "text": "False![next=1]",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "False![next=1]",
 "type": "dialogue"
 },
-"57": {
-"id": "57",
+"49": {
+"id": "49",
 "mutation": {
 "expression": Array[Dictionary]([{
 "type": "variable",
@@ -492,66 +338,52 @@ Which one of these is the fourth letter of the alphabet?[next=6000]",
 "value": Array[Array]([])
 }])
 },
-"next_id": "58",
+"next_id": "50",
 "type": "mutation"
 },
-"58": {
-"id": "58",
+"5": {
+"id": "5",
+"next_id": "7",
+"text": "question_1",
+"type": "title"
+},
+"50": {
+"id": "50",
 "is_snippet": false,
 "next_id": "end",
 "type": "goto"
 },
-"6": {
-"id": "6",
-"mutation": {
-"expression": Array[Dictionary]([{
-"type": "variable",
-"value": "QuestionAnswers"
-}, {
-"type": "dot"
-}, {
-"function": "SetQuestion",
-"type": "function",
-"value": Array[Array]([Array[Dictionary]([{
-"type": "number",
-"value": 2
-}]), Array[Dictionary]([{
-"type": "string",
-"value": "B"
-}]), Array[Dictionary]([{
-"type": "number",
-"value": 5
-}])])
-}])
-},
-"next_id": "8",
-"type": "mutation"
-},
-"60": {
-"id": "60",
-"next_id": "62",
+"52": {
+"id": "52",
+"next_id": "54",
 "text": "question_radio",
 "type": "title"
 },
-"62": {
-"id": "62",
+"54": {
+"id": "54",
 "is_snippet": false,
 "next_id": "end",
 "type": "goto"
 },
-"8": {
+"7": {
 "character": "Host",
 "character_replacements": Array[Dictionary]([]),
-"id": "8",
-"next_id": "10",
+"id": "7",
+"next_id": "9",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Question 1:
-Which one of these is the second letter of the alphabet?[next=5]",
+Which one of these is the second letter of the alphabet?[next=10000]",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Question 1:
-Which one of these is the second letter of the alphabet?[next=5]",
+Which one of these is the second letter of the alphabet?[next=10000]",
 "type": "dialogue"
+},
+"9": {
+"id": "9",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
 }
 }
 raw_text = "~ tbc
@@ -559,56 +391,48 @@ To Be Continued...
 => END
 
 ~ question_1
-set QuestionAnswers.SetQuestion(2,\"B\",5)
 #max 144 characters per line
 Host: Question 1: 
-	Which one of these is the second letter of the alphabet?[next=5]
+	Which one of these is the second letter of the alphabet?[next=10000]
 => END
 
 ~ question_2
-set QuestionAnswers.SetQuestion(3,\"C\",5)
 #max 144 characters per line
 Host: Question 2:
-	Which one of these is the third letter of the alphabet?[next=6]
+	Which one of these is the third letter of the alphabet?[next=10000]
 
 => END
 
 ~ question_3
-set QuestionAnswers.SetQuestion(4,\"A\",5)
 #max 144 characters per line
 Host: Question 3:
-	Which one of these is the first letter of the alphabet?[next=6]
+	Which one of these is the first letter of the alphabet?[next=10000]
 
 => END
 
 ~ question_4
 #max 144 characters per line
-set QuestionAnswers.SetQuestion(5,\"D\",5)
 Host: Question 4:
-	Which one of these is the fourth letter of the alphabet?[next=6]
+	Which one of these is the fourth letter of the alphabet?[next=10000]
 
 => END
 
 ~ question_5
-do QuestionAnswers.current_bars.stop_bars()
 #max 144 characters per line
 Host: Question 5:
-	Which one of these is the fourth letter of the alphabet?[next=6000]
+	Which one of these are the first two letters of the alphabet?[next=10000]
 
 => END
 
 ~ question_attempt
-do QuestionAnswers.current_bars.stop_bars()
 do debug(QuestionAnswers.current_answer)
-if QuestionAnswers.current_answer == null
-	=> question_radio
-else if QuestionAnswers.current_answer == QuestionAnswers.correct_answer:
+if QuestionAnswers.current_answer == QuestionAnswers.correct_answer:
 	Host: Correct![next=1]
 	% Host: Now onto the next question...[next=1]
 	% Host: Next...[next=1]
 	% Host: Let's see what else...[next=1]
 else
-	set QuestionAnswers.question_number = 1
+	set QuestionAnswers.question_number = QuestionAnswers.question_number - 1
 	Host: False![next=1]
 do QuestionAnswers.question_attempt_start.emit()
 => END

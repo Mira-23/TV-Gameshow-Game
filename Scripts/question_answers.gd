@@ -1,11 +1,13 @@
 extends Node
 
-@onready var dialogue_manager: Node = $"/root/CurrentMainScene/Dialogue Manager"
-@onready var current_timer
-@onready var current_bars
+@onready var dialogue_manager : Node = $"/root/CurrentMainScene/Dialogue Manager"
+@onready var current_timer : Node
+@onready var current_bars : Node
+
+var question_wait : int = 10000
 var current_answer = null
-var correct_answer : String
-var question_number = 1
+var correct_answer : String = "B"
+var question_number : int = 1
 signal question_attempt_start
 
 func _ready() -> void:

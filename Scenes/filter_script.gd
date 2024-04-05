@@ -1,12 +1,12 @@
 extends Control
 
-@onready var tv_shader = $TVShader
-@onready var back_buffer_copy = $BackBufferCopy
-@onready var simple_grain = $SimpleGrain
-@onready var back_buffer_copy3 = $BackBufferCopy3
-@onready var new_vhs = $NewVHS
-@onready var back_buffer_copy2 = $BackBufferCopy2
-@onready var blur = $Blur
+@onready var tv_shader : ColorRect = $TVShader
+@onready var back_buffer_copy : BackBufferCopy = $BackBufferCopy
+@onready var simple_grain : ColorRect = $SimpleGrain
+@onready var back_buffer_copy3 : BackBufferCopy = $BackBufferCopy3
+@onready var new_vhs : ColorRect = $NewVHS
+@onready var back_buffer_copy2 : BackBufferCopy = $BackBufferCopy2
+@onready var blur : ColorRect = $Blur
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

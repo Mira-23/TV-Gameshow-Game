@@ -6,7 +6,7 @@ extends Panel
 @onready var progress_bar_d: ProgressBar = $ProgressBar4
 
 #var a = progress_bar_a
-var bar_array
+var bar_array : Array
 var rng = RandomNumberGenerator.new()
 var upper_value: int
 var lower_value: int
@@ -53,7 +53,8 @@ func on_answer_press(action: String, progress_bar: ProgressBar) -> void:
 			bar.value -= (answer_speed/2)
 		
 func _on_timer_timeout() -> void:
-	var answer_dict = {"A": progress_bar_a.value, "B": progress_bar_b.value, "C": progress_bar_c.value, "D": progress_bar_d.value}
-	var answer = answer_dict.find_key(max(progress_bar_a.value,progress_bar_b.value,progress_bar_c.value, progress_bar_d.value))
-	QuestionAnswers.current_answer = answer
-	print("answer ", answer)
+	if (QuestionAnswers.question_number <= 5):
+		var answer_dict = {"A": progress_bar_a.value, "B": progress_bar_b.value, "C": progress_bar_c.value, "D": progress_bar_d.value}
+		var answer = answer_dict.find_key(max(progress_bar_a.value,progress_bar_b.value,progress_bar_c.value, progress_bar_d.value))
+		QuestionAnswers.current_answer = answer
+		print("answer ", answer)

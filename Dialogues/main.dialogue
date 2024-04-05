@@ -3,56 +3,48 @@ To Be Continued...
 => END
 
 ~ question_1
-set QuestionAnswers.SetQuestion(2,"B",5)
 #max 144 characters per line
 Host: Question 1: 
-	Which one of these is the second letter of the alphabet?[next=5]
+	Which one of these is the second letter of the alphabet?[next=10000]
 => END
 
 ~ question_2
-set QuestionAnswers.SetQuestion(3,"C",5)
 #max 144 characters per line
 Host: Question 2:
-	Which one of these is the third letter of the alphabet?[next=6]
+	Which one of these is the third letter of the alphabet?[next=10000]
 
 => END
 
 ~ question_3
-set QuestionAnswers.SetQuestion(4,"A",5)
 #max 144 characters per line
 Host: Question 3:
-	Which one of these is the first letter of the alphabet?[next=6]
+	Which one of these is the first letter of the alphabet?[next=10000]
 
 => END
 
 ~ question_4
 #max 144 characters per line
-set QuestionAnswers.SetQuestion(5,"D",5)
 Host: Question 4:
-	Which one of these is the fourth letter of the alphabet?[next=6]
+	Which one of these is the fourth letter of the alphabet?[next=10000]
 
 => END
 
 ~ question_5
-do QuestionAnswers.current_bars.stop_bars()
 #max 144 characters per line
 Host: Question 5:
-	Which one of these is the fourth letter of the alphabet?[next=6000]
+	Which one of these are the first two letters of the alphabet?[next=10000]
 
 => END
 
 ~ question_attempt
-do QuestionAnswers.current_bars.stop_bars()
 do debug(QuestionAnswers.current_answer)
-if QuestionAnswers.current_answer == null
-	=> question_radio
-else if QuestionAnswers.current_answer == QuestionAnswers.correct_answer:
+if QuestionAnswers.current_answer == QuestionAnswers.correct_answer:
 	Host: Correct![next=1]
 	% Host: Now onto the next question...[next=1]
 	% Host: Next...[next=1]
 	% Host: Let's see what else...[next=1]
 else
-	set QuestionAnswers.question_number = 1
+	set QuestionAnswers.question_number = QuestionAnswers.question_number - 1
 	Host: False![next=1]
 do QuestionAnswers.question_attempt_start.emit()
 => END

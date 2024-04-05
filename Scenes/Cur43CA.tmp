@@ -368,7 +368,6 @@ theme_override_font_sizes/font_size = 24
 text = "• D: D"
 
 [node name="ClickableAnswers" type="Control" parent="DialogueMenuLayer/DialogueMenu/QuestionBox"]
-visible = false
 layout_mode = 1
 anchor_left = -0.00347222
 anchor_top = 1.10306

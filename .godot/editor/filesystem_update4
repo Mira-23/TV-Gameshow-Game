@@ -11,7 +11,11 @@ res://Shaders/Vignette.gdshader
 res://Scenes/CurrentMainScene.tscn
 res://Characters/Host/Initial Model Host/host_initial_model.tscn
 res://Characters/Contestant/Initial Model Contestant/initial_model_contestant.tscn
-res://Scripts/ClickableAnswers.gd
+res://Scripts/question1attempt.gd
+res://Scripts/question_answers.gd
+res://Scripts/barmovement.gd
+res://Scripts/Dialogue Manager.gd
 res://Scenes/filter_script.gd
 res://Scripts/QuestionMenu.gd
-res://Themes/style_box_dark_blue.tres
+res://Scripts/ClickableAnswers.gd
+res://Themes/button_group1.tres
