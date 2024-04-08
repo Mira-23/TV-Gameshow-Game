@@ -36,29 +36,24 @@ func _process(_delta: float) -> void:
 func _on_timer_timeout():
 	var current_dialogue = $"../ExampleBalloon"
 	current_dialogue.queue_free()
-	
-	if (QuestionAnswers.current_answer == "B"):
-		print("yes")
 	DialogueManager.show_dialogue_balloon(main_dialogue, "question_attempt")
+	QuestionAnswers.current_bars.stop_bars()
 
 
 func _on_question_change():
+	QuestionAnswers.current_bars.show_bars()
+	DialogueManager.show_dialogue_balloon(main_dialogue, "question_" + str(QuestionAnswers.question_number))
 	match QuestionAnswers.question_number:
 		0, 1: 
 			QuestionAnswers.SetQuestion(2,"B",time_needed)
-			DialogueManager.show_dialogue_balloon(main_dialogue, "question_1")
 		2: 
 			QuestionAnswers.SetQuestion(3,"C",time_needed)
-			DialogueManager.show_dialogue_balloon(main_dialogue, "question_2")
 		3:
 			QuestionAnswers.SetQuestion(4,"A",time_needed)
-			DialogueManager.show_dialogue_balloon(main_dialogue, "question_3")
 		4:
 			QuestionAnswers.SetQuestion(5,"D",time_needed)
-			DialogueManager.show_dialogue_balloon(main_dialogue, "question_4")
 		5:
 			QuestionAnswers.SetQuestion(6,"A B",time_needed)
-			DialogueManager.show_dialogue_balloon(main_dialogue, "question_5")
 			QuestionAnswers.current_bars.stop_bars()
 			clickable_answers.reveal_self()
 		_: 

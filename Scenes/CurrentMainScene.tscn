@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://c72d4yym01qjh"]
+[gd_scene load_steps=29 format=3 uid="uid://c72d4yym01qjh"]
 
 [ext_resource type="PackedScene" uid="uid://b5voeln4m8bkj" path="res://Characters/Contestant/Initial Model Contestant/initial_model_contestant.tscn" id="1_cost8"]
 [ext_resource type="PackedScene" uid="uid://cjgoppide1bni" path="res://Characters/Host/Initial Model Host/host_initial_model.tscn" id="2_6qc5f"]
@@ -7,7 +7,6 @@
 [ext_resource type="Shader" path="res://Shaders/NewVHS.gdshader" id="4_spq4f"]
 [ext_resource type="Shader" path="res://Shaders/Aditional Shaders/Blur.gdshader" id="5_0ubel"]
 [ext_resource type="Theme" uid="uid://dns7qlt80b07c" path="res://Themes/QuestionMenuTheme.tres" id="5_0v7a6"]
-[ext_resource type="Script" path="res://Scenes/filter_script.gd" id="5_d408l"]
 [ext_resource type="Script" path="res://Scripts/ClickableAnswers.gd" id="6_pp6d2"]
 [ext_resource type="Shader" path="res://Shaders/SimpleGrain.gdshader" id="6_yemo8"]
 [ext_resource type="ButtonGroup" uid="uid://deo1i7r2xmtm7" path="res://Themes/button_group1.tres" id="7_ly58y"]
@@ -36,9 +35,9 @@ material = ExtResource("3_ljqxm")
 radial_segments = 16
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fg5vd"]
-albedo_color = Color(1, 1, 0.686275, 1)
+albedo_color = Color(0.976471, 0.976471, 0.972549, 1)
 emission_enabled = true
-emission = Color(1, 0.690196, 0, 1)
+emission = Color(0.858824, 0.858824, 0.831373, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pfku3"]
 albedo_color = Color(0.278431, 0.278431, 0.278431, 1)
@@ -162,7 +161,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("5_d408l")
 
 [node name="TVShader" type="ColorRect" parent="FilterLayer/Filter"]
 material = ExtResource("4_j1uc1")

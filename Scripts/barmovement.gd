@@ -11,7 +11,7 @@ var rng = RandomNumberGenerator.new()
 var upper_value: int
 var lower_value: int
 var rand_values_array = [rng.randi_range(20,70),rng.randi_range(20,70),rng.randi_range(20,70),rng.randi_range(20,70)]
-var bar_speed: float = 30
+var bar_speed: float = 60
 var answer_speed: float = 40
 
 func _ready() -> void:
@@ -28,9 +28,19 @@ func _process(delta: float) -> void:
 	for i in 4:
 		bar_moving(delta, bar_array[i], rand_values_array[i])
 
+func reshuffle():
+	rand_values_array = [rng.randi_range(20,70),rng.randi_range(20,70),rng.randi_range(20,70),rng.randi_range(20,70)]
+	for i in 4:
+		bar_array[i].value = 0
+
 func stop_bars() -> void:
 	self.set_process(false)
 	self.hide()
+
+func show_bars() -> void:
+	reshuffle()
+	self.set_process(true)
+	self.show()
 
 #replace with tween
 func bar_moving(delta, progress_bar: ProgressBar, rand_value: int) -> void:
