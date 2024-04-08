@@ -2,7 +2,6 @@ extends Node
 
 @onready var dialogue_manager : Node = $"/root/CurrentMainScene/Dialogue Manager"
 @onready var current_timer : Node
-@onready var current_bars : Node
 
 var question_wait : int = 10000
 var current_answer = null

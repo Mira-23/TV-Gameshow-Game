@@ -12,7 +12,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
-	
+
+func hide_self():
+	self.visible = false
+
 func reveal_self():
 	self.visible = true
 

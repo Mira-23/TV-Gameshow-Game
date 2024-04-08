@@ -15,7 +15,6 @@ var bar_speed: float = 60
 var answer_speed: float = 40
 
 func _ready() -> void:
-	QuestionAnswers.current_bars = self
 	bar_array = [progress_bar_a, progress_bar_b, progress_bar_c, progress_bar_d]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

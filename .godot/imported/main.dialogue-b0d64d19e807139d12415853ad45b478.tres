@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_hm1vp"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_mgm6p"]
 
 [resource]
-script = ExtResource("1_hm1vp")
+script = ExtResource("1_mgm6p")
 using_states = PackedStringArray()
 titles = {
 "question_1": "7",
@@ -12,7 +12,7 @@ titles = {
 "question_4": "27",
 "question_5": "34",
 "question_attempt": "40",
-"question_radio": "57",
+"question_radio": "54",
 "tbc": "2"
 }
 character_names = PackedStringArray("Host")
@@ -200,7 +200,7 @@ Which one of these are the first two letters of the alphabet?[next=10000]",
 "id": "41",
 "next_conditional_id": "46",
 "next_id": "42",
-"next_id_after": "52",
+"next_id_after": "49",
 "type": "condition"
 },
 "42": {
@@ -220,7 +220,7 @@ Which one of these are the first two letters of the alphabet?[next=10000]",
 "character": "Host",
 "character_replacements": Array[Dictionary]([]),
 "id": "43",
-"next_id": "52",
+"next_id": "49",
 "notes": "",
 "parent_id": "41",
 "siblings": [{
@@ -243,7 +243,7 @@ Which one of these are the first two letters of the alphabet?[next=10000]",
 "character": "Host",
 "character_replacements": Array[Dictionary]([]),
 "id": "44",
-"next_id": "52",
+"next_id": "49",
 "notes": "",
 "parent_id": "41",
 "tags": PackedStringArray(),
@@ -256,7 +256,7 @@ Which one of these are the first two letters of the alphabet?[next=10000]",
 "character": "Host",
 "character_replacements": Array[Dictionary]([]),
 "id": "45",
-"next_id": "52",
+"next_id": "49",
 "notes": "",
 "parent_id": "41",
 "tags": PackedStringArray(),
@@ -267,19 +267,13 @@ Which one of these are the first two letters of the alphabet?[next=10000]",
 },
 "46": {
 "id": "46",
-"next_conditional_id": "52",
-"next_id": "50",
-"next_id_after": "52",
+"next_conditional_id": "49",
+"next_id": "47",
+"next_id_after": "49",
 "type": "condition"
 },
-"5": {
-"id": "5",
-"next_id": "7",
-"text": "question_1",
-"type": "title"
-},
-"50": {
-"id": "50",
+"47": {
+"id": "47",
 "mutation": {
 "expression": Array[Dictionary]([{
 "type": "variable",
@@ -293,30 +287,19 @@ Which one of these are the first two letters of the alphabet?[next=10000]",
 "type": "assignment",
 "value": "="
 }, {
-"type": "variable",
-"value": "QuestionAnswers"
-}, {
-"type": "dot"
-}, {
-"type": "variable",
-"value": "question_number"
-}, {
-"type": "operator",
-"value": "-"
-}, {
 "type": "number",
 "value": 1
 }])
 },
-"next_id": "51",
+"next_id": "48",
 "parent_id": "46",
 "type": "mutation"
 },
-"51": {
+"48": {
 "character": "Host",
 "character_replacements": Array[Dictionary]([]),
-"id": "51",
-"next_id": "52",
+"id": "48",
+"next_id": "49",
 "notes": "",
 "parent_id": "46",
 "tags": PackedStringArray(),
@@ -325,8 +308,8 @@ Which one of these are the first two letters of the alphabet?[next=10000]",
 "translation_key": "False![next=1]",
 "type": "dialogue"
 },
-"52": {
-"id": "52",
+"49": {
+"id": "49",
 "mutation": {
 "expression": Array[Dictionary]([{
 "type": "variable",
@@ -344,23 +327,29 @@ Which one of these are the first two letters of the alphabet?[next=10000]",
 "value": Array[Array]([])
 }])
 },
-"next_id": "53",
+"next_id": "50",
 "type": "mutation"
 },
-"53": {
-"id": "53",
+"5": {
+"id": "5",
+"next_id": "7",
+"text": "question_1",
+"type": "title"
+},
+"50": {
+"id": "50",
 "is_snippet": false,
 "next_id": "end",
 "type": "goto"
 },
-"55": {
-"id": "55",
-"next_id": "57",
+"52": {
+"id": "52",
+"next_id": "54",
 "text": "question_radio",
 "type": "title"
 },
-"57": {
-"id": "57",
+"54": {
+"id": "54",
 "is_snippet": false,
 "next_id": "end",
 "type": "goto"
@@ -432,10 +421,7 @@ if QuestionAnswers.current_answer == QuestionAnswers.correct_answer:
 	% Host: Next...[next=1]
 	% Host: Let's see what else...[next=1]
 else
-#	if QuestionAnswers.question_number == 1
-#		set QuestionAnswers.question_number = 1
-#	else
-	set QuestionAnswers.question_number = QuestionAnswers.question_number - 1
+	set QuestionAnswers.question_number = 1 # QuestionAnswers.question_number - 1
 	Host: False![next=1]
 do QuestionAnswers.question_attempt_start.emit()
 => END

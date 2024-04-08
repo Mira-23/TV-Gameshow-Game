@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c72d4yym01qjh"]
+[gd_scene load_steps=30 format=3 uid="uid://c72d4yym01qjh"]
 
 [ext_resource type="PackedScene" uid="uid://b5voeln4m8bkj" path="res://Characters/Contestant/Initial Model Contestant/initial_model_contestant.tscn" id="1_cost8"]
 [ext_resource type="PackedScene" uid="uid://cjgoppide1bni" path="res://Characters/Host/Initial Model Host/host_initial_model.tscn" id="2_6qc5f"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://Scripts/barmovement.gd" id="9_bxuyo"]
 [ext_resource type="Script" path="res://Scripts/QuestionMenu.gd" id="10_4dtoi"]
 [ext_resource type="Script" path="res://Scripts/question1attempt.gd" id="10_lvcyo"]
+[ext_resource type="Script" path="res://Scenes/propositions.gd" id="10_u0at5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ewc05"]
 sky_top_color = Color(0.14902, 0.188235, 0.239216, 1)
@@ -220,6 +221,7 @@ anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 script = ExtResource("10_4dtoi")
+metadata/_edit_lock_ = true
 
 [node name="QuestionBox" type="Panel" parent="DialogueMenuLayer/DialogueMenu"]
 layout_mode = 1
@@ -251,20 +253,33 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("5_0v7a6")
 
-[node name="ProposA" type="Panel" parent="DialogueMenuLayer/DialogueMenu/QuestionBox"]
+[node name="Propositions" type="Control" parent="DialogueMenuLayer/DialogueMenu/QuestionBox"]
+layout_mode = 1
+anchor_left = 0.0121528
+anchor_top = 1.10309
+anchor_right = 1.01171
+anchor_bottom = 2.10272
+offset_left = 1.0
+offset_right = 0.256001
+offset_bottom = 0.0360222
+script = ExtResource("10_u0at5")
+metadata/_edit_use_anchors_ = true
+
+[node name="ProposA" type="Panel" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/Propositions"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.091
 anchor_right = 0.486
 anchor_bottom = 1.545
-offset_top = 1.17307
-offset_right = 0.0640259
-offset_bottom = 1.1351
+offset_left = -7.0
+offset_top = -105.827
+offset_right = -6.93597
+offset_bottom = -105.865
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("5_0v7a6")
 
-[node name="LabelA" type="Label" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/ProposA"]
+[node name="LabelA" type="Label" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/Propositions/ProposA"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0504286
@@ -280,21 +295,23 @@ theme_override_font_sizes/font_size = 24
 text = "• A: A"
 metadata/_edit_use_anchors_ = true
 
-[node name="ProposB" type="Panel" parent="DialogueMenuLayer/DialogueMenu/QuestionBox"]
+[node name="ProposB" type="Panel" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/Propositions"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.514
 anchor_top = 1.102
 anchor_right = 1.0
 anchor_bottom = 1.557
-offset_left = -0.0639954
-offset_top = 0.0240021
-offset_bottom = -0.0160065
+offset_left = -7.06403
+offset_top = -106.976
+offset_right = -7.00006
+offset_bottom = -107.016
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("5_0v7a6")
+metadata/_edit_use_anchors_ = true
 
-[node name="LabelB" type="Label" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/ProposB"]
+[node name="LabelB" type="Label" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/Propositions/ProposB"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.029
@@ -309,19 +326,21 @@ theme = ExtResource("5_0v7a6")
 theme_override_font_sizes/font_size = 24
 text = "• B: B"
 
-[node name="ProposC" type="Panel" parent="DialogueMenuLayer/DialogueMenu/QuestionBox"]
+[node name="ProposC" type="Panel" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/Propositions"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.636
 anchor_right = 0.486
 anchor_bottom = 2.125
-offset_top = 3.032
-offset_right = 0.0639954
+offset_left = -7.0
+offset_top = -103.968
+offset_right = -6.936
+offset_bottom = -107.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("5_0v7a6")
 
-[node name="LabelC" type="Label" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/ProposC"]
+[node name="LabelC" type="Label" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/Propositions/ProposC"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.029
@@ -337,20 +356,23 @@ theme_override_font_sizes/font_size = 24
 text = "• C: C"
 metadata/_edit_use_anchors_ = true
 
-[node name="ProposD" type="Panel" parent="DialogueMenuLayer/DialogueMenu/QuestionBox"]
+[node name="ProposD" type="Panel" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/Propositions"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.514
 anchor_top = 1.67
 anchor_right = 1.0
 anchor_bottom = 2.125
-offset_left = -0.0639954
-offset_top = 0.0399933
+offset_left = -7.06403
+offset_top = -106.96
+offset_right = -7.00006
+offset_bottom = -107.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("5_0v7a6")
+metadata/_edit_use_anchors_ = true
 
-[node name="LabelD" type="Label" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/ProposD"]
+[node name="LabelD" type="Label" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/Propositions/ProposD"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.029
