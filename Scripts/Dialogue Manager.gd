@@ -35,18 +35,25 @@ func _process(_delta: float) -> void:
 			DisplayServer.window_set_mode(previous_window)
 
 
-func _on_timer_timeout():
-	var current_dialogue = $"../ExampleBalloon"
-	current_dialogue.queue_free()
-	DialogueManager.show_dialogue_balloon(main_dialogue, "question_attempt")
+func hide_question_menu():
 	current_bars.stop_bars()
 	current_propositions.hide_propositions()
 	clickable_answers.hide_self()
 
+func show_question_menu():
+	current_bars.show_bars()
+	current_propositions.show_propositions("A","B","C","D")
+
+
+func _on_timer_timeout():
+	var current_dialogue = $"../ExampleBalloon"
+	current_dialogue.queue_free()
+	DialogueManager.show_dialogue_balloon(main_dialogue, "question_attempt")
+	hide_question_menu()
+
 
 func _on_question_change():
-	current_bars.show_bars()
-	current_propositions.show_propositions()
+	show_question_menu()
 	DialogueManager.show_dialogue_balloon(main_dialogue, "question_" + str(QuestionAnswers.question_number))
 	match QuestionAnswers.question_number:
 		0, 1: 

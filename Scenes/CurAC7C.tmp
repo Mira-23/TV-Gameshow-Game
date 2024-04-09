@@ -1,0 +1,622 @@
+[gd_scene load_steps=30 format=3 uid="uid://c72d4yym01qjh"]
+
+[ext_resource type="PackedScene" uid="uid://b5voeln4m8bkj" path="res://Characters/Contestant/Initial Model Contestant/initial_model_contestant.tscn" id="1_cost8"]
+[ext_resource type="PackedScene" uid="uid://cjgoppide1bni" path="res://Characters/Host/Initial Model Host/host_initial_model.tscn" id="2_6qc5f"]
+[ext_resource type="Material" uid="uid://icw2kmerfajl" path="res://Materials/DarkBlueMaterial.tres" id="3_ljqxm"]
+[ext_resource type="Material" uid="uid://cfxmmaigllk65" path="res://Materials/ScreenMaterial.tres" id="4_j1uc1"]
+[ext_resource type="Shader" path="res://Shaders/NewVHS.gdshader" id="4_spq4f"]
+[ext_resource type="Shader" path="res://Shaders/Aditional Shaders/Blur.gdshader" id="5_0ubel"]
+[ext_resource type="Theme" uid="uid://dns7qlt80b07c" path="res://Themes/QuestionMenuTheme.tres" id="5_0v7a6"]
+[ext_resource type="Script" path="res://Scripts/ClickableAnswers.gd" id="6_pp6d2"]
+[ext_resource type="Shader" path="res://Shaders/SimpleGrain.gdshader" id="6_yemo8"]
+[ext_resource type="ButtonGroup" uid="uid://deo1i7r2xmtm7" path="res://Themes/button_group1.tres" id="7_ly58y"]
+[ext_resource type="Script" path="res://Scripts/Dialogue Manager.gd" id="7_s4xj7"]
+[ext_resource type="ButtonGroup" uid="uid://dcd6gx17fu3t7" path="res://Themes/button_group2.tres" id="8_htecx"]
+[ext_resource type="Script" path="res://Scripts/barmovement.gd" id="9_bxuyo"]
+[ext_resource type="Script" path="res://Scripts/QuestionMenu.gd" id="10_4dtoi"]
+[ext_resource type="Script" path="res://Scripts/question1attempt.gd" id="10_lvcyo"]
+[ext_resource type="Script" path="res://Scenes/propositions.gd" id="10_u0at5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ewc05"]
+sky_top_color = Color(0.14902, 0.188235, 0.239216, 1)
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_06elw"]
+sky_material = SubResource("ProceduralSkyMaterial_ewc05")
+
+[sub_resource type="Environment" id="Environment_qgfgx"]
+background_mode = 2
+sky = SubResource("Sky_06elw")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1phf0"]
+material = ExtResource("3_ljqxm")
+radial_segments = 16
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fg5vd"]
+albedo_color = Color(0.976471, 0.976471, 0.972549, 1)
+emission_enabled = true
+emission = Color(0.858824, 0.858824, 0.831373, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pfku3"]
+albedo_color = Color(0.278431, 0.278431, 0.278431, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o5d4"]
+shader = ExtResource("6_yemo8")
+shader_parameter/amount = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0ht4e"]
+shader = ExtResource("4_spq4f")
+shader_parameter/tape_wave_amount = 0.003
+shader_parameter/tape_crease_amount = 2.5
+shader_parameter/color_displacement = 1.0
+shader_parameter/lines_velocity = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8pord"]
+shader = ExtResource("5_0ubel")
+shader_parameter/amount = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_00qil"]
+bg_color = Color(0.372549, 0.8, 0.172549, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p8tni"]
+bg_color = Color(0.976471, 0.85098, 0.337255, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sinh7"]
+bg_color = Color(0.964706, 0.537255, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k22r3"]
+bg_color = Color(0.929412, 0.0745098, 0.0588235, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="CurrentMainScene" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.993572, 0.113203, 0, -0.113203, 0.993572, 0.0225563, 3.28141, 7.26297)
+
+[node name="Environment" type="Node" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+visible = false
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
+environment = SubResource("Environment_qgfgx")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Environment"]
+transform = Transform3D(0.971563, -0.0590169, 0.22931, -0.214189, 0.193801, 0.957374, -0.100942, -0.979264, 0.175649, 6, 6, 1.7)
+light_energy = 4.879
+spot_range = 9.75251
+spot_angle = 29.4736
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Environment"]
+transform = Transform3D(-0.155395, 0.96087, -0.229304, -0.214455, 0.193775, 0.957319, 0.964293, 0.197938, 0.175951, -6, 6, 1.7)
+light_energy = 4.879
+spot_range = 9.75251
+spot_angle = 29.4736
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Environment"]
+transform = Transform3D(-0.218143, 0.975917, 3.38809e-09, -0.857839, -0.19175, 0.476806, 0.465323, 0.104012, 0.879009, 0, 8.37805, 0)
+visible = false
+light_energy = 4.879
+spot_range = 9.75251
+spot_angle = 50.1981
+
+[node name="Characters" type="Node" parent="."]
+
+[node name="Initial Model Contestant" parent="Characters" instance=ExtResource("1_cost8")]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -5, 0, 0)
+
+[node name="Host Initial Model" parent="Characters" instance=ExtResource("2_6qc5f")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 5, 0, 0)
+
+[node name="Structures" type="Node" parent="."]
+
+[node name="Stage-Ground" type="CSGMesh3D" parent="Structures"]
+transform = Transform3D(20, 0, 0, 0, 0.115, 0, 0, 0, 20, 0, 0, 0)
+mesh = SubResource("CylinderMesh_1phf0")
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Structures"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0102539, 4.3972, -5.48)
+size = Vector3(12.4795, 8.56641, 0.5)
+material = ExtResource("3_ljqxm")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Structures"]
+transform = Transform3D(13, 0, 0, 0, 6.645, 0, 0, 0, 0.5, -0.0236053, 4.66856, -5.46267)
+size = Vector3(0.892059, 1.06396, 1)
+material = SubResource("StandardMaterial3D_fg5vd")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Structures"]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
+flip_faces = true
+material = SubResource("StandardMaterial3D_pfku3")
+metadata/_edit_lock_ = true
+
+[node name="FilterLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="Filter" type="Control" parent="FilterLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TVShader" type="ColorRect" parent="FilterLayer/Filter"]
+material = ExtResource("4_j1uc1")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.997396
+anchor_bottom = 0.998457
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="FilterLayer/Filter"]
+copy_mode = 2
+
+[node name="SimpleGrain" type="ColorRect" parent="FilterLayer/Filter"]
+material = SubResource("ShaderMaterial_0o5d4")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.997396
+anchor_bottom = 0.998457
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BackBufferCopy3" type="BackBufferCopy" parent="FilterLayer/Filter"]
+copy_mode = 2
+
+[node name="NewVHS" type="ColorRect" parent="FilterLayer/Filter"]
+material = SubResource("ShaderMaterial_0ht4e")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BackBufferCopy2" type="BackBufferCopy" parent="FilterLayer/Filter"]
+copy_mode = 2
+
+[node name="Blur" type="ColorRect" parent="FilterLayer/Filter"]
+material = SubResource("ShaderMaterial_8pord")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DialogueMenuLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="DialogueMenu" type="Control" parent="DialogueMenuLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("10_4dtoi")
+metadata/_edit_lock_ = true
+
+[node name="QuestionBox" type="Panel" parent="DialogueMenuLayer/DialogueMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.657
+anchor_right = 0.75
+anchor_bottom = 0.807
+offset_top = 0.264008
+offset_right = -6.10352e-05
+offset_bottom = 0.0639648
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("5_0v7a6")
+metadata/_edit_lock_ = true
+
+[node name="NameBubble" type="Panel" parent="DialogueMenuLayer/DialogueMenu/QuestionBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.014
+anchor_top = -0.182
+anchor_right = 0.264
+anchor_bottom = 0.182
+offset_left = -0.0640001
+offset_top = -13.438
+offset_right = -0.0639954
+offset_bottom = -5.47001
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("5_0v7a6")
+
+[node name="Propositions" type="Control" parent="DialogueMenuLayer/DialogueMenu/QuestionBox"]
+layout_mode = 1
+anchor_left = 0.0121528
+anchor_top = 1.10309
+anchor_right = 1.01171
+anchor_bottom = 2.10272
+offset_left = 1.0
+offset_right = 0.256001
+offset_bottom = 0.0360222
+script = ExtResource("10_u0at5")
+metadata/_edit_use_anchors_ = true
+
+[node name="ProposA" type="Panel" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/Propositions"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.091
+anchor_right = 0.486
+anchor_bottom = 1.545
+offset_left = -7.0
+offset_top = -105.827
+offset_right = -6.93597
+offset_bottom = -105.865
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("5_0v7a6")
+
+[node name="LabelA" type="Label" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/Propositions/ProposA"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0504286
+anchor_top = 0.136
+anchor_right = 0.292429
+anchor_bottom = 0.864
+offset_left = -0.12
+offset_top = 0.0159998
+offset_right = 0.119995
+offset_bottom = -0.0160027
+theme = ExtResource("5_0v7a6")
+theme_override_font_sizes/font_size = 24
+text = "• A: A"
+metadata/_edit_use_anchors_ = true
+
+[node name="ProposB" type="Panel" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/Propositions"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.514
+anchor_top = 1.102
+anchor_right = 1.0
+anchor_bottom = 1.557
+offset_left = -7.06403
+offset_top = -106.976
+offset_right = -7.00006
+offset_bottom = -107.016
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("5_0v7a6")
+metadata/_edit_use_anchors_ = true
+
+[node name="LabelB" type="Label" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/Propositions/ProposB"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.029
+anchor_top = 0.136
+anchor_right = 0.271
+anchor_bottom = 0.864
+offset_left = 5.88
+offset_top = 0.00308371
+offset_right = 6.12
+offset_bottom = -0.0289192
+theme = ExtResource("5_0v7a6")
+theme_override_font_sizes/font_size = 24
+text = "• B: B"
+
+[node name="ProposC" type="Panel" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/Propositions"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.636
+anchor_right = 0.486
+anchor_bottom = 2.125
+offset_left = -7.0
+offset_top = -103.968
+offset_right = -6.936
+offset_bottom = -107.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("5_0v7a6")
+
+[node name="LabelC" type="Label" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/Propositions/ProposC"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.029
+anchor_top = 0.136
+anchor_right = 0.271
+anchor_bottom = 0.864
+offset_left = 5.88
+offset_top = -0.0385323
+offset_right = 6.12
+offset_bottom = -0.0705338
+theme = ExtResource("5_0v7a6")
+theme_override_font_sizes/font_size = 24
+text = "• C: C"
+metadata/_edit_use_anchors_ = true
+
+[node name="ProposD" type="Panel" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/Propositions"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.514
+anchor_top = 1.67
+anchor_right = 1.0
+anchor_bottom = 2.125
+offset_left = -7.06403
+offset_top = -106.96
+offset_right = -7.00006
+offset_bottom = -107.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("5_0v7a6")
+metadata/_edit_use_anchors_ = true
+
+[node name="LabelD" type="Label" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/Propositions/ProposD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.029
+anchor_top = 0.136
+anchor_right = 0.271
+anchor_bottom = 0.864
+offset_left = 5.88
+offset_top = 0.0030818
+offset_right = 7.12
+offset_bottom = -0.028923
+theme = ExtResource("5_0v7a6")
+theme_override_font_sizes/font_size = 24
+text = "• D: D"
+
+[node name="ClickableAnswers" type="Control" parent="DialogueMenuLayer/DialogueMenu/QuestionBox"]
+visible = false
+layout_mode = 1
+anchor_left = -0.00347222
+anchor_top = 1.10306
+anchor_right = 1.005
+anchor_bottom = 2.124
+offset_top = 0.0030365
+offset_right = 0.120056
+offset_bottom = -0.0278778
+script = ExtResource("6_pp6d2")
+metadata/_edit_use_anchors_ = true
+
+[node name="CheckButton" type="CheckButton" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/ClickableAnswers"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.003
+anchor_right = 0.485
+anchor_bottom = 0.444
+offset_left = 0.257
+offset_right = 0.214996
+offset_bottom = 0.0439949
+theme = ExtResource("5_0v7a6")
+button_group = ExtResource("7_ly58y")
+metadata/_edit_use_anchors_ = true
+
+[node name="CheckButton2" type="CheckButton" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/ClickableAnswers"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.512466
+anchor_right = 0.994466
+anchor_bottom = 0.444
+offset_left = 0.257
+offset_right = 0.214996
+offset_bottom = 0.0439949
+theme = ExtResource("5_0v7a6")
+button_group = ExtResource("8_htecx")
+metadata/_edit_use_anchors_ = true
+
+[node name="CheckButton3" type="CheckButton" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/ClickableAnswers"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.003
+anchor_top = 0.555556
+anchor_right = 0.485
+anchor_bottom = 0.999556
+offset_left = 0.257
+offset_right = 0.214996
+offset_bottom = 0.0439911
+theme = ExtResource("5_0v7a6")
+button_group = ExtResource("7_ly58y")
+metadata/_edit_use_anchors_ = true
+
+[node name="CheckButton4" type="CheckButton" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/ClickableAnswers"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.512466
+anchor_top = 0.555556
+anchor_right = 0.994466
+anchor_bottom = 0.999556
+offset_left = 0.257
+offset_right = 0.214996
+offset_bottom = 0.0439911
+theme = ExtResource("5_0v7a6")
+button_group = ExtResource("8_htecx")
+metadata/_edit_use_anchors_ = true
+
+[node name="BarAnswerSliders" type="Panel" parent="DialogueMenuLayer/DialogueMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.777944
+anchor_top = 0.668543
+anchor_right = 0.975304
+anchor_bottom = 0.957173
+offset_left = -0.192017
+offset_top = -0.216034
+offset_right = 0.449707
+offset_bottom = 2.75195
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("5_0v7a6")
+script = ExtResource("9_bxuyo")
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="DialogueMenuLayer/DialogueMenu/BarAnswerSliders"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.113615
+anchor_top = 0.226195
+anchor_right = 0.245335
+anchor_bottom = 0.889084
+offset_left = 0.0958786
+offset_top = 0.0229988
+offset_right = 0.0636292
+offset_bottom = 0.0739899
+theme = ExtResource("5_0v7a6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_00qil")
+fill_mode = 3
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="BarLabelA" type="Label" parent="DialogueMenuLayer/DialogueMenu/BarAnswerSliders/ProgressBar"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -33.0
+offset_right = 24.0
+offset_bottom = -1.0
+theme = ExtResource("5_0v7a6")
+theme_override_font_sizes/font_size = 25
+text = "A"
+
+[node name="ProgressBar2" type="ProgressBar" parent="DialogueMenuLayer/DialogueMenu/BarAnswerSliders"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.113615
+anchor_top = 0.226195
+anchor_right = 0.245335
+anchor_bottom = 0.889084
+offset_left = 50.0959
+offset_top = 0.0229988
+offset_right = 50.0636
+offset_bottom = 0.0739899
+theme = ExtResource("5_0v7a6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_p8tni")
+fill_mode = 3
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="BarLabelB" type="Label" parent="DialogueMenuLayer/DialogueMenu/BarAnswerSliders/ProgressBar2"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -33.0
+offset_right = 24.0
+offset_bottom = -1.0
+theme = ExtResource("5_0v7a6")
+theme_override_font_sizes/font_size = 25
+text = "B"
+
+[node name="ProgressBar3" type="ProgressBar" parent="DialogueMenuLayer/DialogueMenu/BarAnswerSliders"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.113615
+anchor_top = 0.226195
+anchor_right = 0.245335
+anchor_bottom = 0.889084
+offset_left = 100.096
+offset_top = 0.0229988
+offset_right = 100.064
+offset_bottom = 0.0739899
+theme = ExtResource("5_0v7a6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_sinh7")
+fill_mode = 3
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="BarLabelC" type="Label" parent="DialogueMenuLayer/DialogueMenu/BarAnswerSliders/ProgressBar3"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -33.0
+offset_right = 24.0
+offset_bottom = -1.0
+theme = ExtResource("5_0v7a6")
+theme_override_font_sizes/font_size = 25
+text = "C
+"
+
+[node name="ProgressBar4" type="ProgressBar" parent="DialogueMenuLayer/DialogueMenu/BarAnswerSliders"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.113615
+anchor_top = 0.226195
+anchor_right = 0.245335
+anchor_bottom = 0.889084
+offset_left = 150.096
+offset_top = 0.0229988
+offset_right = 150.064
+offset_bottom = 0.0739899
+theme = ExtResource("5_0v7a6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_k22r3")
+fill_mode = 3
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="BarLabelD" type="Label" parent="DialogueMenuLayer/DialogueMenu/BarAnswerSliders/ProgressBar4"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -33.0
+offset_right = 26.0
+offset_bottom = -1.0
+theme = ExtResource("5_0v7a6")
+theme_override_font_sizes/font_size = 25
+text = "D
+"
+
+[node name="TimerPanel" type="Panel" parent="DialogueMenuLayer/DialogueMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.826
+anchor_top = 0.037037
+anchor_right = 0.979167
+anchor_bottom = 0.21
+offset_left = 0.447937
+offset_bottom = -0.0800018
+grow_horizontal = 0
+theme = ExtResource("5_0v7a6")
+script = ExtResource("10_lvcyo")
+metadata/_edit_use_anchors_ = true
+
+[node name="CountDown" type="Label" parent="DialogueMenuLayer/DialogueMenu/TimerPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.278864
+anchor_top = 0.187214
+anchor_right = 0.744136
+anchor_bottom = 0.794571
+offset_left = -1.08008
+offset_top = 0.0320129
+offset_right = 0.0317612
+offset_bottom = 0.00800323
+grow_horizontal = 0
+theme = ExtResource("5_0v7a6")
+theme_override_font_sizes/font_size = 55
+text = "0"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="DialogueMenuLayer/DialogueMenu/TimerPanel"]
+process_callback = 0
+wait_time = 10.0
+one_shot = true
+
+[node name="Dialogue Manager" type="Node" parent="."]
+script = ExtResource("7_s4xj7")

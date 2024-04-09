@@ -37,14 +37,14 @@ Host: Question 5:
 => END
 
 ~ question_attempt
-do debug(QuestionAnswers.current_answer)
+Host: Your answer is...[next=1]
 if QuestionAnswers.current_answer == QuestionAnswers.correct_answer:
 	Host: Correct![next=1]
 	% Host: Now onto the next question...[next=1]
 	% Host: Next...[next=1]
 	% Host: Let's see what else...[next=1]
 else
-	set QuestionAnswers.question_number = 1 # QuestionAnswers.question_number - 1
+	set QuestionAnswers.question_number = QuestionAnswers.question_number - 1
 	Host: False![next=1]
 do QuestionAnswers.question_attempt_start.emit()
 => END

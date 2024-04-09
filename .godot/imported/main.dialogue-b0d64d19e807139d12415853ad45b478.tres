@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_mgm6p"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_e2mw5"]
 
 [resource]
-script = ExtResource("1_mgm6p")
+script = ExtResource("1_e2mw5")
 using_states = PackedStringArray()
 titles = {
 "question_1": "7",
@@ -153,24 +153,16 @@ Which one of these are the first two letters of the alphabet?[next=10000]",
 "type": "title"
 },
 "40": {
+"character": "Host",
+"character_replacements": Array[Dictionary]([]),
 "id": "40",
-"mutation": {
-"expression": Array[Dictionary]([{
-"function": "debug",
-"type": "function",
-"value": Array[Array]([Array[Dictionary]([{
-"type": "variable",
-"value": "QuestionAnswers"
-}, {
-"type": "dot"
-}, {
-"type": "variable",
-"value": "current_answer"
-}])])
-}])
-},
 "next_id": "41",
-"type": "mutation"
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Your answer is...[next=1]",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Your answer is...[next=1]",
+"type": "dialogue"
 },
 "41": {
 "condition": {
@@ -286,6 +278,17 @@ Which one of these are the first two letters of the alphabet?[next=10000]",
 }, {
 "type": "assignment",
 "value": "="
+}, {
+"type": "variable",
+"value": "QuestionAnswers"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "question_number"
+}, {
+"type": "operator",
+"value": "-"
 }, {
 "type": "number",
 "value": 1
@@ -414,14 +417,14 @@ Host: Question 5:
 => END
 
 ~ question_attempt
-do debug(QuestionAnswers.current_answer)
+Host: Your answer is...[next=1]
 if QuestionAnswers.current_answer == QuestionAnswers.correct_answer:
 	Host: Correct![next=1]
 	% Host: Now onto the next question...[next=1]
 	% Host: Next...[next=1]
 	% Host: Let's see what else...[next=1]
 else
-	set QuestionAnswers.question_number = 1 # QuestionAnswers.question_number - 1
+	set QuestionAnswers.question_number = QuestionAnswers.question_number - 1
 	Host: False![next=1]
 do QuestionAnswers.question_attempt_start.emit()
 => END
