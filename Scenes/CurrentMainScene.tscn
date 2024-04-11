@@ -1,8 +1,9 @@
-[gd_scene load_steps=30 format=3 uid="uid://c72d4yym01qjh"]
+[gd_scene load_steps=31 format=3 uid="uid://c72d4yym01qjh"]
 
 [ext_resource type="PackedScene" uid="uid://b5voeln4m8bkj" path="res://Characters/Contestant/Initial Model Contestant/initial_model_contestant.tscn" id="1_cost8"]
 [ext_resource type="PackedScene" uid="uid://cjgoppide1bni" path="res://Characters/Host/Initial Model Host/host_initial_model.tscn" id="2_6qc5f"]
 [ext_resource type="Material" uid="uid://icw2kmerfajl" path="res://Materials/DarkBlueMaterial.tres" id="3_ljqxm"]
+[ext_resource type="PackedScene" uid="uid://cugtlv58vta4x" path="res://Characters/Host/Standing Pose Host/host_posed_middle.tscn" id="3_y675a"]
 [ext_resource type="Material" uid="uid://cfxmmaigllk65" path="res://Materials/ScreenMaterial.tres" id="4_j1uc1"]
 [ext_resource type="Shader" path="res://Shaders/NewVHS.gdshader" id="4_spq4f"]
 [ext_resource type="Shader" path="res://Shaders/Aditional Shaders/Blur.gdshader" id="5_0ubel"]
@@ -127,6 +128,9 @@ transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 
 
 [node name="Host Initial Model" parent="Characters" instance=ExtResource("2_6qc5f")]
 transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 5, 0, 0)
+
+[node name="Host Posed Middle" parent="Characters" instance=ExtResource("3_y675a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.10996)
 
 [node name="Structures" type="Node" parent="."]
 

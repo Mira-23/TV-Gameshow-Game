@@ -49,5 +49,6 @@ surface_material_override/1 = SubResource("StandardMaterial3D_gkbas")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.031663)
 
 [node name="Cube_003" parent="." index="1"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 0.6, 0.3, 1, 1.11)
 surface_material_override/0 = ExtResource("2_5ea6l")
 surface_material_override/1 = ExtResource("3_g4ggu")

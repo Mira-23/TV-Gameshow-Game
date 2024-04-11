@@ -76,6 +76,9 @@ shadow_mesh = SubResource("ArrayMesh_kfonl")
 
 [node name="Host Initial Model" instance=ExtResource("1_5vtx3")]
 
+[node name="Armature_001" parent="." index="0"]
+visible = false
+
 [node name="Skeleton3D" parent="Armature_001" index="1"]
 bones/0/position = Vector3(0.0149902, 5.60277, 0.0763006)
 bones/0/rotation = Quaternion(0.0338696, -0.220883, 0.00767554, 0.974682)

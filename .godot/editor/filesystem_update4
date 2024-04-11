@@ -11,6 +11,5 @@ res://Shaders/Vignette.gdshader
 res://Scenes/balloon.tscn
 res://Characters/Host/Initial Model Host/host_initial_model.tscn
 res://Characters/Contestant/Initial Model Contestant/initial_model_contestant.tscn
+res://Characters/Host/Standing Pose Host/host_posed_middle.tscn
 res://Scripts/Dialogue Manager.gd
-res://Scenes/propositions.gd
-res://Scripts/QuestionMenu.gd

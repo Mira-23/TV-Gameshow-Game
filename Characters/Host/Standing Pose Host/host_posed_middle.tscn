@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://cugtlv58vta4x"]
+
+[ext_resource type="PackedScene" uid="uid://boehhxlppl46c" path="res://Characters/Host/Standing Pose Host/Host Posed Middle.glb" id="1_31vuj"]
+
+[node name="Host Posed Middle" instance=ExtResource("1_31vuj")]
+
+[node name="Skeleton3D" parent="Armature_004" index="1"]
+bones/0/rotation = Quaternion(0.0570564, 1.19015e-07, 6.80166e-09, 0.998371)
+bones/1/rotation = Quaternion(-0.0786226, -4.24308e-14, -1.87451e-08, 0.996904)
+bones/8/rotation = Quaternion(-0.286918, -0.247134, -0.208286, 0.901787)
+bones/9/rotation = Quaternion(0.689643, 0.000159647, -0.506011, 0.518021)
+bones/10/rotation = Quaternion(-0.295626, -0.0991625, -0.513891, 0.799179)
+bones/11/rotation = Quaternion(0.200874, 0.297406, -0.522925, 0.773142)
+bones/12/rotation = Quaternion(-0.408343, 0.404508, -0.0491306, 0.816833)
+bones/28/rotation = Quaternion(-0.258527, 0.269639, 0.101549, 0.922034)
+bones/29/rotation = Quaternion(0.738528, -0.000123683, 0.541879, 0.401178)
+bones/30/rotation = Quaternion(0.0839228, -0.130586, 0.18154, 0.971055)
+bones/31/rotation = Quaternion(0.325981, -0.0922082, 0.580463, 0.74047)
+bones/32/rotation = Quaternion(-0.426458, -0.341806, -0.10361, 0.831004)
+bones/35/rotation = Quaternion(-0.0314497, 0.0864279, 0.261237, 0.960883)
+bones/38/rotation = Quaternion(-0.0111552, 0.0752932, 0.30152, 0.950417)
+bones/40/rotation = Quaternion(-0.0264037, 0.0285259, 0.0945343, 0.994763)
+bones/41/rotation = Quaternion(0.0249696, 0.0715503, 0.310434, 0.947569)
+bones/44/rotation = Quaternion(0.0386917, 0.0798489, 0.315633, 0.944724)
+bones/48/position = Vector3(-0.235813, 0.336102, -0.785173)
+bones/48/rotation = Quaternion(-0.665865, -0.631692, 0.237957, 0.31775)
+bones/51/rotation = Quaternion(-0.572739, 0.353257, 0.629574, 0.388352)
+bones/52/rotation = Quaternion(-0.547897, -0.104948, 0.033402, 0.829264)
+bones/53/rotation = Quaternion(-0.00124738, 0.00230752, -0.00379248, 0.999989)
+bones/55/position = Vector3(0.21278, 0.336102, -0.076134)
+bones/55/rotation = Quaternion(-0.616877, 0.56988, -0.345633, 0.418613)
+bones/58/position = Vector3(1.26382, 6.27067, 1.50967)
+bones/58/rotation = Quaternion(-0.246133, 0.443844, 0.66176, 0.55181)
+bones/59/position = Vector3(-0.196279, 4.54373, -0.475366)
+bones/60/rotation = Quaternion(0.572739, 0.353257, 0.629574, -0.388352)
+bones/61/rotation = Quaternion(-0.542473, 0.0566288, -0.0830104, 0.834042)
+bones/62/rotation = Quaternion(-0.00124632, -0.00230751, 0.00378926, 0.999989)
+bones/63/position = Vector3(-0.420748, 4.74844, -0.512687)
+bones/64/position = Vector3(-1.32513, 6.90299, 1.36571)
+bones/64/rotation = Quaternion(0.221193, 0.842667, 0.480646, -0.0998238)
+
+[node name="Paper" parent="Armature_004/Skeleton3D" index="0"]
+transform = Transform3D(0.482896, 0.00856208, 0.000789226, 3.20375e-07, 0.280072, -0.00276334, -0.0453209, 0.0912302, 0.00840922, 0.513807, 6.4133, 1.57333)
+
+[node name="Microphone" parent="Armature_004/Skeleton3D" index="1"]
+transform = Transform3D(0.0157775, 0.0146643, -0.0455167, 0.0164902, 0.0433218, 0.0196732, 0.0448875, -0.0210694, 0.00877137, -0.968623, 6.67731, 1.84779)

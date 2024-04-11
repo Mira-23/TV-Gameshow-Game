@@ -12,7 +12,7 @@ var test_path: String = "res://Dialogues/test.dialogue"
 var balloon_scene = load("res://Scenes/balloon.tscn")
 var main_dialogue = load(dialogue_path)
 
-var time_needed : int = 5
+var time_needed : int = 15
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
