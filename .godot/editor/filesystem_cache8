@@ -1,5 +1,5 @@
 3acdcc5cb6df755358dde907981ccea8
-::res://::1712861922
+::res://::1713015971
 icon.svg::CompressedTexture2D::179818749430815539::1710539444::1710539455::1::::<><>::
 README.md::TextFile::-1::1710537382::0::1::::<><>::
 ::res://addons/::1711233047
@@ -71,16 +71,16 @@ settings_view.gd::GDScript::-1::1711233047::0::1::::<>TabContainer<>::
 settings_view.tscn::PackedScene::5839841081119266502::1711233047::0::1::::<><>::res://addons/dialogue_manager/views/settings_view.gd
 ::res://Characters/::1710541174
 ::res://Characters/Contestant/::1710541197
-::res://Characters/Contestant/Initial Model Contestant/::1712861978
+::res://Characters/Contestant/Initial Model Contestant/::1713026801
 Initial Model Contestant.glb::PackedScene::1379995336228333777::1710542821::1710542823::1::::<><>::
 Initial Model Contestant_BlackHairTex.png::CompressedTexture2D::5105333675536406979::1710542822::1710542823::1::::<><>::
 Initial Model Contestant_FaceTex1.png::CompressedTexture2D::7311192056388665835::1710542822::1710542823::1::::<><>::
 Initial Model Contestant_finalJacketTex1.png::CompressedTexture2D::8445221566509466387::1710542822::1710542823::1::::<><>::
 Initial Model Contestant_finalPantsTex.png::CompressedTexture2D::1524302329646491561::1710542822::1710542823::1::::<><>::
 Initial Model Contestant_finalShirtTex1.png::CompressedTexture2D::1725673504093043991::1710542822::1710542823::1::::<><>::
-initial_model_contestant.tscn::PackedScene::4536295705917948809::1712861978::0::1::::<><>::uid://twqk6y5xdmkf::::res://Characters/Contestant/Initial Model Contestant/Initial Model Contestant.glb<>uid://1eplyv6tvl5v::::res://Materials/table_beige_body.tres<>uid://cdkklkkxregbc::::res://Materials/table_green_top.tres
+initial_model_contestant.tscn::PackedScene::4536295705917948809::1713026801::0::1::::<><>::uid://twqk6y5xdmkf::::res://Characters/Contestant/Initial Model Contestant/Initial Model Contestant.glb<>uid://1eplyv6tvl5v::::res://Materials/table_beige_body.tres<>uid://cdkklkkxregbc::::res://Materials/table_green_top.tres
 ::res://Characters/Host/::1712862087
-::res://Characters/Host/Initial Model Host/::1712861978
+::res://Characters/Host/Initial Model Host/::1713026801
 Host Initial Model.glb::PackedScene::1920459470488037045::1710550048::1710550067::1::::<><>::
 Host Initial Model_7721993.jpg::CompressedTexture2D::1166496941359311995::1710550049::1710550068::1::::<><>::
 Host Initial Model_finalFaceTex1.png::CompressedTexture2D::1608419659099165923::1710550050::1710550068::1::::<><>::
@@ -89,56 +89,58 @@ Host Initial Model_finalShirtTex1.png::CompressedTexture2D::9155027298041356642:
 Host Initial Model_finalSuitTex1.png::CompressedTexture2D::7390887267395945163::1710550050::1710550068::1::::<><>::
 Host Initial Model_finalVestTex1.png::CompressedTexture2D::1336745659394983318::1710550050::1710550068::1::::<><>::
 Host Initial Model_HairTex2.png::CompressedTexture2D::8594895119841011616::1710550049::1710550068::1::::<><>::
-host_initial_model.tscn::PackedScene::5417804851811518774::1712861978::0::1::::<><>::uid://2mjxmb1isiaf::::res://Characters/Host/Initial Model Host/Host Initial Model.glb<>uid://1eplyv6tvl5v::::res://Materials/table_beige_body.tres<>uid://cdkklkkxregbc::::res://Materials/table_green_top.tres
-::res://Characters/Host/Standing Pose Host/::1712862700
+host_initial_model.tscn::PackedScene::5417804851811518774::1713026801::0::1::::<><>::uid://2mjxmb1isiaf::::res://Characters/Host/Initial Model Host/Host Initial Model.glb<>uid://1eplyv6tvl5v::::res://Materials/table_beige_body.tres<>uid://cdkklkkxregbc::::res://Materials/table_green_top.tres
+::res://Characters/Host/Standing Pose Host/::1713026801
 Host Posed Middle.glb::PackedScene::3377760750880438268::1712862696::1712862699::1::::<><>::uid://wuh4lnmivspw::::res://Characters/Host/Standing Pose Host/Host Posed Middle_HairTex2.png<>uid://ddnp18bhtm0jo::::res://Characters/Host/Standing Pose Host/Host Posed Middle_7721993.jpg<>uid://drfom45paivw5::::res://Characters/Host/Standing Pose Host/Host Posed Middle_finalShirtTex1.png<>uid://b2jwgpku85tgb::::res://Characters/Host/Standing Pose Host/Host Posed Middle_finalFaceTex1.png<>uid://c7re7825uytl8::::res://Characters/Host/Standing Pose Host/Host Posed Middle_finalSuitTex1.png<>uid://d082dvl6lwhe7::::res://Characters/Host/Standing Pose Host/Host Posed Middle_finalPantsTex.png<>uid://o4cg6ajm2utu::::res://Characters/Host/Standing Pose Host/Host Posed Middle_finalVestTex1.png
-Host Posed Middle_HairTex2.png::CompressedTexture2D::1585919520486586692::1712862696::1712862700::1::::<><>::
 Host Posed Middle_7721993.jpg::CompressedTexture2D::7397624413488500052::1712862697::1712862700::1::::<><>::
-Host Posed Middle_finalShirtTex1.png::CompressedTexture2D::8363667319324899326::1712862698::1712862700::1::::<><>::
 Host Posed Middle_finalFaceTex1.png::CompressedTexture2D::4301446154563110169::1712862698::1712862700::1::::<><>::
-Host Posed Middle_finalSuitTex1.png::CompressedTexture2D::7054280575369306211::1712862698::1712862700::1::::<><>::
 Host Posed Middle_finalPantsTex.png::CompressedTexture2D::8983753445507766980::1712862698::1712862700::1::::<><>::
+Host Posed Middle_finalShirtTex1.png::CompressedTexture2D::8363667319324899326::1712862698::1712862700::1::::<><>::
+Host Posed Middle_finalSuitTex1.png::CompressedTexture2D::7054280575369306211::1712862698::1712862700::1::::<><>::
 Host Posed Middle_finalVestTex1.png::CompressedTexture2D::1042644543199043490::1712862698::1712862700::1::::<><>::
-::res://Dialogues/::1712690246
-main.dialogue::Resource::4551775140164423699::1712690246::1712690246::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
+Host Posed Middle_HairTex2.png::CompressedTexture2D::1585919520486586692::1712862696::1712862700::1::::<><>::
+host_posed_middle.tscn::PackedScene::6190178924129390457::1713026801::0::1::::<><>::uid://boehhxlppl46c::::res://Characters/Host/Standing Pose Host/Host Posed Middle.glb
+::res://Dialogues/::1713022649
+main.dialogue::Resource::4551775140164423699::1713022649::1713022649::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
 test.dialogue::Resource::1502041002892439509::1711233352::1711233352::1::::<><>::
 ::res://Fonts/::1711824384
 Montserrat-Bold.ttf::FontFile::8291405475295179349::1670427611::1711824384::1::::<><>::
-::res://Materials/::1712861977
-DarkBlueMaterial.tres::StandardMaterial3D::567024038864483701::1712861977::0::1::::<><>::
-ScreenMaterial.tres::ShaderMaterial::5172016320005987756::1712861977::0::1::::<><>::res://Shaders/TV.gdshader
-table_beige_body.tres::StandardMaterial3D::1834099138665555765::1712861977::0::1::::<><>::
-table_green_top.tres::StandardMaterial3D::5004679031250957772::1712861977::0::1::::<><>::
-::res://Scenes/::1712861977
-balloon.tscn::PackedScene::2304415056852043862::1712861977::0::1::::<><>::res://Scripts/balloon.gd<>uid://ckvgyvclnwggo::::res://addons/dialogue_manager/dialogue_label.tscn<>uid://dns7qlt80b07c::::res://Themes/QuestionMenuTheme.tres<>res://addons/dialogue_manager/dialogue_reponses_menu.gd
-CurrentMainScene.tscn::PackedScene::7074857800379777369::1712861977::0::1::::<><>::uid://b5voeln4m8bkj::::res://Characters/Contestant/Initial Model Contestant/initial_model_contestant.tscn<>uid://cjgoppide1bni::::res://Characters/Host/Initial Model Host/host_initial_model.tscn<>uid://icw2kmerfajl::::res://Materials/DarkBlueMaterial.tres<>uid://cfxmmaigllk65::::res://Materials/ScreenMaterial.tres<>res://Shaders/NewVHS.gdshader<>res://Shaders/Aditional Shaders/Blur.gdshader<>uid://dns7qlt80b07c::::res://Themes/QuestionMenuTheme.tres<>res://Scripts/ClickableAnswers.gd<>res://Shaders/SimpleGrain.gdshader<>uid://deo1i7r2xmtm7::::res://Themes/button_group1.tres<>res://Scripts/Dialogue Manager.gd<>uid://dcd6gx17fu3t7::::res://Themes/button_group2.tres<>res://Scripts/barmovement.gd<>res://Scripts/QuestionMenu.gd<>res://Scripts/question1attempt.gd<>res://Scenes/propositions.gd
+::res://Materials/::1713016167
+DarkBlueMaterial.tres::StandardMaterial3D::567024038864483701::1713007929::0::1::::<><>::
+screen_material.tres::StandardMaterial3D::705800444894736050::1713016167::0::1::::<><>::uid://3rf1h04ylikq::::res://Textures/Screen Texture/lollipop_cat.jpg
+ScreenMaterial.tres::ShaderMaterial::5172016320005987756::1713007929::0::1::::<><>::res://Shaders/TV.gdshader
+table_beige_body.tres::StandardMaterial3D::1834099138665555765::1713007929::0::1::::<><>::
+table_green_top.tres::StandardMaterial3D::5004679031250957772::1713007929::0::1::::<><>::
+::res://Scenes/::1713026801
+balloon.tscn::PackedScene::2304415056852043862::1713026801::0::1::::<><>::res://Scripts/balloon.gd<>uid://ckvgyvclnwggo::::res://addons/dialogue_manager/dialogue_label.tscn<>uid://dns7qlt80b07c::::res://Themes/QuestionMenuTheme.tres<>res://addons/dialogue_manager/dialogue_reponses_menu.gd
+CurrentMainScene.tscn::PackedScene::7074857800379777369::1713026801::0::1::::<><>::uid://b5voeln4m8bkj::::res://Characters/Contestant/Initial Model Contestant/initial_model_contestant.tscn<>uid://cjgoppide1bni::::res://Characters/Host/Initial Model Host/host_initial_model.tscn<>uid://icw2kmerfajl::::res://Materials/DarkBlueMaterial.tres<>uid://cugtlv58vta4x::::res://Characters/Host/Standing Pose Host/host_posed_middle.tscn<>uid://cfxmmaigllk65::::res://Materials/ScreenMaterial.tres<>res://Shaders/NewVHS.gdshader<>uid://dns7qlt80b07c::::res://Themes/QuestionMenuTheme.tres<>uid://kb5ovk6l24gk::::res://Materials/screen_material.tres<>res://Scripts/ClickableAnswers.gd<>res://Shaders/SimpleGrain.gdshader<>uid://deo1i7r2xmtm7::::res://Themes/button_group1.tres<>res://Scripts/Dialogue Manager.gd<>uid://dcd6gx17fu3t7::::res://Themes/button_group2.tres<>res://Scripts/barmovement.gd<>res://Shaders/LensDistortion.gdshader<>res://Scripts/QuestionMenu.gd<>res://Scripts/question1attempt.gd<>res://Scenes/propositions.gd
 propositions.gd::GDScript::-1::1712690191::0::1::::<>Control<>::
 questionmenu.tscn::PackedScene::8638020092543060338::1711825318::0::1::::<><>::uid://c5d7hpdy4qaq6::::res://Themes/testtheme.tres<>res://Scripts/QuestionMenu.gd<>res://Scripts/ClickableAnswers.gd<>uid://dcd6gx17fu3t7::::res://Themes/button_group2.tres<>uid://deo1i7r2xmtm7::::res://Themes/button_group1.tres<>res://Scripts/barmovement.gd<>res://Scripts/question1attempt.gd
-::res://Scripts/::1712690548
+::res://Scripts/::1713022788
 balloon.gd::GDScript::-1::1711843870::0::1::::<>CanvasLayer<>::
-barmovement.gd::GDScript::-1::1712610160::0::1::::<>Panel<>::
-ClickableAnswers.gd::GDScript::-1::1712609988::0::1::::<>Control<>::
-Dialogue Manager.gd::GDScript::-1::1712690548::0::1::::<>Node<>::
+barmovement.gd::GDScript::-1::1713021654::0::1::::<>Panel<>::
+ClickableAnswers.gd::GDScript::-1::1713021622::0::1::::<>Control<>::
+Dialogue Manager.gd::GDScript::-1::1713022788::0::1::::<>Node<>::
 question1attempt.gd::GDScript::-1::1712608992::0::1::::<>Panel<>::
 QuestionMenu.gd::GDScript::-1::1712689933::0::1::::<>Control<>::
 question_answers.gd::GDScript::-1::1712610291::0::1::::<>Node<>::
 TestCanvas.gd::GDScript::-1::1711843825::0::1::::<>CanvasLayer<>::
-::res://Shaders/::1712861978
+::res://Shaders/::1713026802
 AccurateCRT.gdshader::Shader::-1::1711226949::0::1::::<><>::
 Glitch.gdshader::Shader::-1::1711226949::0::1::::<><>::
 Grain.gdshader::Shader::-1::1711226949::0::1::::<><>::
 JpegCompression.gdshader::Shader::-1::1711226949::0::1::::<><>::
 LensDistortion.gdshader::Shader::-1::1711226949::0::1::::<><>::
 NewGlitch.gdshader::Shader::-1::1711226949::0::1::::<><>::
-NewVHS.gdshader::Shader::-1::1712861978::0::1::::<><>::
+NewVHS.gdshader::Shader::-1::1713026801::0::1::::<><>::
 NTSC.gdshader::Shader::-1::1711226949::0::1::::<><>::
 NTSCBasic.gdshader::Shader::-1::1710635288::0::1::::<><>::
 SimpleGlitch.gdshader::Shader::-1::1711226949::0::1::::<><>::
-SimpleGrain.gdshader::Shader::-1::1712861978::0::1::::<><>::
-TV.gdshader::Shader::-1::1712861978::0::1::::<><>::
+SimpleGrain.gdshader::Shader::-1::1713026802::0::1::::<><>::
+TV.gdshader::Shader::-1::1713026802::0::1::::<><>::
 VHS.gdshader::Shader::-1::1711226949::0::1::::<><>::
 VHSPause.gdshader::Shader::-1::1711226949::0::1::::<><>::
-Vignette.gdshader::Shader::-1::1712861978::0::1::::<><>::
+Vignette.gdshader::Shader::-1::1713026801::0::1::::<><>::
 ::res://Shaders/Aditional Shaders/::1711226949
 B&W.gdshader::Shader::-1::1710635288::0::1::::<><>::
 BetterCC.gdshader::Shader::-1::1711226949::0::1::::<><>::
@@ -146,10 +148,13 @@ Blur.gdshader::Shader::-1::1711226949::0::1::::<><>::
 ColorPrecission.gdshader::Shader::-1::1710635288::0::1::::<><>::
 Dithering.gdshader::Shader::-1::1711226949::0::1::::<><>::
 Sharpness.gdshader::Shader::-1::1711226949::0::1::::<><>::
-::res://Themes/::1712861977
+::res://Textures/::1713015980
+::res://Textures/Screen Texture/::1713016017
+lollipop_cat.jpg::CompressedTexture2D::2000732466922985276::1713015990::1713016017::1::::<><>::
+::res://Themes/::1713007929
 button_group1.tres::ButtonGroup::7470513350618302708::1712343582::0::1::::<><>::
 button_group2.tres::ButtonGroup::7307727062820139526::1705951555::0::1::::<><>::
-QuestionMenuTheme.tres::Theme::8110847943058787486::1712861977::0::1::::<><>::uid://cuk0cwg813ii8::::res://Themes/style_box_blue.tres<>uid://dqeoiby0e7d4p::::res://Fonts/Montserrat-Bold.ttf<>uid://caesnfnsa1hpo::::res://Themes/style_box_dark_blue.tres
+QuestionMenuTheme.tres::Theme::8110847943058787486::1713007929::0::1::::<><>::uid://cuk0cwg813ii8::::res://Themes/style_box_blue.tres<>uid://dqeoiby0e7d4p::::res://Fonts/Montserrat-Bold.ttf<>uid://caesnfnsa1hpo::::res://Themes/style_box_dark_blue.tres
 style_box_blue.tres::StyleBoxFlat::6198784680412172401::1712256403::0::1::::<><>::
 style_box_dark_blue.tres::StyleBoxFlat::4782215283111077496::1712266247::0::1::::<><>::
 testtheme.tres::Theme::6886656047729712847::1711814041::0::1::::<><>::

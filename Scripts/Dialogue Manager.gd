@@ -12,12 +12,13 @@ var test_path: String = "res://Dialogues/test.dialogue"
 var balloon_scene = load("res://Scenes/balloon.tscn")
 var main_dialogue = load(dialogue_path)
 
-var time_needed : int = 15
+var time_needed : int = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#QuestionAnswers.current_bars.stop_bars()
-	QuestionAnswers.SetQuestion(5,"B",time_needed)
+	current_propositions.show_propositions("London","Paris","Berlin","Madrid")
+	QuestionAnswers.SetQuestion(1,"B",time_needed)
 	DialogueManager.show_dialogue_balloon_scene.call_deferred(balloon_scene, main_dialogue, "question_1")
 	
 
@@ -42,7 +43,6 @@ func hide_question_menu():
 
 func show_question_menu():
 	current_bars.show_bars()
-	current_propositions.show_propositions("A","B","C","D")
 
 
 func _on_timer_timeout():
@@ -56,17 +56,38 @@ func _on_question_change():
 	show_question_menu()
 	DialogueManager.show_dialogue_balloon(main_dialogue, "question_" + str(QuestionAnswers.question_number))
 	match QuestionAnswers.question_number:
-		0, 1: 
-			QuestionAnswers.SetQuestion(2,"B",time_needed)
-		2: 
-			QuestionAnswers.SetQuestion(3,"C",time_needed)
-		3:
-			QuestionAnswers.SetQuestion(4,"A",time_needed)
-		4:
-			QuestionAnswers.SetQuestion(5,"D",time_needed)
-		5:
-			QuestionAnswers.SetQuestion(6,"A B",time_needed)
+		5,6,7,8:
 			current_bars.stop_bars()
 			clickable_answers.reveal_self()
+	
+	match QuestionAnswers.question_number:
+		0, 1: 
+			current_propositions.show_propositions("London","Paris","Berlin","Madrid")
+			QuestionAnswers.SetQuestion(1,"B",time_needed)
+		2: 
+			current_propositions.show_propositions("Tomato","Onion","Avocado","Lettuce")
+			QuestionAnswers.SetQuestion(2,"C",time_needed)
+		3:
+			current_propositions.show_propositions("Mars","Jupiter","Venus","Saturn")
+			QuestionAnswers.SetQuestion(3,"A",time_needed)
+		4:
+			current_propositions.show_propositions("NaCl","O2","CO2","H2O")
+			QuestionAnswers.SetQuestion(4,"D",time_needed)
+		5:
+			#C
+			current_propositions.show_propositions("Bangkok","Beijing","Tokyo","Seoul")
+			QuestionAnswers.SetQuestion(5,"C",time_needed)
+		6:
+			#A
+			current_propositions.show_propositions("Lion","Elephant","Tiger","Giraffe")
+			QuestionAnswers.SetQuestion(6,"A",time_needed)
+		7:
+			#B
+			current_propositions.show_propositions("Mount Rila","Mount Everest","Mount Kilimanjaro","Mount Fuji")
+			QuestionAnswers.SetQuestion(7,"B",time_needed)
+		8:
+			#D
+			current_propositions.show_propositions("Emily Brontë","Charles Dickens","Jane Austen","William Shakespeare")
+			QuestionAnswers.SetQuestion(8,"D",time_needed)
 		_: 
 			DialogueManager.show_dialogue_balloon_scene.call_deferred(balloon_scene, main_dialogue, "tbc")

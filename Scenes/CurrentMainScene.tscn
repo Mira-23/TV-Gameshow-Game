@@ -6,14 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://cugtlv58vta4x" path="res://Characters/Host/Standing Pose Host/host_posed_middle.tscn" id="3_y675a"]
 [ext_resource type="Material" uid="uid://cfxmmaigllk65" path="res://Materials/ScreenMaterial.tres" id="4_j1uc1"]
 [ext_resource type="Shader" path="res://Shaders/NewVHS.gdshader" id="4_spq4f"]
-[ext_resource type="Shader" path="res://Shaders/Aditional Shaders/Blur.gdshader" id="5_0ubel"]
 [ext_resource type="Theme" uid="uid://dns7qlt80b07c" path="res://Themes/QuestionMenuTheme.tres" id="5_0v7a6"]
+[ext_resource type="Material" uid="uid://kb5ovk6l24gk" path="res://Materials/screen_material.tres" id="5_7t4ly"]
 [ext_resource type="Script" path="res://Scripts/ClickableAnswers.gd" id="6_pp6d2"]
 [ext_resource type="Shader" path="res://Shaders/SimpleGrain.gdshader" id="6_yemo8"]
 [ext_resource type="ButtonGroup" uid="uid://deo1i7r2xmtm7" path="res://Themes/button_group1.tres" id="7_ly58y"]
 [ext_resource type="Script" path="res://Scripts/Dialogue Manager.gd" id="7_s4xj7"]
 [ext_resource type="ButtonGroup" uid="uid://dcd6gx17fu3t7" path="res://Themes/button_group2.tres" id="8_htecx"]
 [ext_resource type="Script" path="res://Scripts/barmovement.gd" id="9_bxuyo"]
+[ext_resource type="Shader" path="res://Shaders/TVWarp.gdshader" id="9_bxv5p"]
 [ext_resource type="Script" path="res://Scripts/QuestionMenu.gd" id="10_4dtoi"]
 [ext_resource type="Script" path="res://Scripts/question1attempt.gd" id="10_lvcyo"]
 [ext_resource type="Script" path="res://Scenes/propositions.gd" id="10_u0at5"]
@@ -36,11 +37,6 @@ glow_enabled = true
 material = ExtResource("3_ljqxm")
 radial_segments = 16
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fg5vd"]
-albedo_color = Color(0.976471, 0.976471, 0.972549, 1)
-emission_enabled = true
-emission = Color(0.858824, 0.858824, 0.831373, 1)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pfku3"]
 albedo_color = Color(0.278431, 0.278431, 0.278431, 1)
 
@@ -55,9 +51,29 @@ shader_parameter/tape_crease_amount = 2.5
 shader_parameter/color_displacement = 1.0
 shader_parameter/lines_velocity = 0.1
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8pord"]
-shader = ExtResource("5_0ubel")
-shader_parameter/amount = 1.0
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_12mqw"]
+shader = ExtResource("9_bxv5p")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.0
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(1152, 648)
+shader_parameter/pixelate = false
+shader_parameter/roll = false
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.0
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.0
+shader_parameter/aberration = 0.0
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.5
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_00qil"]
 bg_color = Color(0.372549, 0.8, 0.172549, 1)
@@ -124,13 +140,14 @@ spot_angle = 50.1981
 [node name="Characters" type="Node" parent="."]
 
 [node name="Initial Model Contestant" parent="Characters" instance=ExtResource("1_cost8")]
-transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -5, 0, 0)
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -5, 0.146601, 0)
 
 [node name="Host Initial Model" parent="Characters" instance=ExtResource("2_6qc5f")]
 transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 5, 0, 0)
 
 [node name="Host Posed Middle" parent="Characters" instance=ExtResource("3_y675a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.10996)
+visible = false
 
 [node name="Structures" type="Node" parent="."]
 
@@ -147,7 +164,7 @@ material = ExtResource("3_ljqxm")
 [node name="CSGBox3D3" type="CSGBox3D" parent="Structures"]
 transform = Transform3D(13, 0, 0, 0, 6.645, 0, 0, 0, 0.5, -0.0236053, 4.66856, -5.46267)
 size = Vector3(0.892059, 1.06396, 1)
-material = SubResource("StandardMaterial3D_fg5vd")
+material = ExtResource("5_7t4ly")
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="Structures"]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
@@ -206,8 +223,8 @@ mouse_filter = 2
 [node name="BackBufferCopy2" type="BackBufferCopy" parent="FilterLayer/Filter"]
 copy_mode = 2
 
-[node name="Blur" type="ColorRect" parent="FilterLayer/Filter"]
-material = SubResource("ShaderMaterial_8pord")
+[node name="TV Warp" type="ColorRect" parent="FilterLayer/Filter"]
+material = SubResource("ShaderMaterial_12mqw")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -286,17 +303,17 @@ theme = ExtResource("5_0v7a6")
 [node name="LabelA" type="Label" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/Propositions/ProposA"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0504286
-anchor_top = 0.136
-anchor_right = 0.292429
-anchor_bottom = 0.864
+anchor_left = 0.0505162
+anchor_top = 0.226916
+anchor_right = 0.954799
+anchor_bottom = 0.818552
 offset_left = -0.12
 offset_top = 0.0159998
 offset_right = 0.119995
 offset_bottom = -0.0160027
 theme = ExtResource("5_0v7a6")
-theme_override_font_sizes/font_size = 24
-text = "• A: A"
+theme_override_font_sizes/font_size = 20
+text = "A: A"
 metadata/_edit_use_anchors_ = true
 
 [node name="ProposB" type="Panel" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/Propositions"]
@@ -318,17 +335,18 @@ metadata/_edit_use_anchors_ = true
 [node name="LabelB" type="Label" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/Propositions/ProposB"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.029
-anchor_top = 0.136
-anchor_right = 0.271
-anchor_bottom = 0.864
-offset_left = 5.88
-offset_top = 0.00308371
-offset_right = 6.12
-offset_bottom = -0.0289192
+anchor_left = 0.0505162
+anchor_top = 0.226916
+anchor_right = 0.954799
+anchor_bottom = 0.818552
+offset_left = -0.119997
+offset_top = -0.00586414
+offset_right = 0.119995
+offset_bottom = -0.0378647
 theme = ExtResource("5_0v7a6")
-theme_override_font_sizes/font_size = 24
-text = "• B: B"
+theme_override_font_sizes/font_size = 20
+text = "B: B"
+metadata/_edit_use_anchors_ = true
 
 [node name="ProposC" type="Panel" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/Propositions"]
 layout_mode = 1
@@ -347,17 +365,17 @@ theme = ExtResource("5_0v7a6")
 [node name="LabelC" type="Label" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/Propositions/ProposC"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.029
-anchor_top = 0.136
-anchor_right = 0.271
-anchor_bottom = 0.864
-offset_left = 5.88
-offset_top = -0.0385323
-offset_right = 6.12
-offset_bottom = -0.0705338
+anchor_left = 0.0505162
+anchor_top = 0.226916
+anchor_right = 0.954799
+anchor_bottom = 0.818552
+offset_left = -0.119999
+offset_top = -0.0753002
+offset_right = 0.119995
+offset_bottom = -0.107304
 theme = ExtResource("5_0v7a6")
-theme_override_font_sizes/font_size = 24
-text = "• C: C"
+theme_override_font_sizes/font_size = 20
+text = "C: C"
 metadata/_edit_use_anchors_ = true
 
 [node name="ProposD" type="Panel" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/Propositions"]
@@ -379,17 +397,18 @@ metadata/_edit_use_anchors_ = true
 [node name="LabelD" type="Label" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/Propositions/ProposD"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.029
-anchor_top = 0.136
-anchor_right = 0.271
-anchor_bottom = 0.864
-offset_left = 5.88
-offset_top = 0.0030818
-offset_right = 7.12
-offset_bottom = -0.028923
+anchor_left = 0.0505162
+anchor_top = 0.226916
+anchor_right = 0.954799
+anchor_bottom = 0.818552
+offset_left = -0.119997
+offset_top = -0.00586319
+offset_right = 0.119995
+offset_bottom = -0.0378647
 theme = ExtResource("5_0v7a6")
-theme_override_font_sizes/font_size = 24
-text = "• D: D"
+theme_override_font_sizes/font_size = 20
+text = "D: D"
+metadata/_edit_use_anchors_ = true
 
 [node name="ClickableAnswers" type="Control" parent="DialogueMenuLayer/DialogueMenu/QuestionBox"]
 visible = false

@@ -5,34 +5,55 @@ To Be Continued...
 ~ question_1
 #max 144 characters per line
 Host: Question 1: 
-	Which one of these is the second letter of the alphabet?[next=10000]
+	What is the capital of France?[next=10000]
 => END
 
 ~ question_2
 #max 144 characters per line
 Host: Question 2:
-	Which one of these is the third letter of the alphabet?[next=10000]
+	What is the main ingredient in guacamole?[next=10000]
 
 => END
 
 ~ question_3
 #max 144 characters per line
 Host: Question 3:
-	Which one of these is the first letter of the alphabet?[next=10000]
+	Which planet is known as the "Red Planet"[next=10000]
 
 => END
 
 ~ question_4
 #max 144 characters per line
 Host: Question 4:
-	Which one of these is the fourth letter of the alphabet?[next=10000]
+	What is the chemical symbol for water?[next=10000]
 
 => END
 
 ~ question_5
 #max 144 characters per line
 Host: Question 5:
-	Which one of these are the first two letters of the alphabet?[next=10000]
+	What is the capital of Japan?[next=10000]
+
+=> END
+
+~ question_6
+#max 144 characters per line
+Host: Question 6:
+	Which animal is known as the "King of the Jungle"?[next=10000]
+
+=> END
+
+~ question_7
+#max 144 characters per line
+Host: Question 7:
+	What is the tallest mountain in the world?[next=10000]
+
+=> END
+
+~ question_8
+#max 144 characters per line
+Host: Question 8:
+	Who wrote the play "Romeo and Juliet"?[next=10000]
 
 => END
 
@@ -43,8 +64,9 @@ if QuestionAnswers.current_answer == QuestionAnswers.correct_answer:
 	% Host: Now onto the next question...[next=1]
 	% Host: Next...[next=1]
 	% Host: Let's see what else...[next=1]
+	set QuestionAnswers.question_number = QuestionAnswers.question_number + 1
+	do debug(QuestionAnswers.question_number)
 else
-	set QuestionAnswers.question_number = QuestionAnswers.question_number - 1
 	Host: False![next=1]
 do QuestionAnswers.question_attempt_start.emit()
 => END

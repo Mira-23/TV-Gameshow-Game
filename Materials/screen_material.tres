@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://kb5ovk6l24gk"]
+
+[ext_resource type="Texture2D" uid="uid://3rf1h04ylikq" path="res://Textures/Screen Texture/lollipop_cat.jpg" id="1_vgod5"]
+
+[resource]
+albedo_color = Color(0.976471, 0.976471, 0.972549, 1)
+albedo_texture = ExtResource("1_vgod5")
+emission_enabled = true
+emission = Color(0.196078, 0.196078, 0.196078, 1)
+emission_energy_multiplier = 0.73
+emission_texture = ExtResource("1_vgod5")
