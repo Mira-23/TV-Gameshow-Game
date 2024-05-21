@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=12 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" path="res://Scripts/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Theme" uid="uid://dns7qlt80b07c" path="res://Themes/QuestionMenuTheme.tres" id="3_7amrp"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
+[ext_resource type="FontFile" uid="uid://dqeoiby0e7d4p" path="res://Fonts/Montserrat-Bold.ttf" id="4_u6l84"]
+[ext_resource type="FontFile" uid="uid://rehg71t26t7n" path="res://Fonts/Montserrat-BoldItalic.ttf" id="5_4j58p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -95,6 +97,8 @@ offset_bottom = -0.160034
 grow_vertical = 2
 size_flags_vertical = 3
 theme = ExtResource("3_7amrp")
+theme_override_fonts/normal_font = ExtResource("4_u6l84")
+theme_override_fonts/italics_font = ExtResource("5_4j58p")
 text = "Dialogue..."
 metadata/_edit_use_anchors_ = true
 

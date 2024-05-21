@@ -18,7 +18,7 @@ var time_needed : int = 5
 func _ready() -> void:
 	#QuestionAnswers.current_bars.stop_bars()
 	current_propositions.show_propositions("London","Paris","Berlin","Madrid")
-	QuestionAnswers.SetQuestion(1,"B",time_needed)
+	QuestionAnswers.SetQuestion(9,"B",time_needed)
 	DialogueManager.show_dialogue_balloon_scene.call_deferred(balloon_scene, main_dialogue, "question_1")
 	
 
@@ -59,6 +59,9 @@ func _on_question_change():
 		5,6,7,8:
 			current_bars.stop_bars()
 			clickable_answers.reveal_self()
+		9,10:
+			current_bars.stop_bars()
+			hide_question_menu()
 	
 	match QuestionAnswers.question_number:
 		0, 1: 
@@ -89,5 +92,7 @@ func _on_question_change():
 			#D
 			current_propositions.show_propositions("Emily Brontë","Charles Dickens","Jane Austen","William Shakespeare")
 			QuestionAnswers.SetQuestion(8,"D",time_needed)
+		9:
+			QuestionAnswers.current_answer = "None"
 		_: 
 			DialogueManager.show_dialogue_balloon_scene.call_deferred(balloon_scene, main_dialogue, "tbc")
