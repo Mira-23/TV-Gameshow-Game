@@ -1,8 +1,9 @@
+Label
+Panel
 Control
 CanvasLayer
 CheckButton
 ColorRect
-Label
 Node
 BackBufferCopy
 SpotLight3D

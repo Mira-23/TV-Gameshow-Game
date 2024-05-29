@@ -14,14 +14,13 @@ var main_dialogue = load(dialogue_path)
 
 var time_needed : int = 99
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#QuestionAnswers.current_bars.stop_bars()
 	current_propositions.show_propositions("London","Paris","Berlin","Madrid")
 	QuestionAnswers.SetQuestion(9,"B",time_needed)
 	DialogueManager.show_dialogue_balloon_scene.call_deferred(balloon_scene, main_dialogue, "question_1")
-	
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:	

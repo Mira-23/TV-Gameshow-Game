@@ -10,7 +10,8 @@ var question_number : int = 1
 signal question_attempt_start
 
 func _ready() -> void:
-	self.connect("question_attempt_start",dialogue_manager._on_question_change)
+	if(dialogue_manager != null):
+		self.connect("question_attempt_start",dialogue_manager._on_question_change)
 
 func SetQuestion(q_number:int, c_answer:String, c_time: float) -> void:
 	question_number = q_number

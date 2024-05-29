@@ -1,0 +1,195 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxbkx2kjs8ld1"]
+
+[ext_resource type="Theme" uid="uid://bsn3bal8bu47q" path="res://Themes/hangman_letter_theme.tres" id="1_1keq2"]
+[ext_resource type="Script" path="res://Scenes/hangman_controller.gd" id="1_ai0h2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tdu00"]
+bg_color = Color(0.453008, 0.698251, 0.803352, 1)
+
+[node name="MainControl" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ai0h2")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.00028
+anchor_bottom = 1.00027
+offset_right = -0.32
+offset_bottom = -0.176003
+theme_override_styles/panel = SubResource("StyleBoxFlat_tdu00")
+metadata/_edit_use_anchors_ = true
+
+[node name="Cell1" type="Panel" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.144097
+anchor_top = 0.390432
+anchor_right = 0.252014
+anchor_bottom = 0.582062
+offset_right = -0.32
+offset_bottom = -0.176003
+theme = ExtResource("1_1keq2")
+metadata/_edit_use_anchors_ = true
+
+[node name="Letter1" type="Label" parent="Background/Cell1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.201323
+anchor_top = 0.0399679
+anchor_right = 0.766
+anchor_bottom = 0.96
+offset_left = 0.0359993
+offset_top = 0.0439835
+offset_right = 0.0159988
+offset_bottom = -0.0400238
+theme = ExtResource("1_1keq2")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Cell2" type="Panel" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.271701
+anchor_top = 0.390432
+anchor_right = 0.379618
+anchor_bottom = 0.582062
+offset_right = -0.32
+offset_bottom = -0.176003
+theme = ExtResource("1_1keq2")
+metadata/_edit_use_anchors_ = true
+
+[node name="Letter2" type="Label" parent="Background/Cell2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.24971
+anchor_top = 0.0399679
+anchor_right = 0.814387
+anchor_bottom = 0.96
+offset_left = 0.0359993
+offset_top = 0.0439835
+offset_right = 0.0159988
+offset_bottom = -0.0400238
+theme = ExtResource("1_1keq2")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Cell3" type="Panel" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.396701
+anchor_top = 0.390432
+anchor_right = 0.504618
+anchor_bottom = 0.582062
+offset_left = 3.0
+offset_right = 2.67999
+offset_bottom = -0.175995
+theme = ExtResource("1_1keq2")
+metadata/_edit_use_anchors_ = true
+
+[node name="Letter3" type="Label" parent="Background/Cell3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.201323
+anchor_top = 0.0399679
+anchor_right = 0.766
+anchor_bottom = 0.96
+offset_left = 0.0359993
+offset_top = 0.0439835
+offset_right = 0.0159988
+offset_bottom = -0.0400238
+theme = ExtResource("1_1keq2")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Cell4" type="Panel" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.528646
+anchor_top = 0.390432
+anchor_right = 0.636562
+anchor_bottom = 0.582062
+offset_right = -0.32
+offset_bottom = -0.176003
+theme = ExtResource("1_1keq2")
+metadata/_edit_use_anchors_ = true
+
+[node name="Letter4" type="Label" parent="Background/Cell4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.201323
+anchor_top = 0.0399679
+anchor_right = 0.766
+anchor_bottom = 0.96
+offset_left = 0.0360126
+offset_top = 0.0439835
+offset_right = 0.0160446
+offset_bottom = -0.0400238
+theme = ExtResource("1_1keq2")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Cell5" type="Panel" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.65625
+anchor_top = 0.390432
+anchor_right = 0.764167
+anchor_bottom = 0.582062
+offset_right = -0.32
+offset_bottom = -0.176003
+theme = ExtResource("1_1keq2")
+metadata/_edit_use_anchors_ = true
+
+[node name="Letter5" type="Label" parent="Background/Cell5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.201323
+anchor_top = 0.0399679
+anchor_right = 0.766
+anchor_bottom = 0.96
+offset_left = 0.0359879
+offset_top = 0.0439835
+offset_right = 0.0160675
+offset_bottom = -0.0400238
+theme = ExtResource("1_1keq2")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Cell6" type="Panel" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.78125
+anchor_top = 0.390432
+anchor_right = 0.889167
+anchor_bottom = 0.582062
+offset_left = 3.0
+offset_right = 2.67999
+offset_bottom = -0.175995
+theme = ExtResource("1_1keq2")
+metadata/_edit_use_anchors_ = true
+
+[node name="Letter6" type="Label" parent="Background/Cell6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.201323
+anchor_top = 0.0399679
+anchor_right = 0.766
+anchor_bottom = 0.96
+offset_left = 0.0359993
+offset_top = 0.0439835
+offset_right = 0.0160599
+offset_bottom = -0.0400238
+theme = ExtResource("1_1keq2")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
