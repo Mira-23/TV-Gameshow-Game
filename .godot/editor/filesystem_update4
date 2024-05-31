@@ -1,28 +1,25 @@
-res://Scenes/hangman_screen.tscn
+res://Scenes/CurrentMainScene.tscn
 res://Materials/table_beige_body.tres
 res://Materials/table_green_top.tres
 res://Materials/DarkBlueMaterial.tres
 res://Shaders/TV.gdshader
 res://Materials/ScreenMaterial.tres
 res://Shaders/NewVHS.gdshader
+res://Themes/style_box_blue.tres
 res://Themes/QuestionMenuTheme.tres
 res://Materials/screen_material.tres
 res://Shaders/SimpleGrain.gdshader
 res://Shaders/TVWarp.gdshader
+res://Shaders/gradient.gdshader
 res://Themes/hangman_letter_theme.tres
 res://Shaders/Vignette.gdshader
 res://Shaders/SimpleGlitch.gdshader
 res://Shaders/VHS.gdshader
-res://Scenes/hangman_controller.gd
-res://Scenes/CurrentMainScene.tscn
+res://Shaders/skew.gdshader
 res://Scenes/balloon.tscn
 res://Characters/Host/Initial Model Host/host_initial_model.tscn
 res://Characters/Contestant/Initial Model Contestant/initial_model_contestant.tscn
 res://Characters/Host/Standing Pose Host/host_posed_middle.tscn
-res://Scripts/Dialogue Manager.gd
-res://Scripts/question_answers.gd
-res://Themes/style_box_blue.tres
-res://Scenes/box_texture.gd
-res://Shaders/skew.gdshader
-res://Scenes/skew_script.gd
-res://Shaders/gradient.gdshader
+res://Scenes/hangman_screen.tscn
+res://Materials/panel_material.tres
+res://Shaders/smaller_skew.gdshader

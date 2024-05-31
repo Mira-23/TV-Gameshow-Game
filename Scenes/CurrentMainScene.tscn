@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://c72d4yym01qjh"]
+[gd_scene load_steps=31 format=3 uid="uid://c72d4yym01qjh"]
 
 [ext_resource type="PackedScene" uid="uid://b5voeln4m8bkj" path="res://Characters/Contestant/Initial Model Contestant/initial_model_contestant.tscn" id="1_cost8"]
 [ext_resource type="PackedScene" uid="uid://cjgoppide1bni" path="res://Characters/Host/Initial Model Host/host_initial_model.tscn" id="2_6qc5f"]
@@ -15,7 +15,7 @@
 [ext_resource type="ButtonGroup" uid="uid://dcd6gx17fu3t7" path="res://Themes/button_group2.tres" id="8_htecx"]
 [ext_resource type="Script" path="res://Scripts/barmovement.gd" id="9_bxuyo"]
 [ext_resource type="Shader" path="res://Shaders/TVWarp.gdshader" id="9_bxv5p"]
-[ext_resource type="Shader" path="res://Shaders/gradient.gdshader" id="10_2msn0"]
+[ext_resource type="Material" uid="uid://brc08pag2dhc1" path="res://Materials/panel_material.tres" id="10_2uphr"]
 [ext_resource type="Script" path="res://Scripts/question1attempt.gd" id="10_lvcyo"]
 [ext_resource type="Script" path="res://Scenes/propositions.gd" id="10_u0at5"]
 
@@ -74,30 +74,6 @@ shader_parameter/warp_amount = 0.5
 shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.5
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6chn0"]
-shader = ExtResource("10_2msn0")
-shader_parameter/first_color = Color(0.2, 0.44, 0.63, 1)
-shader_parameter/second_color = Color(0.03, 0.01, 0.24, 1)
-shader_parameter/position = 0.0
-shader_parameter/gradient_size = 1.0
-shader_parameter/angle = 0.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nnkxu"]
-shader = ExtResource("10_2msn0")
-shader_parameter/first_color = Color(0.2, 0.44, 0.63, 1)
-shader_parameter/second_color = Color(0.03, 0.01, 0.24, 1)
-shader_parameter/position = 0.0
-shader_parameter/gradient_size = 1.0
-shader_parameter/angle = 0.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_khb34"]
-shader = ExtResource("10_2msn0")
-shader_parameter/first_color = Color(0.2, 0.44, 0.63, 1)
-shader_parameter/second_color = Color(0.03, 0.01, 0.24, 1)
-shader_parameter/position = 0.0
-shader_parameter/gradient_size = 1.0
-shader_parameter/angle = 0.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_00qil"]
 bg_color = Color(0.372549, 0.8, 0.172549, 1)
@@ -198,7 +174,6 @@ metadata/_edit_lock_ = true
 
 [node name="FilterLayer" type="CanvasLayer" parent="."]
 layer = 3
-visible = false
 
 [node name="Filter" type="Control" parent="FilterLayer"]
 layout_mode = 3
@@ -270,97 +245,8 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
 
-[node name="QuestionBoxColor" type="Panel" parent="DialogueMenuLayer/DialogueMenu"]
-material = SubResource("ShaderMaterial_6chn0")
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.25
-anchor_top = 0.657
-anchor_right = 0.75
-anchor_bottom = 0.807
-offset_top = 0.264008
-offset_right = -6.10352e-05
-offset_bottom = 0.0639648
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("5_0v7a6")
-metadata/_edit_lock_ = true
-
-[node name="PropositionColors" type="Control" parent="DialogueMenuLayer/DialogueMenu/QuestionBoxColor"]
-layout_mode = 1
-anchor_left = 0.0136806
-anchor_right = 0.987847
-anchor_bottom = 1.0
-offset_left = 0.12
-offset_top = 105.0
-offset_right = 14.0001
-offset_bottom = 107.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="ProposA" type="Panel" parent="DialogueMenuLayer/DialogueMenu/QuestionBoxColor/PropositionColors"]
-material = SubResource("ShaderMaterial_nnkxu")
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 1.091
-anchor_right = 0.486
-anchor_bottom = 1.545
-offset_left = -3.0
-offset_top = -103.009
-offset_right = -7.44998
-offset_bottom = -106.955
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("5_0v7a6")
-
-[node name="ProposB" type="Panel" parent="DialogueMenuLayer/DialogueMenu/QuestionBoxColor/PropositionColors"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.514
-anchor_top = 1.102
-anchor_right = 1.0
-anchor_bottom = 1.557
-offset_left = -7.06403
-offset_top = -106.976
-offset_right = -7.00006
-offset_bottom = -107.016
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("5_0v7a6")
-metadata/_edit_use_anchors_ = true
-
-[node name="ProposC" type="Panel" parent="DialogueMenuLayer/DialogueMenu/QuestionBoxColor/PropositionColors"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 1.636
-anchor_right = 0.486
-anchor_bottom = 2.125
-offset_left = -7.0
-offset_top = -103.968
-offset_right = -6.936
-offset_bottom = -107.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("5_0v7a6")
-
-[node name="ProposD" type="Panel" parent="DialogueMenuLayer/DialogueMenu/QuestionBoxColor/PropositionColors"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.514
-anchor_top = 1.67
-anchor_right = 1.0
-anchor_bottom = 2.125
-offset_left = -7.06403
-offset_top = -106.96
-offset_right = -7.00006
-offset_bottom = -107.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("5_0v7a6")
-metadata/_edit_use_anchors_ = true
-
 [node name="QuestionBox" type="Panel" parent="DialogueMenuLayer/DialogueMenu"]
+material = ExtResource("10_2uphr")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.25
@@ -374,22 +260,6 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("5_0v7a6")
 metadata/_edit_lock_ = true
-
-[node name="NameBubbleColor" type="Panel" parent="DialogueMenuLayer/DialogueMenu/QuestionBox"]
-material = SubResource("ShaderMaterial_khb34")
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.014
-anchor_top = -0.182
-anchor_right = 0.264
-anchor_bottom = 0.182
-offset_left = 1.936
-offset_top = -11.346
-offset_right = -4.06398
-offset_bottom = -7.65399
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("5_0v7a6")
 
 [node name="NameBubble" type="Panel" parent="DialogueMenuLayer/DialogueMenu/QuestionBox"]
 layout_mode = 1
@@ -422,6 +292,7 @@ script = ExtResource("10_u0at5")
 metadata/_edit_use_anchors_ = true
 
 [node name="ProposA" type="Panel" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/Propositions"]
+material = ExtResource("10_2uphr")
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.091
@@ -452,6 +323,7 @@ text = "A: A"
 metadata/_edit_use_anchors_ = true
 
 [node name="ProposB" type="Panel" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/Propositions"]
+material = ExtResource("10_2uphr")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.514
@@ -484,6 +356,7 @@ text = "B: B"
 metadata/_edit_use_anchors_ = true
 
 [node name="ProposC" type="Panel" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/Propositions"]
+material = ExtResource("10_2uphr")
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.636
@@ -514,6 +387,7 @@ text = "C: C"
 metadata/_edit_use_anchors_ = true
 
 [node name="ProposD" type="Panel" parent="DialogueMenuLayer/DialogueMenu/QuestionBox/Propositions"]
+material = ExtResource("10_2uphr")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.514

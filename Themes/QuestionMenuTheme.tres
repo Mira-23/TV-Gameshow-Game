@@ -1,9 +1,17 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://dns7qlt80b07c"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dns7qlt80b07c"]
 
 [ext_resource type="StyleBox" uid="uid://cuk0cwg813ii8" path="res://Themes/style_box_blue.tres" id="1_8x5uv"]
 [ext_resource type="FontFile" uid="uid://dqeoiby0e7d4p" path="res://Fonts/Montserrat-Bold.ttf" id="1_tom6m"]
 [ext_resource type="FontFile" uid="uid://rehg71t26t7n" path="res://Fonts/Montserrat-BoldItalic.ttf" id="2_x4nfk"]
 [ext_resource type="StyleBox" uid="uid://caesnfnsa1hpo" path="res://Themes/style_box_dark_blue.tres" id="2_x63sw"]
+[ext_resource type="Texture2D" uid="uid://bh84f7ycj4d3w" path="res://Textures/UI Textures/panel_tex.png" id="5_tffvf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bppmb"]
+texture = ExtResource("5_tffvf")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
 
 [resource]
 default_font = ExtResource("1_tom6m")
@@ -15,4 +23,4 @@ CheckButton/styles/hover = ExtResource("2_x63sw")
 CheckButton/styles/hover_pressed = ExtResource("2_x63sw")
 CheckButton/styles/normal = ExtResource("1_8x5uv")
 CheckButton/styles/pressed = ExtResource("2_x63sw")
-Panel/styles/panel = ExtResource("1_8x5uv")
+Panel/styles/panel = SubResource("StyleBoxTexture_bppmb")
