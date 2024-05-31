@@ -9,17 +9,19 @@ var test_path: String = "res://Dialogues/test.dialogue"
 @onready var current_bars : Panel = $"../DialogueMenuLayer/DialogueMenu/BarAnswerSliders"
 @onready var current_propositions : Node = $"../DialogueMenuLayer/DialogueMenu/QuestionBox/Propositions"
 
+
 var balloon_scene = load("res://Scenes/balloon.tscn")
 var main_dialogue = load(dialogue_path)
 
-var time_needed : int = 99
+var time_needed : int = 5
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#QuestionAnswers.current_bars.stop_bars()
+	QuestionAnswers.connect("question_attempt_start",self._on_question_change)
+	
 	current_propositions.show_propositions("London","Paris","Berlin","Madrid")
-	QuestionAnswers.SetQuestion(9,"B",time_needed)
+	QuestionAnswers.SetQuestion(1,"B",time_needed)
 	DialogueManager.show_dialogue_balloon_scene.call_deferred(balloon_scene, main_dialogue, "question_1")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

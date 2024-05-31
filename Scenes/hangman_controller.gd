@@ -26,8 +26,9 @@ var lives = 5
 func _input(event):
 	var letter = event.as_text()
 	if(Input.is_anything_pressed() == true && alphabet.has(letter)):
-			if(correct_dict.keys().has(letter) && correct_dict[letter].text!=null):
+			if(correct_dict.keys().has(letter)):
 					correct_dict[letter].text = letter
 			else:
 				lives-=1
 				print("Wrong letter! Lives remaining: ", lives)
+			alphabet.remove_at(alphabet.find(letter,0))
