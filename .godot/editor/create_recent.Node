@@ -1,12 +1,12 @@
+Panel
+CanvasLayer
+Node
+Control
 TextureRect
 CanvasModulate
 Label
-Panel
-Control
-CanvasLayer
 CheckButton
 ColorRect
-Node
 BackBufferCopy
 SpotLight3D
 CSGSphere3D

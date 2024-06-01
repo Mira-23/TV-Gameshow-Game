@@ -8,24 +8,29 @@ var test_path: String = "res://Dialogues/test.dialogue"
 @onready var clickable_answers : Control = $"../DialogueMenuLayer/DialogueMenu/QuestionBox/ClickableAnswers"
 @onready var current_bars : Panel = $"../DialogueMenuLayer/DialogueMenu/BarAnswerSliders"
 @onready var current_propositions : Node = $"../DialogueMenuLayer/DialogueMenu/QuestionBox/Propositions"
+@onready var guess_word_game: CanvasLayer = $"../GuessWordGame"
+
 
 
 var balloon_scene = load("res://Scenes/balloon.tscn")
 var main_dialogue = load(dialogue_path)
 
-var time_needed : int = 5
+var time_needed : int = 3
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#connect signal from qa to self
 	QuestionAnswers.connect("question_attempt_start",self._on_question_change)
 	
+	#create question 1
 	current_propositions.show_propositions("London","Paris","Berlin","Madrid")
 	QuestionAnswers.SetQuestion(1,"B",time_needed)
 	DialogueManager.show_dialogue_balloon_scene.call_deferred(balloon_scene, main_dialogue, "question_1")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:	
+	#enter fullscreen on f11
 	if Input.is_action_just_pressed("toggle_fullscreen"):
 		current_window = DisplayServer.window_get_mode()
 		if current_window != DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN:
@@ -45,7 +50,7 @@ func hide_question_menu():
 func show_question_menu():
 	current_bars.show_bars()
 
-
+#clears current dialogue and begins the answer state
 func _on_timer_timeout():
 	var current_dialogue = $"../ExampleBalloon"
 	current_dialogue.queue_free()
@@ -54,16 +59,26 @@ func _on_timer_timeout():
 
 
 func _on_question_change():
-	show_question_menu()
+	#if(QuestionAnswers.question_number == 11):
+		#var current_dialogue = $"../@CanvasLayer@11"
+		#current_dialogue.queue_free()
+	
+	
 	DialogueManager.show_dialogue_balloon(main_dialogue, "question_" + str(QuestionAnswers.question_number))
 	match QuestionAnswers.question_number:
+		1,2,3,4:
+			show_question_menu()
 		5,6,7,8:
 			current_bars.stop_bars()
 			clickable_answers.reveal_self()
 		9,10:
 			current_bars.stop_bars()
 			hide_question_menu()
+		11:
+			QuestionAnswers.question_number = 12
+			guess_word_game.visible = true	
 	
+	#sets questions parameters
 	match QuestionAnswers.question_number:
 		0, 1: 
 			current_propositions.show_propositions("London","Paris","Berlin","Madrid")
@@ -94,6 +109,10 @@ func _on_question_change():
 			current_propositions.show_propositions("Emily Brontë","Charles Dickens","Jane Austen","William Shakespeare")
 			QuestionAnswers.SetQuestion(8,"D",time_needed)
 		9:
-			QuestionAnswers.current_answer = "None"
+			QuestionAnswers.question_number = 9
+		10:
+			QuestionAnswers.question_number = 10
+		11, 12:
+			QuestionAnswers.correct_answer = "Something"
 		_: 
 			DialogueManager.show_dialogue_balloon_scene.call_deferred(balloon_scene, main_dialogue, "tbc")

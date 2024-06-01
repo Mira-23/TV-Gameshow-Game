@@ -4,4 +4,4 @@
 
 [resource]
 shader = ExtResource("1_i7lh5")
-shader_parameter/VchangeX = -0.115
+shader_parameter/VchangeX = 0.0

@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxbkx2kjs8ld1"]
+[gd_scene load_steps=6 format=3 uid="uid://bxbkx2kjs8ld1"]
 
 [ext_resource type="Theme" uid="uid://bsn3bal8bu47q" path="res://Themes/hangman_letter_theme.tres" id="1_1keq2"]
 [ext_resource type="Script" path="res://Scenes/hangman_controller.gd" id="1_ai0h2"]
+[ext_resource type="Texture2D" uid="uid://db7kt1dqxonb7" path="res://Textures/UI Textures/guess_cloud_background.png" id="2_qdc1x"]
+[ext_resource type="StyleBox" uid="uid://cyglbdppjmfgi" path="res://heart_texture.tres" id="4_h5oll"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tdu00"]
-bg_color = Color(0.453008, 0.698251, 0.803352, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3c24c"]
+texture = ExtResource("2_qdc1x")
 
 [node name="MainControl" type="Control"]
 layout_mode = 3
@@ -14,6 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ai0h2")
+metadata/_edit_lock_ = true
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 1
@@ -22,18 +25,19 @@ anchor_right = 1.00028
 anchor_bottom = 1.00027
 offset_right = -0.32
 offset_bottom = -0.176003
-theme_override_styles/panel = SubResource("StyleBoxFlat_tdu00")
+theme_override_styles/panel = SubResource("StyleBoxTexture_3c24c")
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="Cell1" type="Panel" parent="Background"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.144097
+anchor_left = 0.126736
 anchor_top = 0.390432
-anchor_right = 0.252014
+anchor_right = 0.232917
 anchor_bottom = 0.582062
-offset_right = -0.32
-offset_bottom = -0.176003
+offset_right = 1.67999
+offset_bottom = -0.175995
 theme = ExtResource("1_1keq2")
 metadata/_edit_use_anchors_ = true
 
@@ -56,12 +60,13 @@ metadata/_edit_use_anchors_ = true
 [node name="Cell2" type="Panel" parent="Background"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.271701
-anchor_top = 0.390432
-anchor_right = 0.379618
-anchor_bottom = 0.582062
-offset_right = -0.32
-offset_bottom = -0.176003
+anchor_left = 0.25434
+anchor_top = 0.419
+anchor_right = 0.362
+anchor_bottom = 0.552
+offset_top = -19.0
+offset_right = -0.0239868
+offset_bottom = 19.3041
 theme = ExtResource("1_1keq2")
 metadata/_edit_use_anchors_ = true
 
@@ -83,9 +88,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Cell3" type="Panel" parent="Background"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.396701
+anchor_left = 0.37934
 anchor_top = 0.390432
-anchor_right = 0.504618
+anchor_right = 0.487257
 anchor_bottom = 0.582062
 offset_left = 3.0
 offset_right = 2.67999
@@ -112,9 +117,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Cell4" type="Panel" parent="Background"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.528646
+anchor_left = 0.509549
 anchor_top = 0.390432
-anchor_right = 0.636562
+anchor_right = 0.617465
 anchor_bottom = 0.582062
 offset_right = -0.32
 offset_bottom = -0.176003
@@ -140,9 +145,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Cell5" type="Panel" parent="Background"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.65625
+anchor_left = 0.637153
 anchor_top = 0.390432
-anchor_right = 0.764167
+anchor_right = 0.74507
 anchor_bottom = 0.582062
 offset_right = -0.32
 offset_bottom = -0.176003
@@ -168,9 +173,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Cell6" type="Panel" parent="Background"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.78125
+anchor_left = 0.762153
 anchor_top = 0.390432
-anchor_right = 0.889167
+anchor_right = 0.87007
 anchor_bottom = 0.582062
 offset_left = 3.0
 offset_right = 2.67999
@@ -192,4 +197,40 @@ offset_bottom = -0.0400238
 theme = ExtResource("1_1keq2")
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Heart1" type="Panel" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.809028
+anchor_top = 0.0200617
+anchor_right = 0.845764
+anchor_bottom = 0.0820617
+offset_right = -0.32
+offset_bottom = -0.176003
+theme_override_styles/panel = ExtResource("4_h5oll")
+metadata/_edit_use_anchors_ = true
+
+[node name="Heart2" type="Panel" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.872396
+anchor_top = 0.0817901
+anchor_right = 0.907396
+anchor_bottom = 0.14379
+offset_right = -0.319946
+offset_bottom = -0.176003
+theme_override_styles/panel = ExtResource("4_h5oll")
+metadata/_edit_use_anchors_ = true
+
+[node name="Heart3" type="Panel" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931424
+anchor_top = 0.143519
+anchor_right = 0.966424
+anchor_bottom = 0.205519
+offset_right = -0.32
+offset_bottom = -0.176003
+theme_override_styles/panel = ExtResource("4_h5oll")
 metadata/_edit_use_anchors_ = true

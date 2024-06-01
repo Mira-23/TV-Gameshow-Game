@@ -12,6 +12,7 @@ var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
 
 
 func _ready() -> void:
+	QuestionAnswers.guess_the_word = self
 	correct_dict = {
 		"A" : letter_1
 		, "S" : letter_2
@@ -24,11 +25,12 @@ func _ready() -> void:
 var lives = 5
 
 func _input(event):
-	var letter = event.as_text()
-	if(Input.is_anything_pressed() == true && alphabet.has(letter)):
-			if(correct_dict.keys().has(letter)):
-					correct_dict[letter].text = letter
-			else:
-				lives-=1
-				print("Wrong letter! Lives remaining: ", lives)
-			alphabet.remove_at(alphabet.find(letter,0))
+	if (QuestionAnswers.question_number == 12):
+		var letter = event.as_text()
+		if(Input.is_anything_pressed() == true && alphabet.has(letter)):
+				if(correct_dict.keys().has(letter)):
+						correct_dict[letter].text = letter
+				else:
+					lives-=1
+					print("Wrong letter! Lives remaining: ", lives)
+				alphabet.remove_at(alphabet.find(letter,0))

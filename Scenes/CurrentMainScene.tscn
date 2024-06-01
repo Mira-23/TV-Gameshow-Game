@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://c72d4yym01qjh"]
+[gd_scene load_steps=32 format=3 uid="uid://c72d4yym01qjh"]
 
 [ext_resource type="PackedScene" uid="uid://b5voeln4m8bkj" path="res://Characters/Contestant/Initial Model Contestant/initial_model_contestant.tscn" id="1_cost8"]
 [ext_resource type="PackedScene" uid="uid://cjgoppide1bni" path="res://Characters/Host/Initial Model Host/host_initial_model.tscn" id="2_6qc5f"]
@@ -18,6 +18,7 @@
 [ext_resource type="Material" uid="uid://brc08pag2dhc1" path="res://Materials/panel_material.tres" id="10_2uphr"]
 [ext_resource type="Script" path="res://Scripts/question1attempt.gd" id="10_lvcyo"]
 [ext_resource type="Script" path="res://Scenes/propositions.gd" id="10_u0at5"]
+[ext_resource type="PackedScene" uid="uid://bxbkx2kjs8ld1" path="res://Scenes/hangman_screen.tscn" id="18_bnvwc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ewc05"]
 sky_top_color = Color(0.14902, 0.188235, 0.239216, 1)
@@ -650,6 +651,11 @@ metadata/_edit_use_anchors_ = true
 process_callback = 0
 wait_time = 10.0
 one_shot = true
+
+[node name="GuessWordGame" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="MainControl" parent="GuessWordGame" instance=ExtResource("18_bnvwc")]
 
 [node name="Dialogue Manager" type="Node" parent="."]
 script = ExtResource("7_s4xj7")

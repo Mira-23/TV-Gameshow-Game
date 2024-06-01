@@ -61,18 +61,30 @@ Host: Question 8:
 #max 144 characters per line
 Host: Question 9:
 	Where is the- [next=1]
-Contesant: Enough![next=1]
-Host: ...?[next=1]
-Contesant: I've had it with these questions! I don't care who you ar-[next=auto]
-Host: Do you know how long we've been here?[next=3]
-Contesant: ...What?[next=3]
-Host: Do you know how m,a,,ny times this stupid show has played?[next=5]
-Host: You don't know any of that! No matter what I do you [i]always[/i] forget![next=8]
-Host: But none of that matters. We've come this far.
-	You will remember this time.
-	You have to.[next=8]
-Contesant: ...[next=3]
+#Contesant: Enough![next=1]
+#Host: ...?[next=1]
+#Contesant: I've had it with these questions! I don't care who you ar-[next=auto]
+#Host: Do you know how long we've been here?[next=3]
+#Contesant: ...What?[next=3]
+#Host: Do you know how m,a,,ny times this stupid show has played?[next=5]
+#Host: You don't know any of that! No matter what I do you [i]always[/i] forget![next=8]
+#Host: But none of that matters. We've come this far.
+#	You will remember this time.
+#	You have to.[next=8]
+#Contesant: ...[next=3]
 
+set QuestionAnswers.question_number = 10
+=> question_10
+
+~ question_10
+#max 144 characters per line
+Host: And now, for the final question! [next=1]
+set QuestionAnswers.question_number = 11
+do QuestionAnswers.question_attempt_start.emit()
+=> question_11
+
+~ question_11
+[i]What is my name?[/i] [next=9999999999]
 => END
 
 ~ question_attempt

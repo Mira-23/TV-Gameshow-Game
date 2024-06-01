@@ -1,12 +1,14 @@
 [gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_0syep"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_ixn0n"]
 
 [resource]
-script = ExtResource("1_0syep")
+script = ExtResource("1_ixn0n")
 using_states = PackedStringArray()
 titles = {
 "question_1": "7",
+"question_10": "81",
+"question_11": "87",
 "question_2": "13",
 "question_3": "20",
 "question_4": "27",
@@ -15,11 +17,11 @@ titles = {
 "question_7": "48",
 "question_8": "55",
 "question_9": "62",
-"question_attempt": "79",
-"question_radio": "94",
+"question_attempt": "91",
+"question_radio": "106",
 "tbc": "2"
 }
-character_names = PackedStringArray("Host", "Contesant")
+character_names = PackedStringArray("Host")
 first_title = "2"
 lines = {
 "1": {
@@ -27,6 +29,59 @@ lines = {
 "next_id": "2",
 "text": "tbc",
 "type": "title"
+},
+"100": {
+"character": "Host",
+"character_replacements": Array[Dictionary]([]),
+"id": "100",
+"next_id": "101",
+"notes": "",
+"parent_id": "99",
+"tags": PackedStringArray(),
+"text": "False![next=1]",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "False![next=1]",
+"type": "dialogue"
+},
+"101": {
+"id": "101",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "QuestionAnswers"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "question_attempt_start"
+}, {
+"type": "dot"
+}, {
+"function": "emit",
+"type": "function",
+"value": Array[Array]([])
+}])
+},
+"next_id": "102",
+"type": "mutation"
+},
+"102": {
+"id": "102",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"104": {
+"id": "104",
+"next_id": "106",
+"text": "question_radio",
+"type": "title"
+},
+"106": {
+"id": "106",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
 },
 "11": {
 "id": "11",
@@ -244,7 +299,7 @@ Who wrote the play \"Romeo and Juliet\"?[next=10000]",
 "character": "Host",
 "character_replacements": Array[Dictionary]([]),
 "id": "62",
-"next_id": "64",
+"next_id": "76",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Question 9:
@@ -252,78 +307,6 @@ Where is the- [next=1]",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Question 9:
 Where is the- [next=1]",
-"type": "dialogue"
-},
-"64": {
-"character": "Contesant",
-"character_replacements": Array[Dictionary]([]),
-"id": "64",
-"next_id": "65",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Enough![next=1]",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Enough![next=1]",
-"type": "dialogue"
-},
-"65": {
-"character": "Host",
-"character_replacements": Array[Dictionary]([]),
-"id": "65",
-"next_id": "66",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "...?[next=1]",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "...?[next=1]",
-"type": "dialogue"
-},
-"66": {
-"character": "Contesant",
-"character_replacements": Array[Dictionary]([]),
-"id": "66",
-"next_id": "67",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "I've had it with these questions! I don't care who you ar-[next=auto]",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "I've had it with these questions! I don't care who you ar-[next=auto]",
-"type": "dialogue"
-},
-"67": {
-"character": "Host",
-"character_replacements": Array[Dictionary]([]),
-"id": "67",
-"next_id": "68",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Do you know how long we've been here?[next=3]",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Do you know how long we've been here?[next=3]",
-"type": "dialogue"
-},
-"68": {
-"character": "Contesant",
-"character_replacements": Array[Dictionary]([]),
-"id": "68",
-"next_id": "69",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "...What?[next=3]",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "...What?[next=3]",
-"type": "dialogue"
-},
-"69": {
-"character": "Host",
-"character_replacements": Array[Dictionary]([]),
-"id": "69",
-"next_id": "70",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Do you know how m,a,,ny times this stupid show has played?[next=5]",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Do you know how m,a,,ny times this stupid show has played?[next=5]",
 "type": "dialogue"
 },
 "7": {
@@ -340,63 +323,143 @@ What is the capital of France?[next=10000]",
 What is the capital of France?[next=10000]",
 "type": "dialogue"
 },
-"70": {
-"character": "Host",
-"character_replacements": Array[Dictionary]([]),
-"id": "70",
-"next_id": "71",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "You don't know any of that! No matter what I do you [i]always[/i] forget![next=8]",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "You don't know any of that! No matter what I do you [i]always[/i] forget![next=8]",
-"type": "dialogue"
-},
-"71": {
-"character": "Host",
-"character_replacements": Array[Dictionary]([]),
-"id": "71",
-"next_id": "74",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "But none of that matters. We've come this far.
-You will remember this time.
-You have to.[next=8]",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "But none of that matters. We've come this far.
-You will remember this time.
-You have to.[next=8]",
-"type": "dialogue"
-},
-"74": {
-"character": "Contesant",
-"character_replacements": Array[Dictionary]([]),
-"id": "74",
-"next_id": "76",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "...[next=3]",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "...[next=3]",
-"type": "dialogue"
-},
 "76": {
 "id": "76",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "QuestionAnswers"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "question_number"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "number",
+"value": 10
+}])
+},
+"next_id": "77",
+"type": "mutation"
+},
+"77": {
+"id": "77",
+"is_snippet": false,
+"next_id": "81",
+"type": "goto"
+},
+"79": {
+"id": "79",
+"next_id": "81",
+"text": "question_10",
+"type": "title"
+},
+"81": {
+"character": "Host",
+"character_replacements": Array[Dictionary]([]),
+"id": "81",
+"next_id": "82",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "And now, for the final question! [next=1]",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "And now, for the final question! [next=1]",
+"type": "dialogue"
+},
+"82": {
+"id": "82",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "QuestionAnswers"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "question_number"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "number",
+"value": 11
+}])
+},
+"next_id": "83",
+"type": "mutation"
+},
+"83": {
+"id": "83",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "QuestionAnswers"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "question_attempt_start"
+}, {
+"type": "dot"
+}, {
+"function": "emit",
+"type": "function",
+"value": Array[Array]([])
+}])
+},
+"next_id": "84",
+"type": "mutation"
+},
+"84": {
+"id": "84",
+"is_snippet": false,
+"next_id": "87",
+"type": "goto"
+},
+"86": {
+"id": "86",
+"next_id": "87",
+"text": "question_11",
+"type": "title"
+},
+"87": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "87",
+"next_id": "88",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "[i]What is my name?[/i] [next=9999999999]",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "[i]What is my name?[/i] [next=9999999999]",
+"type": "dialogue"
+},
+"88": {
+"id": "88",
 "is_snippet": false,
 "next_id": "end",
 "type": "goto"
 },
-"78": {
-"id": "78",
-"next_id": "79",
+"9": {
+"id": "9",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"90": {
+"id": "90",
+"next_id": "91",
 "text": "question_attempt",
 "type": "title"
 },
-"79": {
+"91": {
 "character": "Host",
 "character_replacements": Array[Dictionary]([]),
-"id": "79",
-"next_id": "80",
+"id": "91",
+"next_id": "92",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Your answer is...[next=1]",
@@ -404,7 +467,7 @@ You have to.[next=8]",
 "translation_key": "Your answer is...[next=1]",
 "type": "dialogue"
 },
-"80": {
+"92": {
 "condition": {
 "expression": Array[Dictionary]([{
 "type": "variable",
@@ -429,40 +492,40 @@ You have to.[next=8]",
 "type": "colon"
 }])
 },
-"id": "80",
-"next_conditional_id": "87",
-"next_id": "81",
-"next_id_after": "89",
+"id": "92",
+"next_conditional_id": "99",
+"next_id": "93",
+"next_id_after": "101",
 "type": "condition"
 },
-"81": {
+"93": {
 "character": "Host",
 "character_replacements": Array[Dictionary]([]),
-"id": "81",
-"next_id": "82",
+"id": "93",
+"next_id": "94",
 "notes": "",
-"parent_id": "80",
+"parent_id": "92",
 "tags": PackedStringArray(),
 "text": "Correct![next=1]",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Correct![next=1]",
 "type": "dialogue"
 },
-"82": {
+"94": {
 "character": "Host",
 "character_replacements": Array[Dictionary]([]),
-"id": "82",
-"next_id": "85",
+"id": "94",
+"next_id": "97",
 "notes": "",
-"parent_id": "80",
+"parent_id": "92",
 "siblings": [{
-"id": "82",
+"id": "94",
 "weight": 1.0
 }, {
-"id": "83",
+"id": "95",
 "weight": 1.0
 }, {
-"id": "84",
+"id": "96",
 "weight": 1.0
 }],
 "tags": PackedStringArray(),
@@ -471,34 +534,34 @@ You have to.[next=8]",
 "translation_key": "Now onto the next question...[next=1]",
 "type": "dialogue"
 },
-"83": {
+"95": {
 "character": "Host",
 "character_replacements": Array[Dictionary]([]),
-"id": "83",
-"next_id": "85",
+"id": "95",
+"next_id": "97",
 "notes": "",
-"parent_id": "80",
+"parent_id": "92",
 "tags": PackedStringArray(),
 "text": "Next...[next=1]",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Next...[next=1]",
 "type": "dialogue"
 },
-"84": {
+"96": {
 "character": "Host",
 "character_replacements": Array[Dictionary]([]),
-"id": "84",
-"next_id": "85",
+"id": "96",
+"next_id": "97",
 "notes": "",
-"parent_id": "80",
+"parent_id": "92",
 "tags": PackedStringArray(),
 "text": "Let's see what else...[next=1]",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Let's see what else...[next=1]",
 "type": "dialogue"
 },
-"85": {
-"id": "85",
+"97": {
+"id": "97",
 "mutation": {
 "expression": Array[Dictionary]([{
 "type": "variable",
@@ -527,12 +590,12 @@ You have to.[next=8]",
 "value": 1
 }])
 },
-"next_id": "86",
-"parent_id": "80",
+"next_id": "98",
+"parent_id": "92",
 "type": "mutation"
 },
-"86": {
-"id": "86",
+"98": {
+"id": "98",
 "mutation": {
 "expression": Array[Dictionary]([{
 "function": "debug",
@@ -548,75 +611,16 @@ You have to.[next=8]",
 }])])
 }])
 },
-"next_id": "89",
-"parent_id": "80",
+"next_id": "101",
+"parent_id": "92",
 "type": "mutation"
 },
-"87": {
-"id": "87",
-"next_conditional_id": "89",
-"next_id": "88",
-"next_id_after": "89",
+"99": {
+"id": "99",
+"next_conditional_id": "101",
+"next_id": "100",
+"next_id_after": "101",
 "type": "condition"
-},
-"88": {
-"character": "Host",
-"character_replacements": Array[Dictionary]([]),
-"id": "88",
-"next_id": "89",
-"notes": "",
-"parent_id": "87",
-"tags": PackedStringArray(),
-"text": "False![next=1]",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "False![next=1]",
-"type": "dialogue"
-},
-"89": {
-"id": "89",
-"mutation": {
-"expression": Array[Dictionary]([{
-"type": "variable",
-"value": "QuestionAnswers"
-}, {
-"type": "dot"
-}, {
-"type": "variable",
-"value": "question_attempt_start"
-}, {
-"type": "dot"
-}, {
-"function": "emit",
-"type": "function",
-"value": Array[Array]([])
-}])
-},
-"next_id": "90",
-"type": "mutation"
-},
-"9": {
-"id": "9",
-"is_snippet": false,
-"next_id": "end",
-"type": "goto"
-},
-"90": {
-"id": "90",
-"is_snippet": false,
-"next_id": "end",
-"type": "goto"
-},
-"92": {
-"id": "92",
-"next_id": "94",
-"text": "question_radio",
-"type": "title"
-},
-"94": {
-"id": "94",
-"is_snippet": false,
-"next_id": "end",
-"type": "goto"
 }
 }
 raw_text = "~ tbc
@@ -682,18 +686,30 @@ Host: Question 8:
 #max 144 characters per line
 Host: Question 9:
 	Where is the- [next=1]
-Contesant: Enough![next=1]
-Host: ...?[next=1]
-Contesant: I've had it with these questions! I don't care who you ar-[next=auto]
-Host: Do you know how long we've been here?[next=3]
-Contesant: ...What?[next=3]
-Host: Do you know how m,a,,ny times this stupid show has played?[next=5]
-Host: You don't know any of that! No matter what I do you [i]always[/i] forget![next=8]
-Host: But none of that matters. We've come this far.
-	You will remember this time.
-	You have to.[next=8]
-Contesant: ...[next=3]
+#Contesant: Enough![next=1]
+#Host: ...?[next=1]
+#Contesant: I've had it with these questions! I don't care who you ar-[next=auto]
+#Host: Do you know how long we've been here?[next=3]
+#Contesant: ...What?[next=3]
+#Host: Do you know how m,a,,ny times this stupid show has played?[next=5]
+#Host: You don't know any of that! No matter what I do you [i]always[/i] forget![next=8]
+#Host: But none of that matters. We've come this far.
+#	You will remember this time.
+#	You have to.[next=8]
+#Contesant: ...[next=3]
 
+set QuestionAnswers.question_number = 10
+=> question_10
+
+~ question_10
+#max 144 characters per line
+Host: And now, for the final question! [next=1]
+set QuestionAnswers.question_number = 11
+do QuestionAnswers.question_attempt_start.emit()
+=> question_11
+
+~ question_11
+[i]What is my name?[/i] [next=9999999999]
 => END
 
 ~ question_attempt
