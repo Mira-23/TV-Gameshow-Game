@@ -7,12 +7,18 @@ extends Control
 @onready var letter_5: Label = $Background/Cell5/Letter5
 @onready var letter_6: Label = $Background/Cell6/Letter6
 
+@onready var heart_1: Panel = $Background/Heart1
+@onready var heart_2: Panel = $Background/Heart2
+@onready var heart_3: Panel = $Background/Heart3
+
+
 var correct_dict
 var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
 
 func _ready() -> void:
 	QuestionAnswers.guess_the_word = self
+	
 	correct_dict = {
 		"A" : letter_1
 		, "S" : letter_2
@@ -22,9 +28,11 @@ func _ready() -> void:
 		, "Y" : letter_6
 	}
 
-var lives = 5
+var lives = 3
 
 func _input(event):
+	if(Input.is_anything_pressed() == true && event.as_text() == "Down"):
+		get_tree().change_scene_to_file("res://Scenes/room.tscn")
 	if (QuestionAnswers.question_number == 12):
 		var letter = event.as_text()
 		if(Input.is_anything_pressed() == true && alphabet.has(letter)):
@@ -32,5 +40,12 @@ func _input(event):
 						correct_dict[letter].text = letter
 				else:
 					lives-=1
+					match lives:
+						2:
+							heart_1.visible = false
+						1:
+							heart_2.visible = false
+						0:
+							heart_3.visible = false
 					print("Wrong letter! Lives remaining: ", lives)
 				alphabet.remove_at(alphabet.find(letter,0))

@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_ixn0n"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_ebaj1"]
 
 [resource]
-script = ExtResource("1_ixn0n")
+script = ExtResource("1_ebaj1")
 using_states = PackedStringArray()
 titles = {
 "question_1": "7",
@@ -17,8 +17,8 @@ titles = {
 "question_7": "48",
 "question_8": "55",
 "question_9": "62",
-"question_attempt": "91",
-"question_radio": "106",
+"question_attempt": "95",
+"question_radio": "110",
 "tbc": "2"
 }
 character_names = PackedStringArray("Host")
@@ -36,15 +36,90 @@ lines = {
 "id": "100",
 "next_id": "101",
 "notes": "",
-"parent_id": "99",
+"parent_id": "96",
+"tags": PackedStringArray(),
+"text": "Let's see what else...[next=1]",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Let's see what else...[next=1]",
+"type": "dialogue"
+},
+"101": {
+"id": "101",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "QuestionAnswers"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "question_number"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "variable",
+"value": "QuestionAnswers"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "question_number"
+}, {
+"type": "operator",
+"value": "+"
+}, {
+"type": "number",
+"value": 1
+}])
+},
+"next_id": "102",
+"parent_id": "96",
+"type": "mutation"
+},
+"102": {
+"id": "102",
+"mutation": {
+"expression": Array[Dictionary]([{
+"function": "debug",
+"type": "function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "variable",
+"value": "QuestionAnswers"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "question_number"
+}])])
+}])
+},
+"next_id": "105",
+"parent_id": "96",
+"type": "mutation"
+},
+"103": {
+"id": "103",
+"next_conditional_id": "105",
+"next_id": "104",
+"next_id_after": "105",
+"type": "condition"
+},
+"104": {
+"character": "Host",
+"character_replacements": Array[Dictionary]([]),
+"id": "104",
+"next_id": "105",
+"notes": "",
+"parent_id": "103",
 "tags": PackedStringArray(),
 "text": "False![next=1]",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "False![next=1]",
 "type": "dialogue"
 },
-"101": {
-"id": "101",
+"105": {
+"id": "105",
 "mutation": {
 "expression": Array[Dictionary]([{
 "type": "variable",
@@ -62,20 +137,8 @@ lines = {
 "value": Array[Array]([])
 }])
 },
-"next_id": "102",
-"type": "mutation"
-},
-"102": {
-"id": "102",
-"is_snippet": false,
-"next_id": "end",
-"type": "goto"
-},
-"104": {
-"id": "104",
 "next_id": "106",
-"text": "question_radio",
-"type": "title"
+"type": "mutation"
 },
 "106": {
 "id": "106",
@@ -83,11 +146,23 @@ lines = {
 "next_id": "end",
 "type": "goto"
 },
+"108": {
+"id": "108",
+"next_id": "110",
+"text": "question_radio",
+"type": "title"
+},
 "11": {
 "id": "11",
 "next_id": "13",
 "text": "question_2",
 "type": "title"
+},
+"110": {
+"id": "110",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
 },
 "13": {
 "character": "Host",
@@ -449,17 +524,17 @@ What is the capital of France?[next=10000]",
 "next_id": "end",
 "type": "goto"
 },
-"90": {
-"id": "90",
-"next_id": "91",
+"94": {
+"id": "94",
+"next_id": "95",
 "text": "question_attempt",
 "type": "title"
 },
-"91": {
+"95": {
 "character": "Host",
 "character_replacements": Array[Dictionary]([]),
-"id": "91",
-"next_id": "92",
+"id": "95",
+"next_id": "96",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Your answer is...[next=1]",
@@ -467,7 +542,7 @@ What is the capital of France?[next=10000]",
 "translation_key": "Your answer is...[next=1]",
 "type": "dialogue"
 },
-"92": {
+"96": {
 "condition": {
 "expression": Array[Dictionary]([{
 "type": "variable",
@@ -492,40 +567,40 @@ What is the capital of France?[next=10000]",
 "type": "colon"
 }])
 },
-"id": "92",
-"next_conditional_id": "99",
-"next_id": "93",
-"next_id_after": "101",
+"id": "96",
+"next_conditional_id": "103",
+"next_id": "97",
+"next_id_after": "105",
 "type": "condition"
 },
-"93": {
+"97": {
 "character": "Host",
 "character_replacements": Array[Dictionary]([]),
-"id": "93",
-"next_id": "94",
+"id": "97",
+"next_id": "98",
 "notes": "",
-"parent_id": "92",
+"parent_id": "96",
 "tags": PackedStringArray(),
 "text": "Correct![next=1]",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Correct![next=1]",
 "type": "dialogue"
 },
-"94": {
+"98": {
 "character": "Host",
 "character_replacements": Array[Dictionary]([]),
-"id": "94",
-"next_id": "97",
+"id": "98",
+"next_id": "101",
 "notes": "",
-"parent_id": "92",
+"parent_id": "96",
 "siblings": [{
-"id": "94",
+"id": "98",
 "weight": 1.0
 }, {
-"id": "95",
+"id": "99",
 "weight": 1.0
 }, {
-"id": "96",
+"id": "100",
 "weight": 1.0
 }],
 "tags": PackedStringArray(),
@@ -534,93 +609,18 @@ What is the capital of France?[next=10000]",
 "translation_key": "Now onto the next question...[next=1]",
 "type": "dialogue"
 },
-"95": {
+"99": {
 "character": "Host",
 "character_replacements": Array[Dictionary]([]),
-"id": "95",
-"next_id": "97",
+"id": "99",
+"next_id": "101",
 "notes": "",
-"parent_id": "92",
+"parent_id": "96",
 "tags": PackedStringArray(),
 "text": "Next...[next=1]",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Next...[next=1]",
 "type": "dialogue"
-},
-"96": {
-"character": "Host",
-"character_replacements": Array[Dictionary]([]),
-"id": "96",
-"next_id": "97",
-"notes": "",
-"parent_id": "92",
-"tags": PackedStringArray(),
-"text": "Let's see what else...[next=1]",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Let's see what else...[next=1]",
-"type": "dialogue"
-},
-"97": {
-"id": "97",
-"mutation": {
-"expression": Array[Dictionary]([{
-"type": "variable",
-"value": "QuestionAnswers"
-}, {
-"type": "dot"
-}, {
-"type": "variable",
-"value": "question_number"
-}, {
-"type": "assignment",
-"value": "="
-}, {
-"type": "variable",
-"value": "QuestionAnswers"
-}, {
-"type": "dot"
-}, {
-"type": "variable",
-"value": "question_number"
-}, {
-"type": "operator",
-"value": "+"
-}, {
-"type": "number",
-"value": 1
-}])
-},
-"next_id": "98",
-"parent_id": "92",
-"type": "mutation"
-},
-"98": {
-"id": "98",
-"mutation": {
-"expression": Array[Dictionary]([{
-"function": "debug",
-"type": "function",
-"value": Array[Array]([Array[Dictionary]([{
-"type": "variable",
-"value": "QuestionAnswers"
-}, {
-"type": "dot"
-}, {
-"type": "variable",
-"value": "question_number"
-}])])
-}])
-},
-"next_id": "101",
-"parent_id": "92",
-"type": "mutation"
-},
-"99": {
-"id": "99",
-"next_conditional_id": "101",
-"next_id": "100",
-"next_id_after": "101",
-"type": "condition"
 }
 }
 raw_text = "~ tbc
@@ -711,6 +711,10 @@ do QuestionAnswers.question_attempt_start.emit()
 ~ question_11
 [i]What is my name?[/i] [next=9999999999]
 => END
+
+#~ question_12
+#What?
+#=> END
 
 ~ question_attempt
 Host: Your answer is...[next=1]

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TV-Gameshow-Game"
-run/main_scene="res://Scenes/CurrentMainScene.tscn"
+run/main_scene="res://Scenes/room.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 

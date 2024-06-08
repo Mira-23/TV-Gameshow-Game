@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=3 uid="uid://cfdy5nfl316nr"]
+
+[ext_resource type="Script" path="res://Scripts/tv_handler.gd" id="1_edy2b"]
+[ext_resource type="Script" path="res://Scripts/arrow_movement_handler.gd" id="2_jguuk"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6aist"]
+sky_top_color = Color(0.074531, 0.0980774, 0.130821, 1)
+sky_horizon_color = Color(0.531218, 0.53697, 0.55811, 1)
+ground_bottom_color = Color(0.0503422, 0.0498015, 0.101618, 1)
+ground_horizon_color = Color(0.531218, 0.53697, 0.55811, 1)
+
+[sub_resource type="Sky" id="Sky_vw5kb"]
+sky_material = SubResource("ProceduralSkyMaterial_6aist")
+
+[sub_resource type="Environment" id="Environment_0q522"]
+background_mode = 2
+sky = SubResource("Sky_vw5kb")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_ypfbl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0fo4r"]
+cull_mode = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_ehlrb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7pkdw"]
+
+[node name="Room" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0q522")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(8.77626, 0, 0, 0, 4.88069, 0, 0, 0, 9.91351, 0, 3.12, 0)
+mesh = SubResource("BoxMesh_ypfbl")
+surface_material_override/0 = SubResource("StandardMaterial3D_0fo4r")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.90417, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.92798, -3.40032)
+omni_range = 1.52455
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16121, -3.5)
+mesh = SubResource("BoxMesh_ehlrb")
+script = ExtResource("1_edy2b")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.161, -3.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_7pkdw")
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("2_jguuk")
